@@ -1,0 +1,9 @@
+{
+  "university_name": "Lancaster University",
+  "scholarships": [],
+  "data_freshness": {
+    "retrieved_on": "2026-05-02",
+    "confidence": "low",
+    "notes": "Unable to access Lancaster University official scholarship pages during this run. Official sources were inaccessible via available methods."
+  }
+}

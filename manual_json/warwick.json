@@ -1,0 +1,84 @@
+{
+  "university_name": "University of Warwick",
+  "scholarships": [
+    {
+      "name": "Warwick Bursary (2025 Entry onwards)",
+      "eligibility": {
+        "academic_requirements": "Offer for full-time undergraduate degree",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "All undergraduate courses eligible",
+        "nationality_restrictions": "Home students only - domiciled in England, Scotland, or Northern Ireland",
+        "financial_need_required": true,
+        "other_conditions": "Must apply to Student Finance England, SFNI, or SAAS for income assessment. Family income must be £42,875 or below"
+      },
+      "required_documents": ["Student Finance application confirmation"],
+      "application_process": {
+        "separate_application_required": false,
+        "auto_considered": true,
+        "application_steps": [
+          "Apply for Student Finance England/SFNI/SAAS",
+          "Provide household income assessment",
+          "University automatically checks eligibility from Student Finance data"
+        ]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://warwick.ac.uk/services/wss/funding/bursariesandscholarships/2025-entry/"
+    },
+    {
+      "name": "Warwick Part-Time Fee Waiver (PTFW)",
+      "eligibility": {
+        "academic_requirements": "First undergraduate degree",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Part-time undergraduate courses",
+        "nationality_restrictions": "Home and international students eligible",
+        "financial_need_required": true,
+        "other_conditions": "Must be in receipt of one or more UK Government means-tested benefits and have Tuition Fee Loan entitlement"
+      },
+      "required_documents": [
+        "Evidence of Tuition Fee Loan entitlement",
+        "Evidence of means-tested benefit receipt for 2025-26"
+      ],
+      "application_process": {
+        "separate_application_required": true,
+        "auto_considered": false,
+        "application_steps": [
+          "Complete Part-Time Fee Waiver application form online",
+          "Submit evidence of TFL entitlement",
+          "Submit evidence of means-tested benefit receipt"
+        ]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://warwick.ac.uk/services/wss/funding/bursariesandscholarships/ptfw/"
+    },
+    {
+      "name": "Warwick Undergraduate Global Excellence Scholarship (WUGES)",
+      "eligibility": {
+        "academic_requirements": "Exceptional academic achievement",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "All undergraduate courses eligible",
+        "nationality_restrictions": "International students only",
+        "financial_need_required": false,
+        "other_conditions": "Merit-based scholarship for talented international applicants"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": "NOT_FOUND",
+        "auto_considered": "NOT_FOUND",
+        "application_steps": [
+          "Apply for undergraduate course",
+          "Automatically considered for scholarship based on academic merit"
+        ]
+      },
+      "deadline": "Applications for 2026 now closed",
+      "source_url": "https://warwick.ac.uk/study/international/admissions/finance/scholarships/"
+    }
+  ],
+  "data_freshness": {
+    "retrieved_on": "2026-05-02",
+    "confidence": "high",
+    "notes": "Information sourced from official University of Warwick funding pages."
+  }
+}

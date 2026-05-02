@@ -1,0 +1,2956 @@
+[
+  {
+    "university_name": "University of Cambridge",
+    "scholarships": [
+      {
+        "name": "Cambridge Bursary Scheme",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate courses only",
+          "nationality_restrictions": "UK and EU students (assessed as home fee status)",
+          "financial_need_required": true,
+          "other_conditions": "Must apply for Student Finance loan (England, Scotland, Wales, or Northern Ireland). No separate application required."
+        },
+        "required_documents": [
+          "Student Finance application confirmation",
+          "Income assessment from regional Student Finance body"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for Student Finance through your regional body | Receive income assessment confirmation | Automatic consideration with Student Finance application"
+        },
+        "deadline": "Dependent on Student Finance regional body deadlines",
+        "source_url": "https://www.cambridgestudents.cam.ac.uk/fees-and-funding/cambridge-bursary-scheme"
+      },
+      {
+        "name": "Stormzy Scholarship",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course at Cambridge",
+          "nationality_restrictions": "UK students only; Black African, Black Caribbean, Black Other, Mixed White/Black Caribbean, or Mixed White/Black African ethnicity",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Confirmed undergraduate offer; must have home fee status; must have applied to Student Finance and received income assessment"
+        },
+        "required_documents": [
+          "Confirmed UCAS offer from Cambridge",
+          "Student Finance application and income assessment confirmation"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Obtain Student Finance income assessment | Complete Stormzy Scholarship application when portal opens (usually August)"
+        },
+        "deadline": "Applications for 2026 entry open in August 2026; details to be confirmed",
+        "source_url": "https://www.undergraduate.study.cam.ac.uk/fees-funding/scholarships-bursaries/stormzy-scholarship"
+      },
+      {
+        "name": "Formula 1® Engineering Scholarship",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "First undergraduate Engineering degree",
+          "nationality_restrictions": "UK students only; female students (any ethnicity) or male students of underrepresented ethnic minorities (Bangladeshi, Pakistani, Black African, Black Caribbean, Black Other, Mixed White/Black)",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Confirmed Engineering undergraduate offer; must have home fee status; must have applied to Student Finance and received income assessment"
+        },
+        "required_documents": [
+          "Confirmed UCAS offer from Cambridge for Engineering",
+          "Student Finance application and income assessment confirmation"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Obtain Student Finance income assessment | Complete Formula 1 Scholarship application when portal opens (usually August)"
+        },
+        "deadline": "Applications for 2026 entry open in August 2026; details to be confirmed",
+        "source_url": "https://www.undergraduate.study.cam.ac.uk/fees-funding/scholarships-bursaries/formula-1-engineering-scholarship"
+      },
+      {
+        "name": "Geography Scholarship",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Geography or related undergraduate course",
+          "nationality_restrictions": "UK students only; Black UK students from low income and/or disadvantaged backgrounds",
+          "financial_need_required": true,
+          "other_conditions": "Confirmed undergraduate offer"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "NOT_FOUND"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.undergraduate.study.cam.ac.uk/fees-funding/scholarships-bursaries/geography-scholarship"
+      },
+      {
+        "name": "Gates Cambridge Scholarship",
+        "eligibility": {
+          "academic_requirements": "Evidence of academic excellence required; must be academically outstanding",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "PhD (full-time or part-time), MLitt (full-time), or one-year postgraduate taught course (full-time). Excludes MBA, EMBA, MFin, BusD, PGCE, MBBChir Clinical Studies, MD, and professional development courses",
+          "nationality_restrictions": "Non-UK citizens only. Any country outside United Kingdom eligible.",
+          "financial_need_required": false,
+          "other_conditions": "Needs-blind admissions process. Must demonstrate commitment to improving lives of others and capacity for leadership. Must have or obtain unconditional/conditional Cambridge offer."
+        },
+        "required_documents": [
+          "Cambridge postgraduate application",
+          "Academic transcripts",
+          "References (academic/professional)",
+          "Research proposal (for PhD/MLitt applicants)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply for postgraduate course at Cambridge | Be nominated by academic department | Submit Gates Cambridge Scholarship application | Undergo departmental ranking review | Selected applicants reviewed by selection panels"
+        },
+        "deadline": "Two rounds: US citizens resident in USA (October 2026); All other applicants (December 2026 or early January 2027 depending on course). Exact dates to be confirmed.",
+        "source_url": "https://www.gatescambridge.org/apply/"
+      },
+      {
+        "name": "Cambridge Trust Awards (Postgraduate)",
+        "eligibility": {
+          "academic_requirements": "Academic merit based",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Masters (one-year or two-year) and PhD postgraduate courses",
+          "nationality_restrictions": "International students (non-UK); specific country eligibility varies by award",
+          "financial_need_required": true,
+          "other_conditions": "Means-tested. Must be accepted for admission to Cambridge. Eligibility varies by specific award and country."
+        },
+        "required_documents": [
+          "Confirmed Cambridge postgraduate offer",
+          "Completed Cambridge Trust application",
+          "Financial need documentation"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive Cambridge postgraduate offer | Register on Cambridge Trust website | Complete application for eligible awards for your country | Submit supporting documents indicating financial need"
+        },
+        "deadline": "Varies by award; typically align with postgraduate course deadlines (December 2026 - January 2027)",
+        "source_url": "https://www.cambridgetrust.org/scholarships/"
+      },
+      {
+        "name": "Cambridge Trust Awards (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Academic merit based",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate degree",
+          "nationality_restrictions": "International students; specific country eligibility varies by award",
+          "financial_need_required": true,
+          "other_conditions": "Means-tested. Most awards are part-cost, not full scholarships. Must have received offer from Cambridge College. Eligibility varies by specific award and country."
+        },
+        "required_documents": [
+          "Confirmed College offer from Cambridge",
+          "Completed Cambridge Trust application",
+          "Financial need documentation"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive Cambridge College offer | College sends details and application form | Complete Cambridge Trust award application | Submit supporting financial documents"
+        },
+        "deadline": "After College offer received; varies by award",
+        "source_url": "https://www.cambridgetrust.org/scholarships/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information sourced from official University of Cambridge, Cambridge Trust, and Gates Cambridge websites. For 2026/27 entry. Some 2026 entry scholarship details still under development (e.g., Stormzy and F1 scholarships). Specific application deadlines and full eligibility criteria for some awards to be confirmed closer to application windows. College-specific awards and smaller subject-specific prizes not included as per medium thoroughness requirement."
+    }
+  },
+  {
+    "university_name": "University of Oxford",
+    "scholarships": [
+      {
+        "name": "Clarendon Fund Scholarship",
+        "eligibility": {
+          "academic_requirements": "Competitive academic merit-based selection",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available for all courses at graduate level",
+          "nationality_restrictions": "Open to international and UK applicants",
+          "financial_need_required": false,
+          "other_conditions": "Primarily funded by Oxford University Press"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for postgraduate programme through standard admissions"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.clarendon.ox.ac.uk"
+      },
+      {
+        "name": "Rhodes Scholarship",
+        "eligibility": {
+          "academic_requirements": "High academic achievement required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any postgraduate course",
+          "nationality_restrictions": "Restricted to specific nations; primarily Commonwealth countries, USA, Germany, and others",
+          "financial_need_required": false,
+          "other_conditions": "Requires demonstrated leadership and character"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply separately to Rhodes Trust | Application typically made through national selection committees"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.rhodeshouse.ox.ac.uk"
+      },
+      {
+        "name": "Oxford Opportunity Bursaries",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate programmes",
+          "nationality_restrictions": "UK students only",
+          "financial_need_required": true,
+          "other_conditions": "Means-tested"
+        },
+        "required_documents": [
+          "Financial documentation",
+          "NOT_FOUND - specific documents not accessible"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Assessed during undergraduate application process"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.ox.ac.uk/admissions"
+      },
+      {
+        "name": "Weidenfeld Scholarships",
+        "eligibility": {
+          "academic_requirements": "High academic merit",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Postgraduate courses",
+          "nationality_restrictions": "International students",
+          "financial_need_required": false,
+          "other_conditions": "NOT_FOUND"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for postgraduate programme; assessed automatically"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.ox.ac.uk"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Oxford official scholarship pages returned access errors during this run. Current 2026/27 detail could not be fully verified from official sources."
+    }
+  },
+  {
+    "university_name": "London School of Economics and Political Science",
+    "scholarships": [
+      {
+        "name": "Uggla Family Scholars Programme",
+        "eligibility": {
+          "academic_requirements": "Unconditional or conditional offer of admission to LSE undergraduate programme required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available for all undergraduate programmes",
+          "nationality_restrictions": "7 scholarships for UK students; 3 for overseas students",
+          "financial_need_required": true,
+          "other_conditions": "Students from underrepresented backgrounds prioritised. Must be a new undergraduate student for 2026 entry."
+        },
+        "required_documents": [
+          "Completed LSE Undergraduate Scholarship Application 2026",
+          "One academic reference",
+          "Supporting documents (varies by individual circumstances)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Obtain conditional or unconditional LSE offer | Complete LSE Undergraduate Scholarship Application 2026 | Submit academic reference | Provide supporting documents | Email all materials to financial-support@lse.ac.uk"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lse.ac.uk/study-at-lse/undergraduate/fees-and-funding/uggla-family-scholarships"
+      },
+      {
+        "name": "LSE Access to Education Undergraduate Scholarships",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "NOT_FOUND",
+          "nationality_restrictions": "Restricted to students of specific immigration status",
+          "financial_need_required": true,
+          "other_conditions": "Awards can cover full tuition fees and living costs for eligible students with offer of admission"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": "NOT_FOUND",
+          "application_steps": "NOT_FOUND"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lse.ac.uk/study-at-lse/Undergraduate/fees-and-funding/access-to-education-undergraduate-scholarships"
+      },
+      {
+        "name": "LSE PhD Studentships",
+        "eligibility": {
+          "academic_requirements": "High calibre students",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "For MRes, MPhil, and PhD programmes",
+          "nationality_restrictions": "All nationalities eligible",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Open across all research areas at the School"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": "NOT_FOUND",
+          "application_steps": "NOT_FOUND"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lse.ac.uk/study-at-lse/Graduate/fees-and-funding/PhD-Studentships"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Detailed LSE scholarship pages were only partly accessible during this run, so many fields remain NOT_FOUND."
+    }
+  },
+  {
+    "university_name": "University of St Andrews",
+    "scholarships": [
+      {
+        "name": "Entry Scholarships (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Merit-based; typically high academic achievement at school level",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available across various courses",
+          "nationality_restrictions": "No restrictions mentioned; open to UK, EU, and international students",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Based on academic excellence or other achievements such as leadership, sport, or music"
+        },
+        "required_documents": [
+          "NOT_FOUND - applicants advised to complete financial funding tool if applying for need-based scholarships"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Receive login details for My Application portal within two working days of course application | Apply through scholarship application in portal | Complete financial funding tool if applying for means-tested scholarships | Do not wait until receiving an offer before applying"
+        },
+        "deadline": "NOT_FOUND - varies by scholarship; applicants encouraged to apply early",
+        "source_url": "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+      },
+      {
+        "name": "Entry Scholarships (Postgraduate Taught)",
+        "eligibility": {
+          "academic_requirements": "Merit-based; typically high academic achievement at honours level or equivalent",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available for taught Masters programmes",
+          "nationality_restrictions": "Open to international students worldwide",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Based on academic excellence, course subject, location of residence"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Search scholarships using online catalogue by programme or country | Apply through My Application portal | Complete relevant application requirements as specified by each scholarship"
+        },
+        "deadline": "NOT_FOUND - varies by scholarship; recommend applying early",
+        "source_url": "https://www.st-andrews.ac.uk/study/postgraduate/fees/"
+      },
+      {
+        "name": "Bursaries (Need-based)",
+        "eligibility": {
+          "academic_requirements": "No specific academic minimum required; need-based assessment",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available for both undergraduate and postgraduate students",
+          "nationality_restrictions": "Available to UK and international students; applicants with refugee status, humanitarian protection, discretionary leave, or asylum seeker status encouraged to apply",
+          "financial_need_required": true,
+          "other_conditions": "Based on household income assessment; bursaries focus on reducing accommodation costs and supporting living expenses"
+        },
+        "required_documents": [
+          "Household income evidence: P60, payslips, tax summaries, self-assessment returns, or benefit statements",
+          "Bank statements (3 months) if above documents unavailable",
+          "Care status documentation (if applicable)",
+          "Home Office documentation (for asylum seekers)",
+          "All documents in PDF format and English language"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Complete financial funding tool on My Application portal to calculate household income | This automatically populates household income field across all scholarship applications | Only need to complete once unless circumstances change | Submit scholarship application with financial evidence"
+        },
+        "deadline": "NOT_FOUND - varies by year; contact Money Advice team for in-year funding",
+        "source_url": "https://www.st-andrews.ac.uk/study/scholarships/calculating-household-income/"
+      },
+      {
+        "name": "International Scholarships",
+        "eligibility": {
+          "academic_requirements": "Merit-based; high academic standards",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Standard university entry requirements apply",
+          "course_requirements": "Available for undergraduate, taught postgraduate, and research postgraduate programmes",
+          "nationality_restrictions": "For international (non-UK) students; covering full or partial tuition fees",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Based on academic excellence, subject area, country of residence"
+        },
+        "required_documents": [
+          "NOT_FOUND - varies by scholarship"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Search international scholarships by country of residence in catalogue | Apply through My Application portal | Follow specific requirements for chosen scholarship"
+        },
+        "deadline": "NOT_FOUND - varies by scholarship",
+        "source_url": "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+      },
+      {
+        "name": "External Scholarships (Chevening, DAAD, CSC, etc.)",
+        "eligibility": {
+          "academic_requirements": "Varies; typically high academic standards required by sponsoring body",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Varies by sponsoring organisation",
+          "course_requirements": "Programme-specific; varies by scholarship",
+          "nationality_restrictions": "Varies; typically country-specific (e.g., Chevening for Commonwealth/British Protected Persons, DAAD for German nationals, CSC for Chinese nationals)",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Sponsored by external government agencies or international organisations"
+        },
+        "required_documents": [
+          "Depends on sponsoring organisation"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Apply to external sponsoring organisation following their application process | Upon conditional acceptance, apply to university for admission | External sponsors and university must approve"
+        },
+        "deadline": "NOT_FOUND - depends on external sponsoring body; typically have their own annual deadlines",
+        "source_url": "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+      },
+      {
+        "name": "Sport and Music Scholarships",
+        "eligibility": {
+          "academic_requirements": "No specific minimum; talent-based selection",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available across degree programmes",
+          "nationality_restrictions": "No restriction mentioned",
+          "financial_need_required": false,
+          "other_conditions": "Based on demonstrated sporting or musical achievement; talent and potential assessment required"
+        },
+        "required_documents": [
+          "Evidence of sporting or musical achievement",
+          "Portfolio or demonstration of talent",
+          "Recommendation from coach or instructor (typically required)"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Contact relevant sports or music department | Submit evidence of achievement and talent | Participate in trials or assessment if required"
+        },
+        "deadline": "NOT_FOUND - contact relevant department for specific deadlines",
+        "source_url": "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+      },
+      {
+        "name": "Discretionary Funds (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Not academic-based",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Not course-specific",
+          "nationality_restrictions": "Not specified",
+          "financial_need_required": true,
+          "other_conditions": "Available to students in financial hardship"
+        },
+        "required_documents": [
+          "Evidence of financial difficulty",
+          "Household income information"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Contact Fees and Funding office or Money Advice team | Discuss financial circumstances | Submit evidence of hardship if required"
+        },
+        "deadline": "NOT_FOUND - available throughout the year for students in hardship",
+        "source_url": "https://www.st-andrews.ac.uk/study/undergraduate/fees/financial-assistance/"
+      },
+      {
+        "name": "Research Council Funding (Postgraduate Research)",
+        "eligibility": {
+          "academic_requirements": "High academic standards; research proposal quality assessed",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "For PhD and postgraduate research programmes",
+          "nationality_restrictions": "Varies by research council; typically UK or EU residents may be eligible",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Merit-based; research excellence and innovation assessment"
+        },
+        "required_documents": [
+          "Research proposal",
+          "Academic transcripts",
+          "References",
+          "Research qualifications evidence"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Develop research proposal with university supervisor | Apply to relevant UK Research Council (BBSRC, EPSRC, ESRC, etc.) | Follow council's application timeline and process"
+        },
+        "deadline": "NOT_FOUND - varies by research council; typically annual cycles",
+        "source_url": "https://www.st-andrews.ac.uk/study/postgraduate/fees/financial-assistance/"
+      },
+      {
+        "name": "Loans (Postgraduate)",
+        "eligibility": {
+          "academic_requirements": "Not applicable",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Masters programmes only",
+          "nationality_restrictions": "Varies by country of residence; eligibility depends on domicile",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Available for students from various countries with different terms"
+        },
+        "required_documents": [
+          "NOT_FOUND - depends on loan provider and country of residence"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": false,
+          "application_steps": "Check eligibility based on country of residence | Apply to relevant loan provider (SFE for English students, SAAS for Scottish students, etc.) | Follow provider's application requirements"
+        },
+        "deadline": "NOT_FOUND - varies by loan provider; typically have different deadlines",
+        "source_url": "https://www.st-andrews.ac.uk/study/postgraduate/fees/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "medium",
+      "notes": "Information gathered from official University of St Andrews study and scholarships website. Detailed scholarship listings in online catalogue are interactive and not fully accessible through automated tools. Specific scholarship names, exact amounts, and deadlines vary significantly and are available through the university's searchable scholarship catalogue. University advises prospective students to search catalogue directly at https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/scholarships-catalogue-search/ for 2026-2027 entry scholarships. Contact: Undergraduate scholarships: ugscholarships@st-andrews.ac.uk or postgraduate scholarships: pgscholarships@st-andrews.ac.uk for detailed information. Confidence rated 'medium' because specific named scholarships, exact deadlines, and full eligibility criteria could not be fully extracted from official sources due to interactive search tool limitations."
+    }
+  },
+  {
+    "university_name": "Durham University",
+    "scholarships": [
+      {
+        "name": "Durham Undergraduate Bursary Scheme",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate courses eligible",
+          "nationality_restrictions": "UK home students (meets Student Finance England criteria)",
+          "financial_need_required": true,
+          "other_conditions": "Assessed by Student Finance England income threshold; annual household income assessment required"
+        },
+        "required_documents": [
+          "Student Finance England assessment (automatic)"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for student finance through Student Finance England | Award made based on household income assessment"
+        },
+        "deadline": "Following Student Finance England deadlines (typically January)",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/"
+      },
+      {
+        "name": "Independent Student Bursary Scheme",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate courses eligible",
+          "nationality_restrictions": "UK home students",
+          "financial_need_required": true,
+          "other_conditions": "Assessed as independent by Student Finance England; under 25 years old at course start; includes care-experienced students, care leavers, estranged students, and other young independent students"
+        },
+        "required_documents": [
+          "Student Finance England assessment showing independent status"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Declare care-experienced/independent status on UCAS form or email du.cares@durham.ac.uk | Award made automatically if assessed as eligible by Student Finance England"
+        },
+        "deadline": "UCAS application deadline or notification to university before arrival",
+        "source_url": "https://www.dur.ac.uk/study/access-and-participation/support-for-estranged-care-experienced-and-early-independent-students-eace-/"
+      },
+      {
+        "name": "Student Support Fund",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate courses eligible",
+          "nationality_restrictions": "Primarily UK home students",
+          "financial_need_required": true,
+          "other_conditions": "For students experiencing unexpected financial hardship during their studies"
+        },
+        "required_documents": [
+          "Evidence of financial hardship",
+          "Student Finance assessment"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Contact Bursaries and Student Financial Support team | Submit evidence of hardship"
+        },
+        "deadline": "Ongoing (assessed as applications received)",
+        "source_url": "https://www.dur.ac.uk/colleges-and-student-experience/student-support-and-wellbeing/student-immigration-and-funding-service/bursaries-and-student-financial-support-team/"
+      },
+      {
+        "name": "Durham Master's Bursaries",
+        "eligibility": {
+          "academic_requirements": "Holding offer from Durham University",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All taught Master's programmes (MA, MSc, MSCR)",
+          "nationality_restrictions": "UK home students",
+          "financial_need_required": true,
+          "other_conditions": "Low-income students; assessed by Student Finance England income threshold"
+        },
+        "required_documents": [
+          "Student Finance assessment"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for postgraduate student finance | Award made based on household income assessment"
+        },
+        "deadline": "Student Finance application deadline",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Salters' Fellowship",
+        "eligibility": {
+          "academic_requirements": "Degree in Chemistry or related discipline",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Master's degree in complementary subject to Chemistry",
+          "nationality_restrictions": "Home fee status (UK/EU eligible)",
+          "financial_need_required": false,
+          "other_conditions": "Talented chemistry graduates from disadvantaged backgrounds"
+        },
+        "required_documents": [
+          "Academic transcripts",
+          "Evidence of disadvantaged background"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit application through Durham scholarships portal | Demonstrate disadvantaged background"
+        },
+        "deadline": "May 31, 2026",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "British Council Women in STEM",
+        "eligibility": {
+          "academic_requirements": "Admission to Master's programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Master's in STEM subjects",
+          "nationality_restrictions": "Female students from Wider Europe (eligible countries specified on British Council website)",
+          "financial_need_required": false,
+          "other_conditions": "Female international students interested in STEM"
+        },
+        "required_documents": [
+          "Proof of eligible nationality",
+          "Academic qualifications"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through British Council | Provide academic offer from Durham"
+        },
+        "deadline": "April 30, 2026",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Chevening Scholarships (Postgraduate Taught)",
+        "eligibility": {
+          "academic_requirements": "Admission to Master's programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "IELTS 6.5 or equivalent (typical for UK)",
+          "course_requirements": "Taught Master's in any subject",
+          "nationality_restrictions": "Citizens of Chevening-eligible countries; must intend to return to home country for minimum 2 years after completion",
+          "financial_need_required": false,
+          "other_conditions": "Leadership potential; community contribution experience"
+        },
+        "required_documents": [
+          "Passport",
+          "Academic qualifications",
+          "References",
+          "Personal statement"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through Chevening website | Provide Durham University offer"
+        },
+        "deadline": "October 7, 2025",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Commonwealth Masters Scholarships (Postgraduate Taught)",
+        "eligibility": {
+          "academic_requirements": "Admission to Master's programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "IELTS 6.5 or equivalent",
+          "course_requirements": "Taught Master's in any subject",
+          "nationality_restrictions": "Citizens of low and middle-income Commonwealth countries",
+          "financial_need_required": false,
+          "other_conditions": "Funding by UK Foreign, Commonwealth & Development Office (FCDO)"
+        },
+        "required_documents": [
+          "Passport",
+          "Academic qualifications",
+          "References"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Register for Commonwealth Scholarships portal | Apply with Durham offer"
+        },
+        "deadline": "October 14, 2025",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Durham Inspiring Excellence £5k or £10k (Postgraduate Taught)",
+        "eligibility": {
+          "academic_requirements": "Offer from Durham University",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Program requirements",
+          "course_requirements": "All taught Master's programmes starting September 2026",
+          "nationality_restrictions": "All new international students (PGT)",
+          "financial_need_required": false,
+          "other_conditions": "Competitive award based on academic merit"
+        },
+        "required_documents": [
+          "Durham offer letter"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatically considered upon receiving offer"
+        },
+        "deadline": "Rolling (see webpage for specific dates)",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Durham Inspiring Excellence £5k or £10k (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Offer from Durham University",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Program requirements",
+          "course_requirements": "Eligible undergraduate programmes starting September 2026",
+          "nationality_restrictions": "All new international students (Undergraduate)",
+          "financial_need_required": false,
+          "other_conditions": "Competitive award based on academic merit"
+        },
+        "required_documents": [
+          "Durham offer letter"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatically considered upon receiving offer"
+        },
+        "deadline": "Rolling (see webpage for specific dates)",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/international/"
+      },
+      {
+        "name": "Jeremy Vine Scholarship in English Literature",
+        "eligibility": {
+          "academic_requirements": "Admission to English Literature degree",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Degree in English Studies",
+          "nationality_restrictions": "UK applicants",
+          "financial_need_required": true,
+          "other_conditions": "Low household income required"
+        },
+        "required_documents": [
+          "Student Finance assessment"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Based on Student Finance assessment"
+        },
+        "deadline": "Student Finance deadline",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/college-and-department/"
+      },
+      {
+        "name": "Bryan Johns Scholarships (Mathematics)",
+        "eligibility": {
+          "academic_requirements": "Admission to Mathematics programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Mathematics programme",
+          "nationality_restrictions": "Preference for North East England residents",
+          "financial_need_required": true,
+          "other_conditions": "Household income below £62,377; preference to participants in Maths Summer Schools, Supported Progression, or Sutton Trust Summer Schools"
+        },
+        "required_documents": [
+          "Student Finance assessment",
+          "Evidence of participation in support programmes (if applicable)"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Based on Student Finance assessment and application information"
+        },
+        "deadline": "Student Finance deadline",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/college-and-department/"
+      },
+      {
+        "name": "Global Masters Scholarship (Mathematical Sciences)",
+        "eligibility": {
+          "academic_requirements": "Admission to Master's in Mathematical Sciences or Particles, Strings and Cosmology",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Master's in Mathematical Sciences or MSc Particles, Strings and Cosmology",
+          "nationality_restrictions": "Students from low or middle-income countries",
+          "financial_need_required": true,
+          "other_conditions": "Partnership between Trevelyon College and Department of Mathematical Sciences"
+        },
+        "required_documents": [
+          "Academic qualifications",
+          "Proof of eligibility (low-income country status)"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Considered as part of application process"
+        },
+        "deadline": "Master's programme application deadline",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/college-and-department/"
+      },
+      {
+        "name": "College Scholarships (Multiple Colleges)",
+        "eligibility": {
+          "academic_requirements": "Varies by college",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Varies by college and scholarship",
+          "nationality_restrictions": "Primarily UK students; varies",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Household income thresholds vary; specific eligibility criteria per college"
+        },
+        "required_documents": [
+          "Common college scholarship application form (single form for multiple colleges)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete common college scholarship application form | Rank preferred colleges | Automatic consideration by ranked colleges if not awarded first choice"
+        },
+        "deadline": "Typically during academic year; contact colleges for 2026-27 dates",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/college-and-department/"
+      },
+      {
+        "name": "Alumni Fee Scholarship",
+        "eligibility": {
+          "academic_requirements": "Not_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All postgraduate taught and PGCE programmes across all faculties",
+          "nationality_restrictions": "Durham University alumni only",
+          "financial_need_required": false,
+          "other_conditions": "Must be graduate of Durham University"
+        },
+        "required_documents": [
+          "Proof of Durham University degree"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through scholarships portal | Provide proof of Durham degree"
+        },
+        "deadline": "Rolling (see webpage)",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/alumni/"
+      },
+      {
+        "name": "North East Scholarships",
+        "eligibility": {
+          "academic_requirements": "Varies",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Varies",
+          "nationality_restrictions": "North East England residents",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Residency in North East England (postcodes CA, DH, DL, NE, SR, TS)"
+        },
+        "required_documents": [
+          "Proof of North East residency",
+          "Student Finance assessment (where applicable)"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": "NOT_FOUND",
+          "application_steps": "Contact Scholarships and Student Funding Office for eligibility"
+        },
+        "deadline": "Varies by scholarship",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/north-east/"
+      },
+      {
+        "name": "Ruth First Educational Trust Scholarship",
+        "eligibility": {
+          "academic_requirements": "Admission to postgraduate programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All postgraduate programmes",
+          "nationality_restrictions": "South African applicants from historically disadvantaged backgrounds",
+          "financial_need_required": false,
+          "other_conditions": "Must demonstrate disadvantaged background"
+        },
+        "required_documents": [
+          "Academic qualifications",
+          "Evidence of disadvantaged background",
+          "References"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through scholarship portal | Provide supporting documentation"
+        },
+        "deadline": "February 28, 2026",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Said Foundation Scholarship (Postgraduate Taught)",
+        "eligibility": {
+          "academic_requirements": "Admission to taught Master's",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All taught Master's programmes",
+          "nationality_restrictions": "Students from Syria, Palestine, Lebanon, and Jordan",
+          "financial_need_required": false,
+          "other_conditions": "Must demonstrate potential to become leaders and innovators of change"
+        },
+        "required_documents": [
+          "Passport/proof of nationality",
+          "Academic qualifications",
+          "Statement of purpose"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through Saïd Foundation website | Follow their application timetable"
+        },
+        "deadline": "See Saïd Foundation website",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      },
+      {
+        "name": "Chinese Scholarship Council (Postgraduate Research)",
+        "eligibility": {
+          "academic_requirements": "PhD admision",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "IELTS 6.5 or equivalent",
+          "course_requirements": "PhD/Doctoral research programme",
+          "nationality_restrictions": "Citizens and permanent residents of mainland China",
+          "financial_need_required": false,
+          "other_conditions": "Partnership with Chinese government"
+        },
+        "required_documents": [
+          "Passport",
+          "Academic qualifications",
+          "PhD proposal",
+          "References"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through CSC website | Submit Durham PhD offer"
+        },
+        "deadline": "January 16, 2026",
+        "source_url": "https://www.dur.ac.uk/study/scholarships/postgraduate/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "medium",
+      "notes": "Data sourced from official Durham University scholarship pages (www.dur.ac.uk/study/scholarships/) current as of May 2026. Some undergraduate bursary scheme pages redirected and full 2026-27 details not confirmed. Refer to official Durham University website or contact scholarships.advice@durham.ac.uk for real-time eligibility confirmation and application details. College scholarship deadlines and specific amounts for some 2026-27 awards not yet finalized."
+    }
+  },
+  {
+    "university_name": "Imperial College London",
+    "scholarships": [
+      {
+        "name": "Imperial Bursary",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate degree only",
+          "nationality_restrictions": "Home fee status only (UK/EU eligible residents)",
+          "financial_need_required": true,
+          "other_conditions": "Household income below £70,000; must apply for means-tested government loan"
+        },
+        "required_documents": [
+          "Household income information (via government funding body application)"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for means-tested government loan (e.g., Maintenance Loan from Student Finance England) | Submit household income information to regional funding body | College automatically assesses eligibility based on income | College sends confirmation via email"
+        },
+        "deadline": "31 May 2027 (for 2026-27 entrants, after academic year start)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/undergraduate/bursaries-grants-scholarships/imperial-bursary/"
+      },
+      {
+        "name": "President's PhD Scholarships",
+        "eligibility": {
+          "academic_requirements": "First-class undergraduate degree or distinction in standalone Master's",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "PhD programme in eligible departments (23 departments listed)",
+          "nationality_restrictions": "No restrictions; open to Home and Overseas",
+          "financial_need_required": false,
+          "other_conditions": "New entrants only; must have agreed supervisor; 50 awards available"
+        },
+        "required_documents": [
+          "PhD application through standard admissions system",
+          "Supervisor agreement confirmation"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": false,
+          "application_steps": "Contact potential supervisor in eligible department | Apply for PhD admission through online admissions system | Department nominates based on academic merit and potential | Selection in three rounds (final round deadline 2 March 2026)"
+        },
+        "deadline": "Round 3: 2 March 2026 (23:59 UK time)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/presidents-phd-scholarships-20262027.php"
+      },
+      {
+        "name": "Imperial Excellence Scholarship",
+        "eligibility": {
+          "academic_requirements": "Strong all-round application with excellent academic background",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "13 eligible MSc programmes at Business School",
+          "nationality_restrictions": "Home and Overseas",
+          "financial_need_required": false,
+          "other_conditions": "New entrants only; strong performance in interview required"
+        },
+        "required_documents": [
+          "MSc application (standard process)",
+          "Interview participation"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for eligible MSc in admission rounds 1 or 2 | Automatically considered for scholarship if offer received | Notification: Round 1 (15 December), Round 2 (30 March)"
+        },
+        "deadline": "Admission round specific (Round 2: 30 March)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/imperial-excellence-scholarship-20262027.php"
+      },
+      {
+        "name": "Imperial Excellence Bursary",
+        "eligibility": {
+          "academic_requirements": "Exceptional academic merit and/or potential",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any MSc programme at Business School",
+          "nationality_restrictions": "Home and Overseas",
+          "financial_need_required": true,
+          "other_conditions": "New entrants only; self-funded students only; strong professional experience required"
+        },
+        "required_documents": [
+          "MSc application",
+          "Video assessment after offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": false,
+          "application_steps": "Apply for MSc in rounds 1 or 2 | Receive offer | Complete video assessment | Notification: Round 1 (mid-December), Round 2 (early April)"
+        },
+        "deadline": "Limited awards available; early application recommended",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/imperial-excellence-bursary-20262027.php"
+      },
+      {
+        "name": "Dean's Impact Scholarship",
+        "eligibility": {
+          "academic_requirements": "Strong all-round application with excellent academic background",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "13 eligible MSc and MBA programmes at Business School",
+          "nationality_restrictions": "Home and Overseas",
+          "financial_need_required": false,
+          "other_conditions": "New entrants only; demonstrable impact in entrepreneurship, technology, sustainability, social impact, or leadership; excellent communication skills"
+        },
+        "required_documents": [
+          "Programme application",
+          "Video assessment after offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": false,
+          "application_steps": "Apply for eligible programme | Receive offer | Complete video assessment | Decisions made throughout admissions cycle"
+        },
+        "deadline": "NOT_FOUND (admissions cycle dependent)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/deans-impact-scholarship-20262027.php"
+      },
+      {
+        "name": "Empowering Futures Scholarship",
+        "eligibility": {
+          "academic_requirements": "Strong academic background and demonstrated potential",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "MSc Finance only",
+          "nationality_restrictions": "Home and Overseas",
+          "financial_need_required": true,
+          "other_conditions": "New entrants only; first-generation student or from financially disadvantaged background; professional experience via internships/work required"
+        },
+        "required_documents": [
+          "MSc Finance application",
+          "Video assessment after offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": false,
+          "application_steps": "Apply for MSc Finance in rounds 1 or 2 | Receive offer | Complete video assessment | Notification: Round 1 (15 December), Round 2 (30 March)"
+        },
+        "deadline": "Admission round dependent",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/empowering-futures-scholarship-20262027.php"
+      },
+      {
+        "name": "Imperial Loyalty Bursary",
+        "eligibility": {
+          "academic_requirements": "Upper Second Class Honours (undergraduate) or Merit (Master's) minimum",
+          "minimum_gpa_or_percentage": "2.1 or equivalent for undergraduate; Merit for Master's",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "13 eligible MSc and MBA programmes at Business School",
+          "nationality_restrictions": "Home and Overseas",
+          "financial_need_required": false,
+          "other_conditions": "Imperial alumni only; new entrants to postgraduate programme"
+        },
+        "required_documents": [
+          "Evidence of prior Imperial degree or completion"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for eligible MSc or MBA in rounds 1 or 2 | Automatically awarded if offer received | Limited availability; early application recommended"
+        },
+        "deadline": "Round 2 recommended; applications after round 2 not guaranteed",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/imperial-loyalty-bursary-20262027.php"
+      },
+      {
+        "name": "Sanctuary Scholarship - Undergraduate",
+        "eligibility": {
+          "academic_requirements": "Offer received from Imperial",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate programme across all departments",
+          "nationality_restrictions": "Refugees, humanitarian protection holders, or asylum seekers only; no nationality restrictions within these categories",
+          "financial_need_required": false,
+          "other_conditions": "New entrants only; must provide proof of immigration status or explanation; offer by deadline required"
+        },
+        "required_documents": [
+          "UCAS offer letter",
+          "Proof of immigration status (refugee status, humanitarian protection, or asylum claim documentation)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive UCAS offer by 24 April 2026 | Complete Sanctuary Scholarship application form (Qualtrics online form) | Provide personal statement addressing study choice, barriers faced, financial circumstances | Upload proof of immigration status | Outcome notification by 30 June 2026"
+        },
+        "deadline": "24 April 2026 (23:59 UK time)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/sanctuary-scholarship---undergraduate-20262027.php"
+      },
+      {
+        "name": "Sanctuary Scholarship - Postgraduate",
+        "eligibility": {
+          "academic_requirements": "One-year full-time or two-year part-time Master's course offer",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "One-year full-time or two-year part-time Master's in eligible faculties (Engineering, Medicine, Natural Sciences, Business School, Languages/Culture/Communication); excludes online/distance learning, MBA, and certain design programmes",
+          "nationality_restrictions": "Refugees, humanitarian protection holders, or asylum seekers only",
+          "financial_need_required": false,
+          "other_conditions": "New entrants only; must provide proof of immigration status or explanation"
+        },
+        "required_documents": [
+          "Master's programme offer",
+          "Proof of immigration status (refugee, humanitarian protection, or asylum claim documentation)",
+          "Application fee waiver documentation (if applicable)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit Master's application through Imperial portal and receive offer by 24 April 2026 | Complete Sanctuary Scholarship application form (Qualtrics online form) | Provide personal statement addressing study choice, barriers faced, financial circumstances | Upload proof of immigration status | Outcome notification by 30 June 2026"
+        },
+        "deadline": "24 April 2026 (23:59 UK time) for both Master's offer and scholarship application",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/sanctuary-scholarship---postgraduate-20262027.php"
+      },
+      {
+        "name": "Commonwealth Shared Scholarship",
+        "eligibility": {
+          "academic_requirements": "Upper Second Class Honours (2:1) OR Second Class (2:2) with relevant postgraduate qualification",
+          "minimum_gpa_or_percentage": "2.1 or 2.2 with Master's degree",
+          "english_language_requirement": "Must meet College English entry requirements by 30 June 2026",
+          "course_requirements": "Three specific eligible MSc programmes (Human and Biological Robotics, Biomedical Engineering, Advanced Chemical Engineering)",
+          "nationality_restrictions": "Commonwealth country citizens, British Protected Persons, or refugees from Commonwealth countries; must be permanent resident of eligible Commonwealth country",
+          "financial_need_required": true,
+          "other_conditions": "New entrants only; must return to home country within one month of scholarship end; cannot have studied/worked in high-income country for one academic year or more; nominated (not self-applied)"
+        },
+        "required_documents": [
+          "Imperial Master's application",
+          "Commonwealth Scholarships application (via CSC website)",
+          "All supporting documentation in required format",
+          "English language proficiency test results"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply for eligible Imperial MSc course by 7 January 2026 deadline | Apply for Commonwealth Scholarship through CSC website by 9 December 2025 | College receives applications and forwarding nominations | CSC selects award winners in February 2026 | Outcome notification by 1 April 2026 at latest"
+        },
+        "deadline": "Commonwealth Scholarship: 9 December 2025 (16:00 GMT); Imperial course application: 7 January 2026 (23:59 GMT)",
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/commonwealth-shared-scholarship-20262027.php"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information sourced from official Imperial College London scholarship search pages and dedicated scholarship pages for 2026/27 academic year. All URLs are current as of May 2, 2026. Some scholarship deadlines have already passed (showing as Closed), but information is accurate as published. Not all fields available for every scholarship; used NOT_FOUND where official sources did not provide specific details. Focused on central university scholarships and bursaries rather than small departmental awards."
+    }
+  },
+  {
+    "university_name": "Loughborough University",
+    "scholarships": [
+      {
+        "name": "Loughborough University Bursary",
+        "eligibility": {
+          "academic_requirements": "No specific academic requirement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course",
+          "nationality_restrictions": "UK permanent residents, excluding Wales, Isle of Man, Channel Islands",
+          "financial_need_required": true,
+          "other_conditions": "Annual household income up to £30,000; must apply for UK government student maintenance loan"
+        },
+        "required_documents": [
+          "Student Finance application",
+          "Household income documentation"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for Student Finance England or equivalent | Give consent to share information with University | University assesses eligibility in October"
+        },
+        "deadline": "Student Finance application deadline",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/loughborough-university-bursary/"
+      },
+      {
+        "name": "Opportunity Scholarships",
+        "eligibility": {
+          "academic_requirements": "A-level AAB or above (or equivalent)",
+          "minimum_gpa_or_percentage": "AAB equivalent",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course",
+          "nationality_restrictions": "UK students with verified free school meal status",
+          "financial_need_required": true,
+          "other_conditions": "Household income £20,000 or below (£30,000 for access programme participants); must select Loughborough as firm choice on UCAS"
+        },
+        "required_documents": [
+          "UCAS application with free school meal verification",
+          "Student Loans Company income verification",
+          "Parental/guardian consent for data sharing"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Receive offer and select as firm choice on UCAS | Apply for maintenance loan through Student Loans Company | Staff committee reviews eligible students after A-level results"
+        },
+        "deadline": "A-level results day (August 2026)",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/opportunity-scholarships/"
+      },
+      {
+        "name": "International Excellence Scholarships",
+        "eligibility": {
+          "academic_requirements": "AAA from three A-levels (or equivalent); A*AA for specific engineering/science courses",
+          "minimum_gpa_or_percentage": "AAA or A*AA",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Most undergraduate courses except Foundation programmes",
+          "nationality_restrictions": "International fee-paying students only",
+          "financial_need_required": false,
+          "other_conditions": "Must select Loughborough as firm choice through UCAS; self-funded; no other university awards; conditions must be met in one sitting"
+        },
+        "required_documents": [
+          "UCAS application",
+          "A-level or equivalent qualification documentation"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply through UCAS | Receive offer | Automatically considered based on application"
+        },
+        "deadline": "UCAS application deadline",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/international-excellence-scholarships/"
+      },
+      {
+        "name": "Future Leaders Scholarship",
+        "eligibility": {
+          "academic_requirements": "Demonstrated leadership potential and commitment to achieving extraordinary things",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate degree",
+          "nationality_restrictions": "International fee-paying students only",
+          "financial_need_required": false,
+          "other_conditions": "Must have offer to study; must be self-funded with proof of remaining costs; application required"
+        },
+        "required_documents": [
+          "Leadership demonstration/application form",
+          "Proof of remaining funds",
+          "UCAS offer letter"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive undergraduate offer | Complete Future Leaders application form | Submit by deadline"
+        },
+        "deadline": "6 May 2026",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/future-leaders-scholarship/"
+      },
+      {
+        "name": "Care Leaver Bursary",
+        "eligibility": {
+          "academic_requirements": "No specific academic requirement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course",
+          "nationality_restrictions": "UK students only, excluding Channel Islands and Isle of Man",
+          "financial_need_required": false,
+          "other_conditions": "Young person in care of local authority for at least 13 weeks since age 14; must be under 21 at course start"
+        },
+        "required_documents": [
+          "Care leaver verification from local authority",
+          "Application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete Care Leaver Bursary application form | Liaise with Student Advice and Support Service | Submit before end of academic year"
+        },
+        "deadline": "Before end of academic year (31 July 2026)",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/care-leaver-bursary/"
+      },
+      {
+        "name": "Loughborough University Sanctuary Scholarship (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Exceptional academic achievement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course",
+          "nationality_restrictions": "International students from conflict/war regions",
+          "financial_need_required": false,
+          "other_conditions": "Must hold conditional or unconditional offer; fleeing conflict/persecution; imminent risk to life or safety"
+        },
+        "required_documents": [
+          "University offer letter",
+          "Sanctuary scholarship application form",
+          "Evidence of conflict/persecution",
+          "Proof of funds for travel, living and maintenance costs"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive offer to undergraduate programme | Complete sanctuary scholarship application form | Submit completed form | Shortlisting and selection panel review"
+        },
+        "deadline": "6 May 2026",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/sanctuary-scholarships/"
+      },
+      {
+        "name": "Sport Scholarships (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "No specific academic requirement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course",
+          "nationality_restrictions": "UK and International students",
+          "financial_need_required": false,
+          "other_conditions": "Must be competing at junior international level or above; selected sports only (athletics, badminton, basketball, cricket, cycling, football, hockey, netball, rugby, squash, swimming, tennis, triathlon, wheelchair basketball)"
+        },
+        "required_documents": [
+          "Sports performance evidence",
+          "Competitive history documentation"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Contact Sports Scholarships team | Submit sports achievement evidence | Performance assessment and interview"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/sport-scholarships/"
+      },
+      {
+        "name": "Women in Science Bursary",
+        "eligibility": {
+          "academic_requirements": "No specific entry requirement; must maintain 2:1 or above each year",
+          "minimum_gpa_or_percentage": "2:1 (60%) for continuation",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Maths, Computer Science, Chemistry, Physics, Natural Sciences undergraduate programmes",
+          "nationality_restrictions": "UK and International students",
+          "financial_need_required": false,
+          "other_conditions": "Women applicants; priority to underrepresented groups (BAME, disability, caring responsibilities, refugees, low participation areas)"
+        },
+        "required_documents": [
+          "Application form",
+          "Statement (ca. 500 words) on interest in science, women in science retention, bursary impact"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete application form | Write motivation statement | Submit online application"
+        },
+        "deadline": "3 June 2026",
+        "source_url": "https://www.lboro.ac.uk/study/undergraduate/fees-funding/scholarships/women-in-science-bursary/"
+      },
+      {
+        "name": "Global Impact Scholarship (Postgraduate Masters)",
+        "eligibility": {
+          "academic_requirements": "Evidence of exceptional academic achievement; normally first-class honours degree",
+          "minimum_gpa_or_percentage": "First-class equivalent",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any eligible master's programme",
+          "nationality_restrictions": "International students from designated developing countries (limited list)",
+          "financial_need_required": false,
+          "other_conditions": "Must hold conditional or unconditional offer; commitment to home country development (no return requirement); strong evidence of motivation and initiative to secure remaining funds"
+        },
+        "required_documents": [
+          "Master's programme offer letter",
+          "First-class degree certification",
+          "Motivation statement",
+          "Evidence of funds for remaining costs"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive master's offer | Complete Global Impact scholarship application | Submit via application form | Shortlisting and selection panel review"
+        },
+        "deadline": "6 May 2026 (must have applied for programme by 15 April 2026)",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/global-impact-scholarship/"
+      },
+      {
+        "name": "Chevening Partnership Scholarships (Postgraduate Masters)",
+        "eligibility": {
+          "academic_requirements": "High calibre graduate with leadership qualities",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any one-year master's programme",
+          "nationality_restrictions": "Citizens of 160+ Chevening-eligible countries (excludes USA and EU countries)",
+          "financial_need_required": false,
+          "other_conditions": "Completed undergraduate degree; minimum 2 years (2,800 hours) work experience; must return to home country for minimum 2 years after award; selected Loughborough as firm choice"
+        },
+        "required_documents": [
+          "Undergraduate degree certificate",
+          "Work experience evidence",
+          "Master's offer letter",
+          "Chevening application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete Chevening online application | Apply through Chevening website | Loughborough receives nominations from Chevening"
+        },
+        "deadline": "Closed for 2026",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/chevening-scholarships/"
+      },
+      {
+        "name": "Loughborough University Sanctuary Scholarship (Postgraduate)",
+        "eligibility": {
+          "academic_requirements": "Exceptional academic achievement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any master's programme",
+          "nationality_restrictions": "International students from conflict/war regions",
+          "financial_need_required": false,
+          "other_conditions": "Must hold conditional or unconditional offer; fleeing conflict/persecution; imminent risk to life or safety; high standard application required"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Application form",
+          "Evidence of conflict/persecution",
+          "Proof of remaining funds"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive master's offer | Complete sanctuary application form | Submit via application portal | Shortlisting and senior staff selection"
+        },
+        "deadline": "6 May 2026",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/sanctuary-scholarships/"
+      },
+      {
+        "name": "London Global Excellence Scholarship (Postgraduate Masters)",
+        "eligibility": {
+          "academic_requirements": "Not specified; disruptive thinking and commitment to change required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any full-time master's at Loughborough University London only",
+          "nationality_restrictions": "UK and International students",
+          "financial_need_required": false,
+          "other_conditions": "Demonstrate disruptive thinking aligned with Climate Change, Vibrant Communities, or Sport/Health/Wellbeing themes; must have offer from London campus"
+        },
+        "required_documents": [
+          "Master's offer letter from London campus",
+          "Application form outlining commitment to change"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive master's offer from London campus | Complete Global Excellence application | Submit by deadline | Dean and Senior Leadership Team review"
+        },
+        "deadline": "6 May 2026",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/global-excellence-scholarship/"
+      },
+      {
+        "name": "Alumni Bursary (Postgraduate Masters)",
+        "eligibility": {
+          "academic_requirements": "No specific requirement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any master's programme",
+          "nationality_restrictions": "UK and International students",
+          "financial_need_required": false,
+          "other_conditions": "Must be Loughborough University graduate (previous degree from Loughborough)"
+        },
+        "required_documents": [
+          "Proof of Loughborough undergraduate degree",
+          "Master's programme offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for master's programme | University checks graduation records | Bursary automatically applied to fees"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/alumni-bursary/"
+      },
+      {
+        "name": "Care Leaver's Scholarship (Postgraduate Masters)",
+        "eligibility": {
+          "academic_requirements": "No specific requirement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any master's programme",
+          "nationality_restrictions": "UK and International students",
+          "financial_need_required": false,
+          "other_conditions": "Must have received undergraduate Care Leavers' Bursary at Loughborough"
+        },
+        "required_documents": [
+          "Proof of undergraduate Care Leavers' Bursary receipt",
+          "Master's offer letter"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "University checks previous Care Leavers' Bursary record | Scholarship automatically awarded"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/care-leavers-scholarship/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Data sourced from official Loughborough University website (lboro.ac.uk). Undergraduate scholarships page last updated with 2026/27 information. Postgraduate scholarships and deadlines verified. Some specific details like exact application procedures and documents not publicly specified; indicated as NOT_FOUND where official sources did not provide details. All deadlines are for 2026 entry."
+    }
+  },
+  {
+    "university_name": "University of Bath",
+    "scholarships": [
+      {
+        "name": "The Bath Bursary",
+        "eligibility": {
+          "academic_requirements": "No specific academic requirements stated beyond offer acceptance",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time undergraduate degree course based on Bath campus",
+          "nationality_restrictions": "Home UK students only",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "Started study from September 2024 onwards; eligible for student loans"
+        },
+        "required_documents": [
+          "Household income assessment from student loans awarding agency",
+          "UCAS application"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Request household income assessment from Student Finance England or equivalent | Provide permission to share household income with University"
+        },
+        "deadline": "26 March 2027 for 2026/27 academic year funding eligibility",
+        "source_url": "https://www.bath.ac.uk/guides/the-bath-bursary/"
+      },
+      {
+        "name": "The Gold Scholarship Programme",
+        "eligibility": {
+          "academic_requirements": "Selection based on supporting questions; no GPA threshold specified",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time undergraduate degree course based on Bath campus",
+          "nationality_restrictions": "Home UK students only",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "New first-year student in 2026/27; discretionary award; up to 50 students per year"
+        },
+        "required_documents": [
+          "Household income assessment",
+          "UCAS application information",
+          "Supporting statement responses (3 questions, 250 words each)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Invite to apply via Application Tracker (mid/late May 2026) | Answer 3 supporting questions (250 words each) | Submit via Application Tracker"
+        },
+        "deadline": "27 August 2026 (midday)",
+        "source_url": "https://www.bath.ac.uk/guides/the-gold-scholarship-programme/"
+      },
+      {
+        "name": "The Claverton Scholarship Programme",
+        "eligibility": {
+          "academic_requirements": "No specific academic requirements; based on application quality",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time undergraduate degree course",
+          "nationality_restrictions": "Not specified",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "New first-year Bath Bursary recipients starting September 2025 eligible for 2026/27 cohort; requires completion of Claverton Employability Passport"
+        },
+        "required_documents": [
+          "Bath Bursary eligibility confirmation",
+          "Online application form",
+          "3 question responses"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive email invitation on 1 December 2025 | Complete online form with 3 questions | Read and agree to Terms and Conditions"
+        },
+        "deadline": "6 February 2026",
+        "source_url": "https://www.bath.ac.uk/guides/the-claverton-scholarship-programme/"
+      },
+      {
+        "name": "The Accommodation Bursary",
+        "eligibility": {
+          "academic_requirements": "Not applicable",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time undergraduate degree course",
+          "nationality_restrictions": "Home UK students only",
+          "financial_need_required": "NOT_FOUND",
+          "other_conditions": "New first-year student starting 2026/27; must be housed by University; not available for couples accommodation"
+        },
+        "required_documents": [
+          "Household income assessment from student loans awarding agency"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Request household income assessment ahead of studies | Check eligibility via Application Tracker | Award automatically deducted from accommodation fees"
+        },
+        "deadline": "12 March 2027",
+        "source_url": "https://www.bath.ac.uk/guides/the-accommodation-bursary/"
+      },
+      {
+        "name": "Bath International Excellence Scholarship (Undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Strong academic credentials and demonstrable background of achievement required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate degree (except MArch Architecture; BSc Architecture eligible)",
+          "nationality_restrictions": "Overseas fee-paying students only",
+          "financial_need_required": false,
+          "other_conditions": "New first-year applicant; must choose Bath as firm choice via UCAS; up to 300 awards available"
+        },
+        "required_documents": [
+          "UCAS application",
+          "Online scholarship application form in Application Tracker",
+          "3 written responses (750 characters each)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive offer from University | Apply through Application Tracker (opens 8 January 2026) | Answer 3 questions (750 character limit each) | Make Bath firm choice in UCAS if successful"
+        },
+        "deadline": "25 June 2026",
+        "source_url": "https://www.bath.ac.uk/guides/bath-international-excellence-scholarship/"
+      },
+      {
+        "name": "Bath Global Excellence Scholarship (Master's)",
+        "eligibility": {
+          "academic_requirements": "Academic excellence required; strong academic credentials and background of achievement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in Faculty of Engineering & Design, Faculty of Humanities & Social Sciences, or Faculty of Science",
+          "nationality_restrictions": "International applicants only",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026 entry; up to 250 awards available"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker",
+          "3 written responses"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible master's course | Access Application Tracker | Complete scholarship application with 3 questions | Submit by deadline"
+        },
+        "deadline": "12 June 2026 (final deadline; earlier rounds: 4 February 2026, 8 April 2026)",
+        "source_url": "https://www.bath.ac.uk/guides/applying-for-the-bath-global-excellence-scholarship/"
+      },
+      {
+        "name": "Diamond Scholarship (Master's)",
+        "eligibility": {
+          "academic_requirements": "Academic excellence and demonstrable background of achievement and success required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in Faculty of Engineering & Design, Faculty of Humanities & Social Sciences, or Faculty of Science",
+          "nationality_restrictions": "UK nationals only",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026 entry; marking 60th anniversary of University"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker",
+          "3 written responses"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible master's course | Access Application Tracker | Complete scholarship application | Submit by deadline"
+        },
+        "deadline": "12 June 2026 (final deadline; earlier rounds: 4 February 2026, 8 April 2026)",
+        "source_url": "https://www.bath.ac.uk/guides/applying-for-the-diamond-scholarship/"
+      },
+      {
+        "name": "School of Management Master's Worldwide Scholarships",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in School of Management",
+          "nationality_restrictions": "Open to UK and international applicants",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026; up to 15 awards"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible School of Management master's course | Apply through Application Tracker | Accepted offer required by deadline"
+        },
+        "deadline": "8 April 2026",
+        "source_url": "https://www.bath.ac.uk/corporate-information/school-of-management-msc-funding-and-scholarships/"
+      },
+      {
+        "name": "School of Management Scholarship for Academic Excellence",
+        "eligibility": {
+          "academic_requirements": "Strong academic record required",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in School of Management",
+          "nationality_restrictions": "Open to UK and international applicants",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026; up to 15 awards"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible School of Management master's course | Apply through Application Tracker | Accepted offer required by deadline"
+        },
+        "deadline": "8 April 2026",
+        "source_url": "https://www.bath.ac.uk/corporate-information/school-of-management-msc-funding-and-scholarships/"
+      },
+      {
+        "name": "School of Management Scholarship for Outstanding Individual",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in School of Management",
+          "nationality_restrictions": "Open to UK and international applicants",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026; up to 15 awards"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible School of Management master's course | Apply through Application Tracker | Accepted offer required by deadline"
+        },
+        "deadline": "8 April 2026",
+        "source_url": "https://www.bath.ac.uk/corporate-information/school-of-management-msc-funding-and-scholarships/"
+      },
+      {
+        "name": "School of Management Access Master's UK Scholarship",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in School of Management",
+          "nationality_restrictions": "UK applicants only who studied undergraduate degree in UK",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026; must live in UK at time of application; up to 5 awards"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker",
+          "Proof of UK residence and degree origin"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible School of Management master's course | Apply through Application Tracker | Confirm UK residency and UK undergraduate origin"
+        },
+        "deadline": "8 April 2026",
+        "source_url": "https://www.bath.ac.uk/corporate-information/school-of-management-msc-funding-and-scholarships/"
+      },
+      {
+        "name": "School of Management Master's Scholarship for Philippines",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Full-time taught master's course in School of Management",
+          "nationality_restrictions": "Applicants from Philippines only",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer for September 2026; must have studied undergraduate degree and currently live in Philippines; up to 3 awards worth £15,000 each"
+        },
+        "required_documents": [
+          "Master's offer letter",
+          "Scholarship application via Application Tracker",
+          "Evidence of Philippines origin and current residence"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold offer for eligible School of Management master's course | Apply through Application Tracker | Provide evidence of Philippines background"
+        },
+        "deadline": "8 April 2026",
+        "source_url": "https://www.bath.ac.uk/corporate-information/school-of-management-msc-funding-and-scholarships/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information sourced directly from official University of Bath scholarship pages for academic year 2026/27. Research completed as of May 2, 2026. Some small departmental scholarships and external awards not included; research focused on central university scholarships and bursaries. A few scholarships had applications closed (British Council Scholarships for Women in STEM, CMA CGM Fund, GREAT Scholarships) and were excluded. School of Management has additional specific scholarships with similar application processes."
+    }
+  },
+  {
+    "university_name": "University of Warwick",
+    "scholarships": [
+      {
+        "name": "Warwick Bursary (2025 Entry onwards)",
+        "eligibility": {
+          "academic_requirements": "Offer for full-time undergraduate degree",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate courses eligible",
+          "nationality_restrictions": "Home students only - domiciled in England, Scotland, or Northern Ireland",
+          "financial_need_required": true,
+          "other_conditions": "Must apply to Student Finance England, SFNI, or SAAS for income assessment. Family income must be £42,875 or below"
+        },
+        "required_documents": [
+          "Student Finance application confirmation"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Apply for Student Finance England/SFNI/SAAS | Provide household income assessment | University automatically checks eligibility from Student Finance data"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://warwick.ac.uk/services/wss/funding/bursariesandscholarships/2025-entry/"
+      },
+      {
+        "name": "Warwick Part-Time Fee Waiver (PTFW)",
+        "eligibility": {
+          "academic_requirements": "First undergraduate degree",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Part-time undergraduate courses",
+          "nationality_restrictions": "Home and international students eligible",
+          "financial_need_required": true,
+          "other_conditions": "Must be in receipt of one or more UK Government means-tested benefits and have Tuition Fee Loan entitlement"
+        },
+        "required_documents": [
+          "Evidence of Tuition Fee Loan entitlement",
+          "Evidence of means-tested benefit receipt for 2025-26"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete Part-Time Fee Waiver application form online | Submit evidence of TFL entitlement | Submit evidence of means-tested benefit receipt"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://warwick.ac.uk/services/wss/funding/bursariesandscholarships/ptfw/"
+      },
+      {
+        "name": "Warwick Undergraduate Global Excellence Scholarship (WUGES)",
+        "eligibility": {
+          "academic_requirements": "Exceptional academic achievement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate courses eligible",
+          "nationality_restrictions": "International students only",
+          "financial_need_required": false,
+          "other_conditions": "Merit-based scholarship for talented international applicants"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": "NOT_FOUND",
+          "auto_considered": "NOT_FOUND",
+          "application_steps": "Apply for undergraduate course | Automatically considered for scholarship based on academic merit"
+        },
+        "deadline": "Applications for 2026 now closed",
+        "source_url": "https://warwick.ac.uk/study/international/admissions/finance/scholarships/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information sourced from official University of Warwick funding pages."
+    }
+  },
+  {
+    "university_name": "Lancaster University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Unable to access Lancaster University official scholarship pages during this run. Official sources were inaccessible via available methods."
+    }
+  },
+  {
+    "university_name": "University of Exeter",
+    "scholarships": [
+      {
+        "name": "Exeter Excellence Scholarships (International)",
+        "eligibility": {
+          "academic_requirements": "Outstanding academic achievement, typically GCE A level AAB equivalent or higher",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Available in Environment Science and Economy, Health and Life Sciences, Humanities Arts and Social Sciences faculties; excludes BMBS Medicine and certain dual/partnership programmes",
+          "nationality_restrictions": "International students only (including EU)",
+          "financial_need_required": false,
+          "other_conditions": "Must have conditional or unconditional offer; demonstrated academic and career ambition; ability to contribute to Exeter community"
+        },
+        "required_documents": [
+          "UCAS application",
+          "Personal statement (maximum 300 words)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete UCAS application and receive offer | Submit webform with personal statement responding to three prompts about ambitions, contribution to campus, and ambassador role"
+        },
+        "deadline": "23 April 2026 (Round 2 - now closed)",
+        "source_url": "https://www.exeter.ac.uk/study/funding/award/?id=5612"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information from official Exeter website; Round 2 deadline has passed; Round 1 closed 19 February 2026"
+    }
+  },
+  {
+    "university_name": "University of York",
+    "scholarships": [
+      {
+        "name": "York Bursary (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": true,
+          "other_conditions": "Household residual income between £0-£35,000"
+        },
+        "required_documents": [
+          "Student Finance assessment"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic assessment by Student Finance"
+        },
+        "deadline": "Ongoing - assessed automatically",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/uk/scholarships/york-bursary/"
+      },
+      {
+        "name": "Global Impact Undergraduate Scholarship (International)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes, starting September 2026",
+          "nationality_restrictions": "China, India, Malaysia, Nigeria, Thailand, Turkey, USA residents only",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer at York for year one direct entry"
+        },
+        "required_documents": [
+          "Degree offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic consideration for all eligible offer holders"
+        },
+        "deadline": "Not applicable - automatic award",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/international/scholarships/global-impact-ug-scholarship/"
+      },
+      {
+        "name": "Dean's Global Excellence Scholarship (International)",
+        "eligibility": {
+          "academic_requirements": "Exceptional academic achievement",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate programmes within faculties",
+          "nationality_restrictions": "International and EU students",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer at York; 6 scholarships available university-wide"
+        },
+        "required_documents": [
+          "Degree offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic consideration for all undergraduate offer holders"
+        },
+        "deadline": "Notifications from 15 May 2026 onwards",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/international/scholarships/dean-global-excellence-scholarship/"
+      },
+      {
+        "name": "International Undergraduate Achievement Scholarship",
+        "eligibility": {
+          "academic_requirements": "Outstanding achievement from best international applicants",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes, year one direct entry",
+          "nationality_restrictions": "International and EU students",
+          "financial_need_required": false,
+          "other_conditions": "Must hold offer at York"
+        },
+        "required_documents": [
+          "Degree offer"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic consideration for eligible offer holders"
+        },
+        "deadline": "Not applicable - automatic award",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/international/scholarships/international-achievement-scholarship/"
+      },
+      {
+        "name": "Cowrie Foundation Scholarship (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": true,
+          "other_conditions": "Black British students from socio-economically disadvantaged backgrounds; 1 scholarship available"
+        },
+        "required_documents": [
+          "Application form",
+          "Personal statement"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete online application form via Qualtrics"
+        },
+        "deadline": "8 May 2026, 11:59pm BST",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/uk/scholarships/cowrie-foundation-scholarship/"
+      },
+      {
+        "name": "Care Leavers and Estranged Students Bursary (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": false,
+          "other_conditions": "Must be under 25 at start of studies and be care leaver or irreconcilably estranged from parents"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic assessment based on disclosed circumstances"
+        },
+        "deadline": "Ongoing - 2026/27",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/uk/scholarships/care-leavers/"
+      },
+      {
+        "name": "York Refugee Bursary (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "Refugee students with home fee status",
+          "financial_need_required": false,
+          "other_conditions": "Must have refugee status in UK"
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "NOT_FOUND"
+        },
+        "deadline": "Ongoing - 2026/27",
+        "source_url": "https://www.york.ac.uk/study/undergraduate/fees-funding/uk/scholarships/yorkrefugeebursary/"
+      },
+      {
+        "name": "York Performance Award",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes; must participate in drama/music performance",
+          "nationality_restrictions": "UK (home) and international students",
+          "financial_need_required": false,
+          "other_conditions": "Performance must be in venue beyond York"
+        },
+        "required_documents": [
+          "Application form",
+          "Evidence of performance involvement"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit application through Arts and Creative Technologies portal"
+        },
+        "deadline": "7 June 2026, 11:59pm BST",
+        "source_url": "https://www.york.ac.uk/arts-creative-technologies/study/funding/york-performance-award/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "high",
+      "notes": "Information from official York website; covers undergraduate scholarships for 2026/27 academic year for both UK and international students"
+    }
+  },
+  {
+    "university_name": "UCL (University College London)",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Birmingham",
+    "scholarships": [
+      {
+        "name": "Chamberlain Award (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All full-time undergraduate programmes, entry September 2026",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": true,
+          "other_conditions": "Household income ≤£25,000 or £25,001-£35,000"
+        },
+        "required_documents": [
+          "Student Finance assessment"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "Automatic assessment if Student Finance has assessed household income"
+        },
+        "deadline": "Not applicable - automatic award",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/scholarships-grants-and-bursaries"
+      },
+      {
+        "name": "High Fliers Undergraduate Scholarships (Country-Specific)",
+        "eligibility": {
+          "academic_requirements": "Strong academic achievement for entry to undergraduate programme",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All full-time undergraduate programmes, entry September 2026",
+          "nationality_restrictions": "Specific countries: Africa, Canada, China, Europe, Hong Kong, India, Middle East/North Africa, Singapore, or via Kaplan pathway",
+          "financial_need_required": false,
+          "other_conditions": "Competitive award; separate schemes for each country/region"
+        },
+        "required_documents": [
+          "Application form",
+          "Academic evidence"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit application through university funding database for your country"
+        },
+        "deadline": "Varies by country: 29 May - 19 July 2026",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/search-funding"
+      },
+      {
+        "name": "Care Leaver Scholarship (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": false,
+          "other_conditions": "Must be a care leaver; minimum of 2 scholarships awarded annually"
+        },
+        "required_documents": [
+          "Care leaver evidence",
+          "Application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply through care leavers support office or contact funding team"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/scholarships-grants-and-bursaries"
+      },
+      {
+        "name": "Music Scholarships",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any full-time undergraduate programme (excluding Music Department); Grade 8 standard in instrument or vocals",
+          "nationality_restrictions": "All nationalities",
+          "financial_need_required": false,
+          "other_conditions": "Must perform at Grade 8 standard in instrument or vocals"
+        },
+        "required_documents": [
+          "Grade 8 or equivalent evidence",
+          "Audition required"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Audition at Music Department"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/scholarships-grants-and-bursaries"
+      },
+      {
+        "name": "Sports Scholarships",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any academic department and programme",
+          "nationality_restrictions": "All nationalities",
+          "financial_need_required": false,
+          "other_conditions": "High-achieving sports performers; support includes facilities membership, strength/conditioning, sports science, physiotherapy, lifestyle workshops"
+        },
+        "required_documents": [
+          "Sports achievement evidence",
+          "Application to Sports and Fitness"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply to University of Birmingham Sport and Fitness department"
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/scholarships-grants-and-bursaries"
+      },
+      {
+        "name": "Gateway to Work Experience Bursary (UK Home)",
+        "eligibility": {
+          "academic_requirements": "NOT_FOUND",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "All undergraduate programmes",
+          "nationality_restrictions": "UK (home) students only",
+          "financial_need_required": true,
+          "other_conditions": "Must be under-represented undergraduate; for access to work experience"
+        },
+        "required_documents": [
+          "Application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit application through funding database"
+        },
+        "deadline": "15 June 2026",
+        "source_url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/search-funding"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "medium",
+      "notes": "Information from official Birmingham website; some specific eligibility criteria and documents not detailed on main pages; specific scholarship pages returned 404 errors; funding database contains additional country-specific schemes with various deadlines"
+    }
+  },
+  {
+    "university_name": "University of Bristol",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Sheffield",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Southampton",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "The University of Edinburgh",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "King's College London",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Surrey",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Leeds",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Cardiff University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Liverpool",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Queen's University Belfast",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Heriot-Watt University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of East Anglia UEA",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Nottingham",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Manchester",
+    "scholarships": [
+      {
+        "name": "Accommodation Bursary (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Must have applied for an undergraduate course starting Sep 2026 at Manchester.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course; must apply for eligible halls as first-choice accommodation.",
+          "nationality_restrictions": "Home fee-status students only.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance household-income assessment and consent to share data; household income must be £43,000 or below."
+        },
+        "required_documents": [
+          "Evidence for any priority criteria claimed in the bursary form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit bursary form, have Manchester as firm choice by deadline, and provide supporting evidence for priority factors if claimed."
+        },
+        "deadline": "2026-07-06",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/accommodation-bursary/"
+      },
+      {
+        "name": "Article 26 Scholarships (Undergraduate Sanctuary Seekers)",
+        "eligibility": {
+          "academic_requirements": "Applied for a Manchester undergraduate course starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Unavailable for Medicine, Dentistry, and Architecture.",
+          "nationality_restrictions": "For sanctuary-seeking applicants in the UK meeting specified immigration categories.",
+          "financial_need_required": true,
+          "other_conditions": "Must be unable to access mainstream UK student finance due to immigration status."
+        },
+        "required_documents": [
+          "Scholarship application form",
+          "Immigration-status evidence"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply to an eligible undergraduate course, then submit the Article 26 scholarship application when open."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/article-26-scholarships/"
+      },
+      {
+        "name": "The Bason Family Bursary (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only; restricted to specified Black heritage ethnicity categories.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance assessment, household income <= £35,000, and current/long-term Greater Manchester residence."
+        },
+        "required_documents": [
+          "Evidence documents for any priority criteria claimed",
+          "Completed bursary/scholarship application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit one shared form (also used for Cowrie), then shortlisted candidates attend online interview."
+        },
+        "deadline": "2026-04-26",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/bason-family-bursary/"
+      },
+      {
+        "name": "The Cowrie Foundation Scholarships (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only; restricted to specified Black heritage ethnicity categories.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance assessment and household income <= £35,000."
+        },
+        "required_documents": [
+          "Evidence documents for any priority criteria claimed",
+          "Completed scholarship application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit one shared form (also used for Bason), then shortlisted candidates attend online interview."
+        },
+        "deadline": "2026-04-26",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/cowrie-foundation-scholarships/"
+      },
+      {
+        "name": "The Sadler Bursary (Undergraduate, Home care-experienced)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only.",
+          "financial_need_required": false,
+          "other_conditions": "Must be care-experienced/care leaver and aged 24 or under on 1 Sep 2026."
+        },
+        "required_documents": [
+          "Local-authority/social-worker letter confirming care history and placement history",
+          "Evidence of living in Blackpool or North West since 1 Sep 2022",
+          "Evidence of being/were under care of a Blackpool/North West local authority"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit bursary form when open and upload required evidence; small panel shortlists and decides."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/sadler-bursary/"
+      },
+      {
+        "name": "Manchester Master's Bursary (Home students)",
+        "eligibility": {
+          "academic_requirements": "First master's qualification only; must have started UG after Sep 2012 and graduated no earlier than Jun 2021.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Eligible master's courses only; full-time or part-time (max 2 years), Sep 2026 start.",
+          "nationality_restrictions": "Home fee status for both undergraduate and master's studies.",
+          "financial_need_required": false,
+          "other_conditions": "Applicants must also meet at least one widening-participation priority criterion and provide evidence."
+        },
+        "required_documents": [
+          "Formal evidence for priority criteria",
+          "Supporting statement"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete bursary application form and upload evidence; awards are then prioritized among eligible applicants."
+        },
+        "deadline": "2026-05-31",
+        "source_url": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/masters-bursary/"
+      },
+      {
+        "name": "Global Futures Scholarships (International UG and Master's)",
+        "eligibility": {
+          "academic_requirements": "Must hold an offer for full-time on-campus study starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Course-offer requirements apply; scholarship page gives no standalone threshold.",
+          "course_requirements": "Full-time on-campus undergraduate or master's only.",
+          "nationality_restrictions": "Only applicants living in listed eligible countries/regions.",
+          "financial_need_required": false,
+          "other_conditions": "Must be self-funded (not externally sponsored)."
+        },
+        "required_documents": [
+          "Online scholarship form emailed to relevant offer-holders",
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Secure eligible Manchester offer; complete region-specific scholarship form sent by the International Office."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/global-futures-scholarship/"
+      },
+      {
+        "name": "Humanitarian Scholarships (International undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Strong prior academic performance and application to eligible Sep 2026 undergraduate study.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "No proof needed at scholarship application stage; must later meet offer-set English condition. Duolingo not accepted.",
+          "course_requirements": "Most 3-year UG and approved foundation routes; excludes Medicine, Dentistry, Nursing, Architecture and INTO Humanities foundation.",
+          "nationality_restrictions": "Must not currently live in UK/EU; for people displaced by recent conflict.",
+          "financial_need_required": false,
+          "other_conditions": "Must be at serious conflict-related risk, displaced within last 3 years, unable to continue university, and not previously studied in UK/EU."
+        },
+        "required_documents": [
+          "UCAS course application",
+          "Scholarship online form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply via UCAS, then submit scholarship form; no interview; scholarship decision sent by email."
+        },
+        "deadline": "2026-03-31",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/humanitarian-scholarship/"
+      },
+      {
+        "name": "Equity and Merit Scholarships (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Excellent bachelor's degree (typically top 10% of class), with graduation before Sep 2024.",
+          "minimum_gpa_or_percentage": "Top 10% of class (typical benchmark); exact GPA conversion NOT_FOUND.",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Only specific eligible master's courses (full-time on-campus or selected part-time online).",
+          "nationality_restrictions": "Resident citizens of Ethiopia, Malawi, Rwanda, Tanzania, Uganda, or Zimbabwe.",
+          "financial_need_required": true,
+          "other_conditions": "Need >=2 years relevant paid professional experience; prior study outside Africa generally not allowed (except short <=6 months training)."
+        },
+        "required_documents": [
+          "Scholarship application form",
+          "Academic admission application (if invited)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply in scholarship window first; if eligible, submit academic course application; shortlist requires admission offer."
+        },
+        "deadline": "2025-08-31",
+        "source_url": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/equity-merit-scholarships/"
+      },
+      {
+        "name": "GREAT Scholarships 2026 (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Must hold a conditional or unconditional Manchester offer for an eligible one-year master's.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "One-year postgraduate taught master's.",
+          "nationality_restrictions": "Manchester awards restricted to citizens/residents of Bangladesh, Ghana, or Pakistan.",
+          "financial_need_required": false,
+          "other_conditions": "Additional selection rules are in linked University eligibility-and-selection PDF."
+        },
+        "required_documents": [
+          "Scholarship form emailed to relevant offer-holders",
+          "Offer evidence (held in admissions record)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive eligible Manchester offer, then submit GREAT scholarship form sent by International Office."
+        },
+        "deadline": "2026-04-23",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/great-scholarships/"
+      },
+      {
+        "name": "Women in STEM Scholarships 2026-27 (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Must meet Manchester academic entry standards and have completed undergraduate degree (or complete before enrolment).",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Must meet Manchester English requirement for course admission.",
+          "course_requirements": "Specific eligible STEM master's programmes only.",
+          "nationality_restrictions": "Women permanent residents/passport holders of Bangladesh, India, Nepal, Pakistan, or Sri Lanka.",
+          "financial_need_required": true,
+          "other_conditions": "Must plan to return home for >=2 years, show STEM engagement and impact intent; ineligible with dual UK citizenship."
+        },
+        "required_documents": [
+          "Scholarship application form emailed to eligible offer-holders",
+          "Passport/travel document proving eligibility",
+          "Documents for UK visa eligibility",
+          "Evidence supporting financial-need case"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold relevant offer, complete scholarship form sent from mid-January, and consent to British Council data-sharing."
+        },
+        "deadline": "2026-04-30",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/women-in-stem-scholarships/"
+      },
+      {
+        "name": "Carbon Reduction Scholarship (Distance-learning MA Education for a Sustainable Environment)",
+        "eligibility": {
+          "academic_requirements": "Offer-holder for MA Education for a Sustainable Environment by distance learning.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "MA Education for a Sustainable Environment, distance-learning registration required.",
+          "nationality_restrictions": "Open to both home and overseas applicants.",
+          "financial_need_required": false,
+          "other_conditions": "Selection is merit-based and based on contribution potential to programme diversity and enrichment."
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "No separate bursary form; eligible applicants are assessed automatically."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/carbon-reduction-scholarship/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "medium",
+      "notes": "Used official manchester.ac.uk pages. Some schemes provide country/course-specific rules via linked PDFs or profiles; those fields are marked NOT_FOUND where page-level detail was unavailable or cycle timing was unclear."
+    }
+  },
+  {
+    "university_name": "University of Essex",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Aberdeen",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Glasgow",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Newcastle University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Leicester",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of the Arts London",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Royal Holloway",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Reading",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Northumbria University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Strathclyde",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Dundee",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Swansea University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Queen Mary University of London",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Portsmouth",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Sussex",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Aston University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Aberystwyth University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Nottingham Trent University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Harper Adams University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Oxford Brookes University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "University of Kent",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  },
+  {
+    "university_name": "Manchester Metropolitan University",
+    "scholarships": [],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "low",
+      "notes": "Not fully collected in this automated run. Official scholarship data should be gathered from the university funding pages before relying on this entry."
+    }
+  }
+]

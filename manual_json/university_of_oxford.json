@@ -1,0 +1,90 @@
+{
+  "university_name": "University of Oxford",
+  "scholarships": [
+    {
+      "name": "Clarendon Fund Scholarship",
+      "eligibility": {
+        "academic_requirements": "Competitive academic merit-based selection",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Available for all courses at graduate level",
+        "nationality_restrictions": "Open to international and UK applicants",
+        "financial_need_required": false,
+        "other_conditions": "Primarily funded by Oxford University Press"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": false,
+        "auto_considered": true,
+        "application_steps": ["Apply for postgraduate programme through standard admissions"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.clarendon.ox.ac.uk"
+    },
+    {
+      "name": "Rhodes Scholarship",
+      "eligibility": {
+        "academic_requirements": "High academic achievement required",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Any postgraduate course",
+        "nationality_restrictions": "Restricted to specific nations; primarily Commonwealth countries, USA, Germany, and others",
+        "financial_need_required": false,
+        "other_conditions": "Requires demonstrated leadership and character"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": true,
+        "auto_considered": false,
+        "application_steps": ["Apply separately to Rhodes Trust", "Application typically made through national selection committees"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.rhodeshouse.ox.ac.uk"
+    },
+    {
+      "name": "Oxford Opportunity Bursaries",
+      "eligibility": {
+        "academic_requirements": "NOT_FOUND",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Undergraduate programmes",
+        "nationality_restrictions": "UK students only",
+        "financial_need_required": true,
+        "other_conditions": "Means-tested"
+      },
+      "required_documents": ["Financial documentation", "NOT_FOUND - specific documents not accessible"],
+      "application_process": {
+        "separate_application_required": false,
+        "auto_considered": true,
+        "application_steps": ["Assessed during undergraduate application process"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.ox.ac.uk/admissions"
+    },
+    {
+      "name": "Weidenfeld Scholarships",
+      "eligibility": {
+        "academic_requirements": "High academic merit",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Postgraduate courses",
+        "nationality_restrictions": "International students",
+        "financial_need_required": false,
+        "other_conditions": "NOT_FOUND"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": false,
+        "auto_considered": true,
+        "application_steps": ["Apply for postgraduate programme; assessed automatically"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.ox.ac.uk"
+    }
+  ],
+  "data_freshness": {
+    "retrieved_on": "2026-05-02",
+    "confidence": "low",
+    "notes": "Oxford official scholarship pages returned access errors during this run. Current 2026/27 detail could not be fully verified from official sources."
+  }
+}

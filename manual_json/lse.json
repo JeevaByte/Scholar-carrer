@@ -1,0 +1,80 @@
+{
+  "university_name": "London School of Economics and Political Science",
+  "scholarships": [
+    {
+      "name": "Uggla Family Scholars Programme",
+      "eligibility": {
+        "academic_requirements": "Unconditional or conditional offer of admission to LSE undergraduate programme required",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "Available for all undergraduate programmes",
+        "nationality_restrictions": "7 scholarships for UK students; 3 for overseas students",
+        "financial_need_required": true,
+        "other_conditions": "Students from underrepresented backgrounds prioritised. Must be a new undergraduate student for 2026 entry."
+      },
+      "required_documents": [
+        "Completed LSE Undergraduate Scholarship Application 2026",
+        "One academic reference",
+        "Supporting documents (varies by individual circumstances)"
+      ],
+      "application_process": {
+        "separate_application_required": true,
+        "auto_considered": false,
+        "application_steps": [
+          "Obtain conditional or unconditional LSE offer",
+          "Complete LSE Undergraduate Scholarship Application 2026",
+          "Submit academic reference",
+          "Provide supporting documents",
+          "Email all materials to financial-support@lse.ac.uk"
+        ]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.lse.ac.uk/study-at-lse/undergraduate/fees-and-funding/uggla-family-scholarships"
+    },
+    {
+      "name": "LSE Access to Education Undergraduate Scholarships",
+      "eligibility": {
+        "academic_requirements": "NOT_FOUND",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "NOT_FOUND",
+        "nationality_restrictions": "Restricted to students of specific immigration status",
+        "financial_need_required": true,
+        "other_conditions": "Awards can cover full tuition fees and living costs for eligible students with offer of admission"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": "NOT_FOUND",
+        "auto_considered": "NOT_FOUND",
+        "application_steps": ["NOT_FOUND"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.lse.ac.uk/study-at-lse/Undergraduate/fees-and-funding/access-to-education-undergraduate-scholarships"
+    },
+    {
+      "name": "LSE PhD Studentships",
+      "eligibility": {
+        "academic_requirements": "High calibre students",
+        "minimum_gpa_or_percentage": "NOT_FOUND",
+        "english_language_requirement": "NOT_FOUND",
+        "course_requirements": "For MRes, MPhil, and PhD programmes",
+        "nationality_restrictions": "All nationalities eligible",
+        "financial_need_required": "NOT_FOUND",
+        "other_conditions": "Open across all research areas at the School"
+      },
+      "required_documents": ["NOT_FOUND"],
+      "application_process": {
+        "separate_application_required": "NOT_FOUND",
+        "auto_considered": "NOT_FOUND",
+        "application_steps": ["NOT_FOUND"]
+      },
+      "deadline": "NOT_FOUND",
+      "source_url": "https://www.lse.ac.uk/study-at-lse/Graduate/fees-and-funding/PhD-Studentships"
+    }
+  ],
+  "data_freshness": {
+    "retrieved_on": "2026-05-02",
+    "confidence": "low",
+    "notes": "Detailed LSE scholarship pages were only partly accessible during this run, so many fields remain NOT_FOUND."
+  }
+}

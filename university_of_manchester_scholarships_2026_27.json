@@ -1,0 +1,289 @@
+[
+  {
+    "university_name": "University of Manchester",
+    "scholarships": [
+      {
+        "name": "Accommodation Bursary (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Must have applied for an undergraduate course starting Sep 2026 at Manchester.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Any undergraduate course; must apply for eligible halls as first-choice accommodation.",
+          "nationality_restrictions": "Home fee-status students only.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance household-income assessment and consent to share data; household income must be £43,000 or below."
+        },
+        "required_documents": [
+          "Evidence for any priority criteria claimed in the bursary form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit bursary form, have Manchester as firm choice by deadline, and provide supporting evidence for priority factors if claimed."
+        },
+        "deadline": "2026-07-06",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/accommodation-bursary/"
+      },
+      {
+        "name": "Article 26 Scholarships (Undergraduate Sanctuary Seekers)",
+        "eligibility": {
+          "academic_requirements": "Applied for a Manchester undergraduate course starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Unavailable for Medicine, Dentistry, and Architecture.",
+          "nationality_restrictions": "For sanctuary-seeking applicants in the UK meeting specified immigration categories.",
+          "financial_need_required": true,
+          "other_conditions": "Must be unable to access mainstream UK student finance due to immigration status."
+        },
+        "required_documents": [
+          "Scholarship application form",
+          "Immigration-status evidence"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply to an eligible undergraduate course, then submit the Article 26 scholarship application when open."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/article-26-scholarships/"
+      },
+      {
+        "name": "The Bason Family Bursary (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only; restricted to specified Black heritage ethnicity categories.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance assessment, household income <= £35,000, and current/long-term Greater Manchester residence."
+        },
+        "required_documents": [
+          "Evidence documents for any priority criteria claimed",
+          "Completed bursary/scholarship application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit one shared form (also used for Cowrie), then shortlisted candidates attend online interview."
+        },
+        "deadline": "2026-04-26",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/bason-family-bursary/"
+      },
+      {
+        "name": "The Cowrie Foundation Scholarships (Undergraduate, Home)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only; restricted to specified Black heritage ethnicity categories.",
+          "financial_need_required": true,
+          "other_conditions": "Requires Student Finance assessment and household income <= £35,000."
+        },
+        "required_documents": [
+          "Evidence documents for any priority criteria claimed",
+          "Completed scholarship application form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit one shared form (also used for Bason), then shortlisted candidates attend online interview."
+        },
+        "deadline": "2026-04-26",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/cowrie-foundation-scholarships/"
+      },
+      {
+        "name": "The Sadler Bursary (Undergraduate, Home care-experienced)",
+        "eligibility": {
+          "academic_requirements": "Applied for an undergraduate degree starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Undergraduate study at Manchester.",
+          "nationality_restrictions": "Home fee-status only.",
+          "financial_need_required": false,
+          "other_conditions": "Must be care-experienced/care leaver and aged 24 or under on 1 Sep 2026."
+        },
+        "required_documents": [
+          "Local-authority/social-worker letter confirming care history and placement history",
+          "Evidence of living in Blackpool or North West since 1 Sep 2022",
+          "Evidence of being/were under care of a Blackpool/North West local authority"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Submit bursary form when open and upload required evidence; small panel shortlists and decides."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/scholarships-and-bursaries/sadler-bursary/"
+      },
+      {
+        "name": "Manchester Master's Bursary (Home students)",
+        "eligibility": {
+          "academic_requirements": "First master's qualification only; must have started UG after Sep 2012 and graduated no earlier than Jun 2021.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Eligible master's courses only; full-time or part-time (max 2 years), Sep 2026 start.",
+          "nationality_restrictions": "Home fee status for both undergraduate and master's studies.",
+          "financial_need_required": false,
+          "other_conditions": "Applicants must also meet at least one widening-participation priority criterion and provide evidence."
+        },
+        "required_documents": [
+          "Formal evidence for priority criteria",
+          "Supporting statement"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Complete bursary application form and upload evidence; awards are then prioritized among eligible applicants."
+        },
+        "deadline": "2026-05-31",
+        "source_url": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/masters-bursary/"
+      },
+      {
+        "name": "Global Futures Scholarships (International UG and Master's)",
+        "eligibility": {
+          "academic_requirements": "Must hold an offer for full-time on-campus study starting Sep 2026.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Course-offer requirements apply; scholarship page gives no standalone threshold.",
+          "course_requirements": "Full-time on-campus undergraduate or master's only.",
+          "nationality_restrictions": "Only applicants living in listed eligible countries/regions.",
+          "financial_need_required": false,
+          "other_conditions": "Must be self-funded (not externally sponsored)."
+        },
+        "required_documents": [
+          "Online scholarship form emailed to relevant offer-holders",
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Secure eligible Manchester offer; complete region-specific scholarship form sent by the International Office."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/global-futures-scholarship/"
+      },
+      {
+        "name": "Humanitarian Scholarships (International undergraduate)",
+        "eligibility": {
+          "academic_requirements": "Strong prior academic performance and application to eligible Sep 2026 undergraduate study.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "No proof needed at scholarship application stage; must later meet offer-set English condition. Duolingo not accepted.",
+          "course_requirements": "Most 3-year UG and approved foundation routes; excludes Medicine, Dentistry, Nursing, Architecture and INTO Humanities foundation.",
+          "nationality_restrictions": "Must not currently live in UK/EU; for people displaced by recent conflict.",
+          "financial_need_required": false,
+          "other_conditions": "Must be at serious conflict-related risk, displaced within last 3 years, unable to continue university, and not previously studied in UK/EU."
+        },
+        "required_documents": [
+          "UCAS course application",
+          "Scholarship online form"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply via UCAS, then submit scholarship form; no interview; scholarship decision sent by email."
+        },
+        "deadline": "2026-03-31",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/humanitarian-scholarship/"
+      },
+      {
+        "name": "Equity and Merit Scholarships (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Excellent bachelor's degree (typically top 10% of class), with graduation before Sep 2024.",
+          "minimum_gpa_or_percentage": "Top 10% of class (typical benchmark); exact GPA conversion NOT_FOUND.",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "Only specific eligible master's courses (full-time on-campus or selected part-time online).",
+          "nationality_restrictions": "Resident citizens of Ethiopia, Malawi, Rwanda, Tanzania, Uganda, or Zimbabwe.",
+          "financial_need_required": true,
+          "other_conditions": "Need >=2 years relevant paid professional experience; prior study outside Africa generally not allowed (except short <=6 months training)."
+        },
+        "required_documents": [
+          "Scholarship application form",
+          "Academic admission application (if invited)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Apply in scholarship window first; if eligible, submit academic course application; shortlist requires admission offer."
+        },
+        "deadline": "2025-08-31",
+        "source_url": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/equity-merit-scholarships/"
+      },
+      {
+        "name": "GREAT Scholarships 2026 (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Must hold a conditional or unconditional Manchester offer for an eligible one-year master's.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "One-year postgraduate taught master's.",
+          "nationality_restrictions": "Manchester awards restricted to citizens/residents of Bangladesh, Ghana, or Pakistan.",
+          "financial_need_required": false,
+          "other_conditions": "Additional selection rules are in linked University eligibility-and-selection PDF."
+        },
+        "required_documents": [
+          "Scholarship form emailed to relevant offer-holders",
+          "Offer evidence (held in admissions record)"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Receive eligible Manchester offer, then submit GREAT scholarship form sent by International Office."
+        },
+        "deadline": "2026-04-23",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/great-scholarships/"
+      },
+      {
+        "name": "Women in STEM Scholarships 2026-27 (International Master's)",
+        "eligibility": {
+          "academic_requirements": "Must meet Manchester academic entry standards and have completed undergraduate degree (or complete before enrolment).",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "Must meet Manchester English requirement for course admission.",
+          "course_requirements": "Specific eligible STEM master's programmes only.",
+          "nationality_restrictions": "Women permanent residents/passport holders of Bangladesh, India, Nepal, Pakistan, or Sri Lanka.",
+          "financial_need_required": true,
+          "other_conditions": "Must plan to return home for >=2 years, show STEM engagement and impact intent; ineligible with dual UK citizenship."
+        },
+        "required_documents": [
+          "Scholarship application form emailed to eligible offer-holders",
+          "Passport/travel document proving eligibility",
+          "Documents for UK visa eligibility",
+          "Evidence supporting financial-need case"
+        ],
+        "application_process": {
+          "separate_application_required": true,
+          "auto_considered": false,
+          "application_steps": "Hold relevant offer, complete scholarship form sent from mid-January, and consent to British Council data-sharing."
+        },
+        "deadline": "2026-04-30",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/women-in-stem-scholarships/"
+      },
+      {
+        "name": "Carbon Reduction Scholarship (Distance-learning MA Education for a Sustainable Environment)",
+        "eligibility": {
+          "academic_requirements": "Offer-holder for MA Education for a Sustainable Environment by distance learning.",
+          "minimum_gpa_or_percentage": "NOT_FOUND",
+          "english_language_requirement": "NOT_FOUND",
+          "course_requirements": "MA Education for a Sustainable Environment, distance-learning registration required.",
+          "nationality_restrictions": "Open to both home and overseas applicants.",
+          "financial_need_required": false,
+          "other_conditions": "Selection is merit-based and based on contribution potential to programme diversity and enrichment."
+        },
+        "required_documents": [
+          "NOT_FOUND"
+        ],
+        "application_process": {
+          "separate_application_required": false,
+          "auto_considered": true,
+          "application_steps": "No separate bursary form; eligible applicants are assessed automatically."
+        },
+        "deadline": "NOT_FOUND",
+        "source_url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/carbon-reduction-scholarship/"
+      }
+    ],
+    "data_freshness": {
+      "retrieved_on": "2026-05-02",
+      "confidence": "medium",
+      "notes": "Used official manchester.ac.uk pages. Some schemes provide country/course-specific rules via linked PDFs or profiles; those fields are marked NOT_FOUND where page-level detail was unavailable or cycle timing was unclear."
+    }
+  }
+]
