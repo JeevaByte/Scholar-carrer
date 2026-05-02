@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/opportunitycard.tsx","./src/lib/api.ts","./src/lib/query.test.ts","./src/lib/query.ts","./src/pages/dashboardpage.tsx","./src/pages/landingpage.tsx","./src/pages/opportunitiespage.tsx","./src/pages/opportunitydetailpage.tsx","./src/pages/savedpage.tsx"],"version":"5.9.3"}
