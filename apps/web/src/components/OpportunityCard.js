@@ -1,5 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Link } from "react-router-dom";
-export function OpportunityCard({ item, onSave }) {
-    return (_jsxs("article", { className: "card", children: [_jsx("div", { style: { display: "flex", gap: "0.4rem", marginBottom: "0.6rem", flexWrap: "wrap" }, children: item.tags.map((tag) => (_jsx("span", { className: "badge", children: tag }, tag))) }), _jsx("h3", { style: { margin: "0.2rem 0" }, children: item.title }), _jsx("p", { style: { marginTop: 0 }, children: item.provider }), _jsx("p", { children: item.summary }), _jsx("p", { children: _jsx("strong", { children: item.amountLabel }) }), _jsxs("p", { children: ["Deadline: ", item.deadlineISO] }), _jsxs("div", { style: { display: "flex", gap: "0.6rem" }, children: [_jsx(Link, { className: "secondary-btn", to: `/opportunities/${item.id}`, children: "View Details" }), onSave ? (_jsx("button", { className: "primary-btn", onClick: () => onSave(item.id), children: "Save" })) : null] })] }));
-}
