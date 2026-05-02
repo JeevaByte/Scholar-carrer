@@ -66,5 +66,18 @@ app.use((error: unknown, _req: express.Request, res: express.Response, _next: ex
     return;
   }
 
-  res.status(500).json({ message: "Internal error", error: String(error) });
+  const message =
+    typeof error === "object" && error !== null && "message" in error
+      ? String((error as { message: unknown }).message)
+      : String(error);
+  const code =
+    typeof error === "object" && error !== null && "code" in error
+      ? String((error as { code: unknown }).code)
+      : undefined;
+  const details =
+    typeof error === "object" && error !== null && "details" in error
+      ? (error as { details: unknown }).details
+      : undefined;
+
+  res.status(500).json({ message: "Internal error", error: message, code, details });
 });

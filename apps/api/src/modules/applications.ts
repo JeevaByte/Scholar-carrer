@@ -1,7 +1,7 @@
 import { applyOpportunitySchema } from "@scholar-career/shared";
 import type { Router } from "express";
 
-const mockUserId = "user-demo-1";
+const mockUserId = "00000000-0000-0000-0000-000000000001";
 
 export const registerApplicationRoutes = (router: Router) => {
   router.post("/applications", async (req, res, next) => {

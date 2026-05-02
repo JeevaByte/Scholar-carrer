@@ -1,6 +1,6 @@
 import type { Router } from "express";
 
-const mockUserId = "user-demo-1";
+const mockUserId = "00000000-0000-0000-0000-000000000001";
 
 export const registerDashboardRoutes = (router: Router) => {
   router.get("/dashboard", async (req, res, next) => {

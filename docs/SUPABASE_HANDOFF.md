@@ -37,6 +37,12 @@
    - `SUPABASE_URL`
    - `SUPABASE_ANON_KEY`
    - `SUPABASE_SERVICE_ROLE_KEY`
-2. Apply SQL migration.
-3. Seed minimum opportunities rows.
-4. Start API and open `/docs` for endpoint validation.
+2. Apply SQL migrations in order:
+   - `supabase/migrations/001_initial_schema.sql`
+   - `supabase/migrations/002_app_seed_and_todos.sql`
+3. Start API and open `/docs` for endpoint validation.
+
+## Quick verification
+1. `GET /health` returns `dataSource: supabase`
+2. `GET /api/v1/opportunities` returns seeded opportunities
+3. Frontend `/todos` page loads rows from Supabase `todos` table

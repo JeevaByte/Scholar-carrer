@@ -4,12 +4,14 @@ import { OpportunitiesPage } from "./pages/OpportunitiesPage";
 import { OpportunityDetailPage } from "./pages/OpportunityDetailPage";
 import { SavedPage } from "./pages/SavedPage";
 import { DashboardPage } from "./pages/DashboardPage";
+import { TodosPage } from "./pages/TodosPage";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/opportunities", label: "Opportunities" },
   { to: "/saved", label: "Saved" },
-  { to: "/dashboard", label: "Dashboard" }
+  { to: "/dashboard", label: "Dashboard" },
+  { to: "/todos", label: "Todos" }
 ];
 
 export function App() {
@@ -40,6 +42,7 @@ export function App() {
           <Route path="/opportunities/:id" element={<OpportunityDetailPage />} />
           <Route path="/saved" element={<SavedPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/todos" element={<TodosPage />} />
         </Routes>
       </main>
 

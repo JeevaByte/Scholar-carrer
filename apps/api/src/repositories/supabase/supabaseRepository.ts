@@ -17,6 +17,10 @@ export class SupabaseRepository implements DataRepository {
     if (filters.search) query = query.ilike("title", `%${filters.search}%`);
     if (filters.educationLevel) query = query.eq("education_level", filters.educationLevel);
     if (filters.location) query = query.eq("location", filters.location);
+    if (filters.minAmount !== undefined) query = query.gte("amount_value", filters.minAmount);
+    if (filters.maxAmount !== undefined) query = query.lte("amount_value", filters.maxAmount);
+    if (filters.sort === "amount") query = query.order("amount_value", { ascending: false });
+    if (filters.sort === "deadline") query = query.order("deadline_iso", { ascending: true });
 
     const { data, count, error } = await query;
     if (error) throw error;
