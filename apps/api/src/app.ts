@@ -9,6 +9,7 @@ import { registerApplicationRoutes } from "./modules/applications.js";
 import { registerDashboardRoutes } from "./modules/dashboard.js";
 import { registerProfileRoutes } from "./modules/profile.js";
 import { MockRepository } from "./repositories/mock/mockRepository.js";
+import { PostgresRepository } from "./repositories/postgres/postgresRepository.js";
 import { SupabaseRepository } from "./repositories/supabase/supabaseRepository.js";
 import type { DataRepository } from "./repositories/contracts.js";
 
@@ -36,7 +37,12 @@ const openApiDoc = {
   }
 };
 
-const repo = env.dataSource === "supabase" ? new SupabaseRepository() : new MockRepository();
+const repo =
+  env.dataSource === "postgres"
+    ? new PostgresRepository()
+    : env.dataSource === "supabase"
+      ? new SupabaseRepository()
+      : new MockRepository();
 
 export const app = express();
 app.use(cors());
@@ -47,7 +53,7 @@ app.use((req, _res, next) => {
 });
 
 app.get("/health", (_req, res) => {
-  res.json({ status: "ok", dataSource: env.dataSource });
+  res.json({ status: "ok", dataSource: env.dataSource, usesDatabaseUrl: Boolean(env.databaseUrl) });
 });
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(openApiDoc));

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholar Career - Scholarship Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary-container": "#1d1b1a",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-primary": "#c8c6c5",
+                      "secondary-container": "#e1dfdf",
+                      "primary": "#000000",
+                      "surface-container": "#f1edec",
+                      "primary-container": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "surface": "#fdf8f8",
+                      "on-tertiary-container": "#868381",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-background": "#1c1b1b",
+                      "surface-dim": "#ddd9d8",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "secondary-fixed": "#e4e2e2",
+                      "on-surface": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "secondary": "#5e5e5e",
+                      "inverse-surface": "#313030",
+                      "on-surface-variant": "#444748",
+                      "tertiary-fixed": "#e6e1df",
+                      "surface-container-low": "#f7f3f2",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary-container": "#858383",
+                      "outline": "#747878",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#ebe7e6",
+                      "primary-fixed": "#e5e2e1",
+                      "background": "#fdf8f8",
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "on-secondary-container": "#626262",
+                      "on-primary": "#ffffff",
+                      "brand-indigo": "#3D5AFE",
+                      "brand-border": "#E8E6E1",
+                      "brand-badge-bg": "#F0EFEA"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "12px"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "container-max": "1200px",
+                      "xl": "80px",
+                      "gutter": "32px",
+                      "base": "8px",
+                      "md": "24px",
+                      "card-p": "48px"
+              },
+              "fontFamily": {
+                      "h2": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "button": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "15px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .custom-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-brand-indigo selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 docked full-width top-0 z-50 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky">
+<div class="flex items-center justify-between h-20 px-12 max-w-[1200px] mx-auto">
+<!-- Brand -->
+<a class="text-xl font-black text-slate-900 dark:text-slate-50 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+                Scholar Career
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="h-full flex flex-col justify-center text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 font-['Inter'] text-sm font-medium tracking-tight" href="#">Opportunities</a>
+<a class="h-full flex flex-col justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 font-['Inter'] text-sm font-medium tracking-tight transition-colors" href="#">Dashboard</a>
+<a class="h-full flex flex-col justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 font-['Inter'] text-sm font-medium tracking-tight transition-colors" href="#">Mentors</a>
+<a class="h-full flex flex-col justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 font-['Inter'] text-sm font-medium tracking-tight transition-colors" href="#">Resources</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="font-button text-button text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Sign In</button>
+<button class="font-button text-button bg-brand-indigo text-white px-md py-sm rounded-card hover:bg-indigo-700 transition-colors active:scale-[0.98]">Get Started</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-[1200px] mx-auto px-12 py-lg flex flex-col gap-lg">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row gap-md items-start justify-between border-b border-brand-border pb-md">
+<div class="flex gap-md items-center">
+<div class="w-20 h-20 rounded-lg border border-brand-border bg-white flex items-center justify-center custom-shadow overflow-hidden flex-shrink-0">
+<img alt="Organization Logo" class="w-full h-full object-cover" data-alt="A minimalist corporate logo featuring clean geometric shapes in a bright, modern setting. The logo is displayed on a pristine white background, illuminated by soft, high-key studio lighting. The aesthetic is corporate-modern, utilizing deep blacks and crisp whites, evoking a sense of prestigious reliability and calm focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMb5jPE5XIZ0AQ4oMP8hHx9wEkyQzHoIz9SHCjfeLO_XaRM5b3hxhu5-saIBM916rhj5XpraOf-OVP_su1ip-u9r8al53v3x1raz7TNDKIGooZU-N9YZMmYuCpkuxDJGrfvudIS0SV_zQgNaD1sjpjsMUbV0jJ4qXm1q3rFAPb3Z2APUIXkdDdHGrxJkygF8uWubLvm1abvYiC5tg1SstaF95Ip73gEZWJWm89VJ94aceWM-BV0agarchCPria7rryogKmdreaj1M"/>
+</div>
+<div>
+<div class="flex gap-sm mb-xs">
+<span class="font-label-caps text-label-caps bg-brand-badge-bg text-on-surface px-sm py-xs rounded-full">STEM</span>
+<span class="font-label-caps text-label-caps bg-brand-badge-bg text-on-surface px-sm py-xs rounded-full">Full Ride</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-background">Future Tech Innovators Scholarship</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-base">Global Technology Foundation</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-secondary mb-xs uppercase">Award Amount</p>
+<p class="font-h2 text-h2 text-brand-indigo">$50,000</p>
+<p class="font-body-sm text-body-sm text-secondary mt-xs">Per academic year</p>
+</div>
+</section>
+<!-- Split View Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Details (Wider) -->
+<div class="lg:col-span-2 flex flex-col gap-md">
+<!-- Description Card -->
+<article class="bg-surface-container-lowest border border-brand-border rounded-card p-card-p custom-shadow">
+<h2 class="font-h3 text-h3 text-on-background mb-md">About the Scholarship</h2>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4">
+<p>The Future Tech Innovators Scholarship is designed to support the next generation of leaders in computer science, software engineering, and artificial intelligence. We believe that financial barriers should never stand in the way of exceptional talent reaching its full potential.</p>
+<p>This award not only provides significant financial backing but also includes a comprehensive mentorship program, pairing recipients with senior engineers at top-tier technology firms. Scholars will also receive invitations to our annual innovator summit in Silicon Valley.</p>
+</div>
+</article>
+<!-- Eligibility Card -->
+<article class="bg-surface-container-lowest border border-brand-border rounded-card p-card-p custom-shadow">
+<h2 class="font-h3 text-h3 text-on-background mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-brand-indigo">verified_user</span>
+                        Eligibility Criteria
+                    </h2>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-sm">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">check_circle</span>
+                            Must be currently enrolled as a high school senior or undergraduate college student.
+                        </li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">check_circle</span>
+                            Intending to pursue a degree in Computer Science, Computer Engineering, or closely related field.
+                        </li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">check_circle</span>
+                            Minimum cumulative GPA of 3.5 on a 4.0 scale.
+                        </li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">check_circle</span>
+                            Demonstrated financial need as determined by the FAFSA or equivalent documentation.
+                        </li>
+</ul>
+</article>
+<!-- Requirements Card -->
+<article class="bg-surface-container-lowest border border-brand-border rounded-card p-card-p custom-shadow">
+<h2 class="font-h3 text-h3 text-on-background mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-brand-indigo">assignment</span>
+                        Application Requirements
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="border border-brand-border rounded-lg p-md bg-surface-bright">
+<span class="material-symbols-outlined text-secondary mb-sm">description</span>
+<h4 class="font-button text-button text-on-background mb-xs">Personal Essay</h4>
+<p class="font-body-sm text-body-sm text-secondary">A 1000-word essay detailing your vision for the future of technology and your role in it.</p>
+</div>
+<div class="border border-brand-border rounded-lg p-md bg-surface-bright">
+<span class="material-symbols-outlined text-secondary mb-sm">school</span>
+<h4 class="font-button text-button text-on-background mb-xs">Transcripts</h4>
+<p class="font-body-sm text-body-sm text-secondary">Official or unofficial academic transcripts from your current institution.</p>
+</div>
+<div class="border border-brand-border rounded-lg p-md bg-surface-bright">
+<span class="material-symbols-outlined text-secondary mb-sm">recommend</span>
+<h4 class="font-button text-button text-on-background mb-xs">Recommendations</h4>
+<p class="font-body-sm text-body-sm text-secondary">Two letters of recommendation from academic or professional references.</p>
+</div>
+<div class="border border-brand-border rounded-lg p-md bg-surface-bright">
+<span class="material-symbols-outlined text-secondary mb-sm">code</span>
+<h4 class="font-button text-button text-on-background mb-xs">Project Portfolio</h4>
+<p class="font-body-sm text-body-sm text-secondary">Links to GitHub repositories or a portfolio website showcasing recent technical projects.</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="flex flex-col gap-md">
+<!-- Action Card (Sticky) -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-card p-md custom-shadow sticky top-[104px]">
+<div class="text-center mb-md pb-md border-b border-brand-border">
+<p class="font-label-caps text-label-caps text-secondary mb-xs uppercase">Application Deadline</p>
+<p class="font-h3 text-h3 text-on-background">October 15, 2024</p>
+<div class="flex justify-center gap-xs mt-sm text-brand-indigo font-button text-button">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span>45 Days Remaining</span>
+</div>
+</div>
+<button class="w-full bg-brand-indigo text-white font-button text-button py-sm rounded-card hover:bg-indigo-700 transition-colors active:scale-[0.98] mb-sm flex items-center justify-center gap-2">
+                        Apply Now
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full border-[1.5px] border-brand-border text-on-background font-button text-button py-sm rounded-card hover:bg-indigo-50/20 transition-colors active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+                        Save for Later
+                    </button>
+<div class="mt-md pt-md border-t border-brand-border">
+<p class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Selection Timeline</p>
+<div class="space-y-sm">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-secondary">Review Period</span>
+<span class="text-on-background font-medium">Nov - Dec</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-secondary">Interviews</span>
+<span class="text-on-background font-medium">January 2025</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-secondary">Final Decision</span>
+<span class="text-on-background font-medium">February 2025</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Info Card -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-card p-md custom-shadow">
+<h3 class="font-button text-button text-on-background mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline">help_outline</span>
+                        Questions?
+                    </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-sm">Contact the scholarship administrator directly for specific inquiries regarding this opportunity.</p>
+<div class="space-y-xs">
+<a class="flex items-center gap-sm font-body-sm text-body-sm text-brand-indigo hover:underline" href="mailto:support@globaltech.org">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                            support@globaltech.org
+                        </a>
+<a class="flex items-center gap-sm font-body-sm text-body-sm text-brand-indigo hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">language</span>
+                            globaltech.org/scholars
+                        </a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 full-width border-t border-slate-200 dark:border-slate-800 flat no-shadows mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-12 max-w-[1200px] mx-auto gap-8">
+<div class="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+                Scholar Career
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Terms</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Help Center</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Accessibility</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Contact</a>
+</div>
+<div class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 text-center md:text-right">
+                © 2024 Scholar Career. Built for high-stakes milestones.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholar Career Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary-container": "#1d1b1a",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-primary": "#c8c6c5",
+                      "secondary-container": "#e1dfdf",
+                      "primary": "#000000",
+                      "surface-container": "#f1edec",
+                      "primary-container": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "surface": "#fdf8f8",
+                      "on-tertiary-container": "#868381",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-background": "#1c1b1b",
+                      "surface-dim": "#ddd9d8",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "secondary-fixed": "#e4e2e2",
+                      "on-surface": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "secondary": "#5e5e5e",
+                      "inverse-surface": "#313030",
+                      "on-surface-variant": "#444748",
+                      "tertiary-fixed": "#e6e1df",
+                      "surface-container-low": "#f7f3f2",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary-container": "#858383",
+                      "outline": "#747878",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#ebe7e6",
+                      "primary-fixed": "#e5e2e1",
+                      "background": "#fdf8f8",
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "on-secondary-container": "#626262",
+                      "on-primary": "#ffffff",
+                      "brand-indigo": "#3D5AFE",
+                      "brand-indigo-hover": "#2B3FB2",
+                      "brand-indigo-ghost": "rgba(61, 90, 254, 0.02)",
+                      "brand-border": "#E8E6E1",
+                      "brand-success": "#7A9B76",
+                      "brand-chip-bg": "#F0EFEA",
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "container-max": "1200px",
+                      "xl": "80px",
+                      "gutter": "32px",
+                      "base": "8px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "h2": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "button": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "15px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] docked full-width top-0 z-50">
+<div class="flex items-center justify-between h-20 px-12 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-md">
+<span class="text-xl font-black text-slate-900 dark:text-slate-50 tracking-tight">Scholar Career</span>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 py-2 px-3 rounded-DEFAULT" href="#">Opportunities</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="#">Dashboard</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 py-2 px-3 rounded-DEFAULT" href="#">Mentors</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 py-2 px-3 rounded-DEFAULT" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="font-button text-button text-on-background px-md py-sm border-[1.5px] border-brand-border rounded-xl hover:bg-brand-indigo-ghost transition-colors">Sign In</button>
+<button class="font-button text-button bg-brand-indigo text-on-primary px-md py-sm rounded-xl hover:bg-brand-indigo-hover transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.04)]">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-12 py-xl grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<header class="col-span-full mb-lg">
+<h1 class="font-h1 text-h1 text-on-background mb-xs">Welcome back, Alex.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Here is an overview of your scholarship journey.</p>
+</header>
+<!-- Stats Overview Bento Grid -->
+<section class="col-span-full lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<!-- In Progress Stat -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">In Progress</span>
+<span class="material-symbols-outlined text-brand-indigo" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+</div>
+<div class="font-h2 text-h2 text-on-background">4</div>
+</div>
+<!-- Submitted Stat -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Submitted</span>
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">send</span>
+</div>
+<div class="font-h2 text-h2 text-on-background">12</div>
+</div>
+<!-- Awards Won Stat -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-brand-success/10 rounded-full -mr-8 -mt-8 blur-xl"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Awards Won</span>
+<span class="material-symbols-outlined text-brand-success" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="font-h2 text-h2 text-on-background relative z-10">2</div>
+</div>
+</section>
+<!-- Right Column / Profile Snapshot -->
+<aside class="col-span-full lg:col-span-4 mb-lg flex flex-col gap-md">
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Profile Completeness</h3>
+<div class="w-full h-[4px] bg-secondary-fixed rounded-none mb-sm">
+<div class="h-full bg-brand-indigo w-[85%] rounded-none"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your profile is 85% complete. Add your latest transcripts to unlock more matches.</p>
+<button class="mt-md font-button text-button text-on-background w-full py-sm border-[1.5px] border-brand-border rounded-xl hover:bg-brand-indigo-ghost transition-colors">Update Profile</button>
+</div>
+</aside>
+<!-- Recent Activity Section -->
+<section class="col-span-full lg:col-span-8">
+<h2 class="font-h2 text-h2 text-on-background mb-md">Recent Activity</h2>
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
+<!-- Activity Item 1 -->
+<div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface transition-colors group cursor-pointer">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-brand-success/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-success" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-background font-medium mb-xs">National STEM Merit Scholarship</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Submitted on Oct 12, 2024</p>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-brand-success/10 text-brand-success font-label-caps text-label-caps border border-brand-success/20">AWARDED</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface transition-colors group cursor-pointer">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-brand-indigo/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-indigo" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-background font-medium mb-xs">Global Leaders Initiative</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Draft saved 2 days ago</p>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-brand-indigo/10 text-brand-indigo font-label-caps text-label-caps border border-brand-indigo/20">IN PROGRESS</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center justify-between p-md hover:bg-surface transition-colors group cursor-pointer">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-outline-variant/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-background font-medium mb-xs">Arts &amp; Humanities Trust Fund</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Submitted on Sep 28, 2024</p>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps border border-outline-variant">SUBMITTED</span>
+</div>
+</div>
+<button class="mt-md font-button text-button text-brand-indigo hover:text-brand-indigo-hover flex items-center gap-xs transition-colors">
+                View all applications <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</section>
+<!-- Recommendations Section -->
+<section class="col-span-full lg:col-span-4 flex flex-col gap-md">
+<h2 class="font-h2 text-h2 text-on-background">Recommended for You</h2>
+<!-- Rec Card 1 -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-brand-indigo/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="flex flex-wrap gap-xs mb-sm relative z-10">
+<span class="px-sm py-xs rounded-full bg-brand-chip-bg text-on-surface font-label-caps text-label-caps">FULL RIDE</span>
+<span class="px-sm py-xs rounded-full bg-brand-chip-bg text-on-surface font-label-caps text-label-caps">TECH</span>
+</div>
+<h4 class="font-body-lg text-body-lg text-on-background font-medium mb-xs relative z-10">Future Tech Innovators Grant</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md relative z-10">For undergraduates pursuing computer science with a focus on AI ethics.</p>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">event</span> Due Nov 15</span>
+<button class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-indigo hover:border-brand-indigo hover:text-on-primary transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- Rec Card 2 -->
+<div class="bg-surface-container-lowest border border-brand-border rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-brand-indigo/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="flex flex-wrap gap-xs mb-sm relative z-10">
+<span class="px-sm py-xs rounded-full bg-brand-chip-bg text-on-surface font-label-caps text-label-caps">$10,000</span>
+<span class="px-sm py-xs rounded-full bg-brand-chip-bg text-on-surface font-label-caps text-label-caps">LEADERSHIP</span>
+</div>
+<h4 class="font-body-lg text-body-lg text-on-background font-medium mb-xs relative z-10">Civic Leadership Endowment</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md relative z-10">Recognizing outstanding community service and local government initiatives.</p>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">event</span> Due Dec 01</span>
+<button class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-indigo hover:border-brand-indigo hover:text-on-primary transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 full-width border-t border-slate-200 dark:border-slate-800 flat no-shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-12 max-w-[1200px] mx-auto">
+<div class="mb-md md:mb-0 text-center md:text-left">
+<span class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-xs block cursor-default">Scholar Career</span>
+<p class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 cursor-default">© 2024 Scholar Career. Built for high-stakes milestones.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Terms</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Help Center</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Accessibility</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
