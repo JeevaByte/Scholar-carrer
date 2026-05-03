@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "prebuild": "npm run build -w @scholar-career/shared",
-    "build": "tsc -p tsconfig.json && npm run compile-api-handler",
-    "compile-api-handler": "npx tsc api/[...all].ts --outDir .temp --skipLibCheck && mv .temp/[...all].js api/[...all].js && rmdir .temp",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "test": "vitest run",
     "lint": "echo 'api lint placeholder'",
