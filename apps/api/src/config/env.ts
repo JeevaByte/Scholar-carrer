@@ -6,8 +6,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Support running from either monorepo root or apps/api directly.
-dotenv.config({ path: path.resolve(__dirname, "../../.env") });
-dotenv.config({ path: path.resolve(__dirname, "../../../../.env") });
+// Wrap in try-catch to handle missing files gracefully in serverless environments
+try {
+  dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+  dotenv.config({ path: path.resolve(__dirname, "../../../../.env") });
+} catch {
+  // Silently fail - environment variables should be set in the deployment environment
+}
 
 type DataSource = "mock" | "supabase" | "postgres";
 
