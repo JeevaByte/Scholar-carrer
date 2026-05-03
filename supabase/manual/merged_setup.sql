@@ -28,12 +28,6 @@ create table if not exists opportunities (
   tags text[] not null default '{}'
 );
 
-create table if not exists opportunity_tags (
-  id bigserial primary key,
-  opportunity_id uuid not null references opportunities(id) on delete cascade,
-  tag text not null
-);
-
 create table if not exists saved_opportunities (
   id bigserial primary key,
   user_id uuid not null references profiles(id) on delete cascade,
@@ -71,7 +65,6 @@ alter table if exists opportunities
 
 alter table profiles enable row level security;
 alter table opportunities enable row level security;
-alter table opportunity_tags enable row level security;
 alter table saved_opportunities enable row level security;
 alter table applications enable row level security;
 alter table activity_feed enable row level security;
@@ -92,19 +85,37 @@ create policy "applications_select_own" on applications for select using (auth.u
 drop policy if exists "applications_insert_own" on applications;
 create policy "applications_insert_own" on applications for insert with check (auth.uid() = user_id);
 
+drop policy if exists "applications_update_own" on applications;
+create policy "applications_update_own" on applications for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+drop policy if exists "saved_delete_own" on saved_opportunities;
+create policy "saved_delete_own" on saved_opportunities for delete using (auth.uid() = user_id);
+
+drop policy if exists "activity_feed_select_own" on activity_feed;
+create policy "activity_feed_select_own" on activity_feed for select using (auth.uid() = user_id);
+
+drop policy if exists "activity_feed_insert_own" on activity_feed;
+create policy "activity_feed_insert_own" on activity_feed for insert with check (auth.uid() = user_id);
+
+drop policy if exists "profiles_insert_own" on profiles;
+create policy "profiles_insert_own" on profiles for insert with check (auth.uid() = id);
+
+drop policy if exists "profiles_update_own" on profiles;
+create policy "profiles_update_own" on profiles for update using (auth.uid() = id) with check (auth.uid() = id);
+
 drop policy if exists "opportunities_select_all" on opportunities;
 create policy "opportunities_select_all" on opportunities for select using (true);
-
-drop policy if exists "opportunity_tags_select_all" on opportunity_tags;
-create policy "opportunity_tags_select_all" on opportunity_tags for select using (true);
 
 drop policy if exists "todos_select_all" on todos;
 create policy "todos_select_all" on todos for select using (true);
 
 grant usage on schema public to anon, authenticated;
 grant select on table opportunities to anon, authenticated;
-grant select on table opportunity_tags to anon, authenticated;
 grant select on table todos to anon, authenticated;
+grant select, insert, update, delete on table profiles to authenticated;
+grant select, insert, update, delete on table saved_opportunities to authenticated;
+grant select, insert, update, delete on table applications to authenticated;
+grant select, insert, update, delete on table activity_feed to authenticated;
 
 insert into profiles (id, full_name, email, nationality, education_level, profile_completion)
 values ('00000000-0000-0000-0000-000000000001', 'Demo User', 'demo@scholarcareer.app', 'Global', 'undergraduate', 85)
