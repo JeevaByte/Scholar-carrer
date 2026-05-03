@@ -38,6 +38,21 @@ app.use((req, _res, next) => {
     req.repo = repo;
     next();
 });
+app.get("/", (_req, res) => {
+    res.json({
+        service: "Scholar Career API",
+        status: "ok",
+        docs: "/docs",
+        health: "/health",
+        basePath: "/api/v1"
+    });
+});
+app.get("/favicon.ico", (_req, res) => {
+    res.status(204).end();
+});
+app.get("/favicon.png", (_req, res) => {
+    res.status(204).end();
+});
 app.get("/health", (_req, res) => {
     res.json({ status: "ok", dataSource: env.dataSource, usesDatabaseUrl: Boolean(env.databaseUrl) });
 });
