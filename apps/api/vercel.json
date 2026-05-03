@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build -w @scholar-career/api",
   "functions": {
     "api/[...all].ts": {
-      "maxDuration": 30,
-      "includeFiles": "dist/**"
+      "maxDuration": 30
     }
   },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/[...all].ts"
+      "dest": "/api/[...all]"
     }
   ]
 }
