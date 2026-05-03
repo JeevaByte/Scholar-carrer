@@ -1,0 +1,20 @@
+{
+  "name": "scholar-career-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces --include-workspace-root",
+    "dev": "npm run build -w @scholar-career/shared && (npm run dev -w @scholar-career/api & npm run dev -w @scholar-career/web)",
+    "build": "npm run build -w @scholar-career/shared && npm run build -w @scholar-career/api && npm run build -w @scholar-career/web",
+    "test": "npm run test -ws --if-present",
+    "lint": "npm run lint -ws --if-present",
+    "format": "npm run format -ws --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
