@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build -w @scholar-career/shared && npm run build -w @scholar-career/web",
+  "outputDirectory": "apps/web/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
