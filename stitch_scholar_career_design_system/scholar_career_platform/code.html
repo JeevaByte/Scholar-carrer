@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholar Career - Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary-container": "#1d1b1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-container": "#e1dfdf",
+                        "primary": "#000000",
+                        "surface-container": "#f1edec",
+                        "primary-container": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface": "#fdf8f8",
+                        "on-tertiary-container": "#868381",
+                        "surface-bright": "#fdf8f8",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#ddd9d8",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-surface": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5e5e5e",
+                        "inverse-surface": "#313030",
+                        "on-surface-variant": "#444748",
+                        "tertiary-fixed": "#e6e1df",
+                        "surface-container-low": "#f7f3f2",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary-container": "#858383",
+                        "outline": "#747878",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container-high": "#ebe7e6",
+                        "primary-fixed": "#e5e2e1",
+                        "background": "#fdf8f8",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-secondary-container": "#626262",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "xl": "80px",
+                        "gutter": "32px",
+                        "base": "8px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "button": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "button": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky top-0 z-50 w-full">
+<div class="flex items-center justify-between h-20 px-12 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-xl font-black text-slate-900 dark:text-slate-50" href="#">Scholar Career</a>
+<nav class="hidden md:flex gap-6">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer px-2 py-1 rounded" href="#">Opportunities</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer px-2 py-1 rounded" href="#">Dashboard</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer px-2 py-1 rounded" href="#">Mentors</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer px-2 py-1 rounded" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 border-1.5 border-outline-variant rounded-lg bg-surface focus:border-[#3D5AFE] focus:ring-2 focus:ring-[#3D5AFE]/20 transition-all font-body-sm text-on-surface" placeholder="Search..." type="text"/>
+</div>
+<button class="font-button text-button px-sm py-xs border-1.5 border-[#E8E6E1] text-[#333333] rounded-lg hover:bg-[#3D5AFE]/5 transition-colors">Sign In</button>
+<button class="font-button text-button px-sm py-xs bg-[#3D5AFE] text-white rounded-lg hover:bg-[#3249CC] transition-colors">Get Started</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-12 py-24 text-center">
+<h1 class="font-h1 text-h1 text-primary-container max-w-4xl mx-auto mb-6">Making High-Stakes Opportunities Visible and Equitable Globally.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Discover scholarships, fellowships, and career milestones curated for your unique journey. Designed for clarity, built for success.</p>
+<div class="flex justify-center gap-4">
+<button class="font-button text-button px-md py-sm bg-[#3D5AFE] text-white rounded-xl hover:bg-[#3249CC] transition-colors shadow-sm">Find Opportunities</button>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="border-y border-surface-variant bg-surface-container-lowest py-12">
+<div class="max-w-container-max mx-auto px-12">
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center mb-8 uppercase tracking-widest">Trusted by leading institutions</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale">
+<span class="font-h3 text-h3 text-primary-container font-black">University A</span>
+<span class="font-h3 text-h3 text-primary-container font-black">Foundation B</span>
+<span class="font-h3 text-h3 text-primary-container font-black">Global Corp</span>
+<span class="font-h3 text-h3 text-primary-container font-black">Institute X</span>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="max-w-container-max mx-auto px-12 py-24">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 text-primary-container mb-4">How it works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A streamlined path from discovery to achievement.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:border-[#3D5AFE]/30 transition-colors">
+<div class="w-12 h-12 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center mb-6 text-[#3D5AFE]">
+<span class="material-symbols-outlined">search</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary-container mb-3">Discover</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Smart matching algorithms surface high-value opportunities tailored to your academic and professional profile.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:border-[#3D5AFE]/30 transition-colors">
+<div class="w-12 h-12 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center mb-6 text-[#3D5AFE]">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary-container mb-3">Apply</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage applications with integrated timelines, document storage, and strategic guidance for each milestone.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:border-[#3D5AFE]/30 transition-colors">
+<div class="w-12 h-12 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center mb-6 text-[#3D5AFE]">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary-container mb-3">Succeed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Connect with mentors and alumni to secure funding, placements, and launch your high-impact career.</p>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="max-w-container-max mx-auto px-12 py-24">
+<div class="bg-surface-container border border-outline-variant rounded-xl p-lg flex flex-col md:flex-row gap-12 items-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<div class="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden bg-surface-dim">
+<img alt="Student Portrait" class="w-full h-full object-cover" data-alt="A highly detailed, professional portrait of a confident young student in a modern, bright academic setting. The lighting is soft and high-key, creating a pristine, light-mode aesthetic. They are smiling slightly, conveying success and calm focus. The background is a blurred, contemporary library with off-white tones and subtle structural elements, fitting a premium SaaS visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGOwOmwZA936ZzCDEzVBj-vhX7ZI_FNT8KcxZ14AU-R00jWMLhNmR4dXDZ2j99QFsAqAG5lZ54B981bI_OwevMRkQQcnyhrjH_T-qvaB7_ycRhJheNM3BeIASR1gvWjbsa3B6rZ_DpQepWBAMYfmkYtdwDxyIsDYF18x0ZKkCYWD3n5RtMU9CnXwJ9s7Oy1I4kcyNINMJl9Ic5hk3oWJgdf4Njr-59I_9xvA2YlvxxczmjP91YQH4uJ37VmVMHM--yGDOs1b8Pow4"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="material-symbols-outlined text-[#3D5AFE] text-4xl mb-4">format_quote</span>
+<p class="font-h3 text-h3 text-primary-container mb-6 italic">"Scholar Career completely transformed my approach to applying for fellowships. The curated list cut through the noise, and the application tracking kept me focused. I secured a full-ride opportunity I wouldn't have found otherwise."</p>
+<div class="flex items-center gap-4">
+<div>
+<p class="font-button text-button text-primary-container">Sarah Jenkins</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2024 Global Excellence Fellow</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-12 max-w-[1200px] mx-auto">
+<div class="mb-4 md:mb-0 text-center md:text-left">
+<p class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Scholar Career</p>
+<p class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400">© 2024 Scholar Career. Built for high-stakes milestones.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Terms</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Help Center</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Accessibility</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-default" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+</body></html>

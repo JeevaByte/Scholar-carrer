@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholar Career - Opportunity Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary-container": "#1d1b1a",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-primary": "#c8c6c5",
+                      "secondary-container": "#e1dfdf",
+                      "primary": "#000000",
+                      "surface-container": "#f1edec",
+                      "primary-container": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "surface": "#fdf8f8",
+                      "on-tertiary-container": "#868381",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-background": "#1c1b1b",
+                      "surface-dim": "#ddd9d8",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "secondary-fixed": "#e4e2e2",
+                      "on-surface": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "secondary": "#5e5e5e",
+                      "inverse-surface": "#313030",
+                      "on-surface-variant": "#444748",
+                      "tertiary-fixed": "#e6e1df",
+                      "surface-container-low": "#f7f3f2",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary-container": "#858383",
+                      "outline": "#747878",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#ebe7e6",
+                      "primary-fixed": "#e5e2e1",
+                      "background": "#fdf8f8",
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "on-secondary-container": "#626262",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "container-max": "1200px",
+                      "xl": "80px",
+                      "gutter": "32px",
+                      "base": "8px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "h2": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "button": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "15px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md font-['Inter'] antialiased">
+<!-- TopNavBar -->
+<nav class="bg-white dark:bg-slate-900 font-['Inter'] text-sm font-medium tracking-tight docked full-width top-0 z-50 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky">
+<div class="flex items-center justify-between h-20 px-12 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-md">
+<a class="text-xl font-black text-slate-900 dark:text-slate-50" href="#">Scholar Career</a>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer" href="#">Opportunities</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer" href="#">Mentors</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98] cursor-pointer" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="font-button text-button text-slate-500 hover:text-slate-900 bg-transparent px-sm py-base rounded-lg transition-colors">Sign In</button>
+<button class="font-button text-button bg-[#3D5AFE] text-white px-md py-sm rounded-xl hover:bg-indigo-700 transition-colors shadow-sm">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Main Layout -->
+<main class="max-w-[1200px] mx-auto px-12 py-xl">
+<!-- Search Header -->
+<div class="mb-xl max-w-3xl">
+<h1 class="font-h1 text-h1 text-on-background mb-base">Discover Opportunities</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md">Find scholarships, grants, and fellowships that match your high-stakes career goals.</p>
+<div class="relative group">
+<input class="block w-full px-md pt-6 pb-2 text-on-background bg-surface-container-lowest border-[1.5px] border-[#E8E6E1] rounded-xl focus:border-[#3D5AFE] focus:ring-0 focus:shadow-[0_0_0_2px_rgba(61,90,254,0.2)] transition-all peer" id="search" placeholder=" " type="text"/>
+<label class="absolute left-md top-4 text-on-surface-variant transition-all peer-focus:-translate-y-2 peer-focus:text-[#3D5AFE] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-body-md peer-placeholder-shown:font-body-md peer-focus:font-label-caps peer-focus:text-label-caps cursor-text" for="search">Search for scholarships...</label>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-lg">
+<div>
+<h3 class="font-h3 text-h3 text-on-background mb-sm border-b border-surface-variant pb-xs">Filters</h3>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Location</h4>
+<div class="space-y-xs">
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="rounded border-[#E8E6E1] text-[#3D5AFE] focus:ring-[#3D5AFE]" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-on-background">North America</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="rounded border-[#E8E6E1] text-[#3D5AFE] focus:ring-[#3D5AFE]" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-on-background">Europe</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer group">
+<input checked="" class="rounded border-[#E8E6E1] text-[#3D5AFE] focus:ring-[#3D5AFE]" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-[#3D5AFE] font-medium">Global / Online</span>
+</label>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Education Level</h4>
+<div class="flex flex-wrap gap-xs">
+<button class="px-sm py-xs rounded-full border-[1.5px] border-[#3D5AFE] bg-[#3D5AFE]/10 text-[#3D5AFE] font-body-sm text-body-sm transition-colors">Undergraduate</button>
+<button class="px-sm py-xs rounded-full border-[1.5px] border-[#E8E6E1] text-on-surface hover:bg-surface-container transition-colors font-body-sm text-body-sm">Graduate</button>
+<button class="px-sm py-xs rounded-full border-[1.5px] border-[#E8E6E1] text-on-surface hover:bg-surface-container transition-colors font-body-sm text-body-sm">PhD</button>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Award Amount</h4>
+<input class="w-full accent-[#3D5AFE]" type="range"/>
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>$0</span>
+<span>$50k+</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Grid -->
+<div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-xs mb-sm">
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">Full Ride</span>
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">STEM</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-[#3D5AFE] transition-colors">bookmark_border</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-background mb-xs group-hover:text-[#3D5AFE] transition-colors">Global Tech Innovators Fellowship</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Future Forward Foundation</p>
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-background">$50,000 / year</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-lg">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-sm text-body-sm">Deadline: Oct 15, 2024</span>
+</div>
+</div>
+<button class="w-full font-button text-button text-[#1c1b1b] border-[1.5px] border-[#E8E6E1] rounded-xl py-sm hover:bg-[#3D5AFE]/[0.02] hover:border-[#3D5AFE] hover:text-[#3D5AFE] transition-all">View Details</button>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-xs mb-sm">
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">Merit Based</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-[#3D5AFE] transition-colors">bookmark_border</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-background mb-xs group-hover:text-[#3D5AFE] transition-colors">Design Leadership Grant</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Creative Minds Institute</p>
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-background">$15,000 one-time</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-lg">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-sm text-body-sm">Deadline: Nov 01, 2024</span>
+</div>
+</div>
+<button class="w-full font-button text-button text-[#1c1b1b] border-[1.5px] border-[#E8E6E1] rounded-xl py-sm hover:bg-[#3D5AFE]/[0.02] hover:border-[#3D5AFE] hover:text-[#3D5AFE] transition-all">View Details</button>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-xs mb-sm">
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">Need Based</span>
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">Global</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-[#3D5AFE] transition-colors">bookmark_border</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-background mb-xs group-hover:text-[#3D5AFE] transition-colors">Emerging Leaders Scholarship</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">World Education Fund</p>
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-background">Tuition + Stipend</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-lg">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-sm text-body-sm">Deadline: Jan 15, 2025</span>
+</div>
+</div>
+<button class="w-full font-button text-button text-[#1c1b1b] border-[1.5px] border-[#E8E6E1] rounded-xl py-sm hover:bg-[#3D5AFE]/[0.02] hover:border-[#3D5AFE] hover:text-[#3D5AFE] transition-all">View Details</button>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-xs mb-sm">
+<span class="inline-block px-sm py-xs bg-[#F0EFEA] text-[#1c1b1b] rounded-full font-label-caps text-label-caps">Research</span>
+</div>
+<span class="material-symbols-outlined text-[#3D5AFE] cursor-pointer transition-colors" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-background mb-xs group-hover:text-[#3D5AFE] transition-colors">Quantum Computing Fellowship</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Advanced Sciences Corp</p>
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-background">$75,000 / year</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-lg">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-sm text-body-sm">Deadline: Feb 28, 2025</span>
+</div>
+</div>
+<button class="w-full font-button text-button text-[#1c1b1b] border-[1.5px] border-[#E8E6E1] rounded-xl py-sm hover:bg-[#3D5AFE]/[0.02] hover:border-[#3D5AFE] hover:text-[#3D5AFE] transition-all">View Details</button>
+</article>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 font-['Inter'] text-xs text-slate-500 dark:text-slate-400 full-width border-t border-slate-200 dark:border-slate-800 flat no-shadows cursor-default mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-12 max-w-[1200px] mx-auto gap-md md:gap-0">
+<div class="text-lg font-bold text-slate-800 dark:text-slate-200">
+                Scholar Career
+            </div>
+<div class="flex flex-wrap justify-center gap-sm md:gap-md">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Help Center</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Accessibility</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Contact</a>
+</div>
+<div>
+                © 2024 Scholar Career. Built for high-stakes milestones.
+            </div>
+</div>
+</footer>
+</body></html>

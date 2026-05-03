@@ -9,12 +9,14 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 dotenv.config({ path: path.resolve(__dirname, "../../../../.env") });
 
-type DataSource = "mock" | "supabase";
+type DataSource = "mock" | "supabase" | "postgres";
 
 export const env = {
   nodeEnv: process.env.NODE_ENV ?? "development",
   port: Number(process.env.API_PORT ?? 4000),
   dataSource: (process.env.DATA_SOURCE as DataSource) ?? "mock",
+  databaseUrl: process.env.DATABASE_URL ?? "",
+  databaseSslMode: process.env.PGSSLMODE ?? "require",
   supabaseUrl: process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.VITE_SUPABASE_URL ?? "",
   supabaseAnonKey:
     process.env.SUPABASE_ANON_KEY ??

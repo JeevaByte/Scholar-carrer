@@ -1,0 +1,2553 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholar Career — Complete Prototype</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+/* =====================================================================
+   SINGLE SOURCE OF TRUTH — matches DESIGN.md exactly.
+   This config is shared by every screen below; no per-screen overrides.
+   ===================================================================== */
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        /* Surface */
+        "surface": "#fdf8f8",
+        "surface-dim": "#ddd9d8",
+        "surface-bright": "#fdf8f8",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f7f3f2",
+        "surface-container": "#f1edec",
+        "surface-container-high": "#ebe7e6",
+        "surface-container-highest": "#e5e2e1",
+        "on-surface": "#1c1b1b",
+        "on-surface-variant": "#444748",
+        "inverse-surface": "#313030",
+        "inverse-on-surface": "#f4f0ef",
+        "outline": "#747878",
+        "outline-variant": "#c4c7c7",
+        "surface-tint": "#5f5e5e",
+        "surface-variant": "#e5e2e1",
+        /* Primary / Secondary / Tertiary */
+        "primary": "#000000",
+        "on-primary": "#ffffff",
+        "primary-container": "#1c1b1b",
+        "on-primary-container": "#858383",
+        "inverse-primary": "#c8c6c5",
+        "secondary": "#5e5e5e",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#e1dfdf",
+        "on-secondary-container": "#626262",
+        "tertiary": "#000000",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#1d1b1a",
+        "on-tertiary-container": "#868381",
+        "background": "#fdf8f8",
+        "on-background": "#1c1b1b",
+        /* Semantic */
+        "error": "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+        /* Brand accent + helpers — formalized into the system */
+        "brand": "#3D5AFE",
+        "brand-hover": "#3249CC",
+        "brand-tint-2": "rgba(61,90,254,0.02)",
+        "brand-tint-5": "rgba(61,90,254,0.05)",
+        "brand-tint-10": "rgba(61,90,254,0.10)",
+        "brand-border": "#E8E6E1",
+        "brand-chip-bg": "#F0EFEA",
+        "success": "#4F8A4A",
+        "success-tint": "rgba(79,138,74,0.10)",
+        "warning": "#B86E1F",
+        "warning-tint": "rgba(184,110,31,0.10)"
+      },
+      /* DESIGN.md radii — single source of truth */
+      borderRadius: {
+        "sm": "0.25rem",       /* 4px  */
+        "DEFAULT": "0.5rem",   /* 8px  */
+        "md": "0.75rem",       /* 12px */
+        "lg": "1rem",          /* 16px */
+        "xl": "1.5rem",        /* 24px */
+        "full": "9999px"
+      },
+      /* DESIGN.md spacing — 8px grid */
+      spacing: {
+        "xs": "4px",
+        "base": "8px",
+        "sm": "12px",
+        "md": "24px",
+        "gutter": "32px",
+        "lg": "48px",
+        "xl": "80px",
+        "container-max": "1200px"
+      },
+      fontFamily: {
+        "sans": ["Inter", "system-ui", "sans-serif"]
+      },
+      fontSize: {
+        "h1":         ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+        "h2":         ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "h3":         ["24px", { lineHeight: "1.4", letterSpacing: "0",       fontWeight: "600" }],
+        "body-lg":    ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-md":    ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-sm":    ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+        "label-caps": ["12px", { lineHeight: "1",   letterSpacing: "0.1em",   fontWeight: "600" }],
+        "button":     ["15px", { lineHeight: "1",   fontWeight: "600" }]
+      },
+      boxShadow: {
+        "ambient": "0 4px 20px rgba(0,0,0,0.04)",
+        "ambient-lift": "0 8px 30px rgba(0,0,0,0.08)",
+        "focus-ring": "0 0 0 2px rgba(61,90,254,0.2)"
+      }
+    }
+  }
+};
+</script>
+<style>
+  body { font-family: "Inter", system-ui, sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .icon-fill { font-variation-settings: 'FILL' 1; }
+
+  /* Page navigation pill at the top of the prototype */
+  .screen-anchor { scroll-margin-top: 96px; }
+  .screen-divider {
+    background: repeating-linear-gradient(
+      135deg,
+      #ebe7e6 0 8px,
+      transparent 8px 16px
+    );
+  }
+
+  /* Stepper line */
+  .step-line { background: linear-gradient(to right, #3D5AFE 0%, #3D5AFE var(--p,0%), #E8E6E1 var(--p,0%), #E8E6E1 100%); }
+
+  /* Floating label baseline */
+  .float-input:focus + .float-label,
+  .float-input:not(:placeholder-shown) + .float-label {
+    transform: translateY(-10px) scale(0.85);
+    color: #3D5AFE;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+  .float-label {
+    transform-origin: left top;
+    transition: all 200ms ease;
+    pointer-events: none;
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+
+<!-- ====================================================================
+     PROTOTYPE NAVIGATOR — internal jump menu (not part of the product)
+     ==================================================================== -->
+<div class="bg-inverse-surface text-inverse-on-surface text-body-sm sticky top-0 z-[100]">
+  <div class="max-w-[1200px] mx-auto px-12 py-base flex items-center gap-md flex-wrap">
+    <span class="font-button text-button">Prototype navigator →</span>
+    <a href="#screen-landing"   class="hover:text-white">Landing</a>
+    <a href="#screen-signup"    class="hover:text-white">Sign Up</a>
+    <a href="#screen-academic"  class="hover:text-white">Academic Info</a>
+    <a href="#screen-eligibility" class="hover:text-white">Eligibility</a>
+    <a href="#screen-profile"   class="hover:text-white">Profile Builder</a>
+    <a href="#screen-foryou"    class="hover:text-white">For You</a>
+    <a href="#screen-browse"    class="hover:text-white">Browse All</a>
+    <a href="#screen-saved"     class="hover:text-white">Saved</a>
+    <a href="#screen-detail"    class="hover:text-white">Scholarship Detail</a>
+    <a href="#screen-unis"      class="hover:text-white">Universities</a>
+    <a href="#screen-career"    class="hover:text-white">Salary & Career</a>
+    <a href="#screen-dashboard" class="hover:text-white">Dashboard</a>
+  </div>
+</div>
+
+<!-- ====================================================================
+     REUSABLE NAVBAR (rendered once per screen, identical structure)
+     "For You" and "Browse All" are now first-class nav tabs.
+     ==================================================================== -->
+<template id="tpl-navbar">
+  <header class="bg-surface-container-lowest border-b border-brand-border shadow-ambient sticky top-[40px] z-50">
+    <div class="max-w-[1200px] mx-auto px-12 h-20 flex items-center justify-between gap-md">
+      <a href="#screen-landing" class="flex items-center gap-2 text-xl font-bold text-on-background tracking-tight">
+        <span class="material-symbols-outlined icon-fill text-brand">school</span>
+        Scholar Career
+      </a>
+      <nav class="hidden md:flex items-center gap-gutter h-full text-body-sm font-medium">
+        <a data-nav="foryou"    class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-foryou">For You</a>
+        <a data-nav="browse"    class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-browse">Browse All</a>
+        <a data-nav="unis"      class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-unis">Universities</a>
+        <a data-nav="career"    class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-career">Salary &amp; Career</a>
+        <a data-nav="saved"     class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-saved">Saved</a>
+        <a data-nav="dashboard" class="h-full flex items-center text-on-surface-variant hover:text-on-background transition-colors" href="#screen-dashboard">Dashboard</a>
+      </nav>
+      <div class="flex items-center gap-sm">
+        <button class="relative w-10 h-10 rounded-md hover:bg-surface-container transition-colors flex items-center justify-center" aria-label="Notifications">
+          <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand"></span>
+        </button>
+        <button data-action="signin" class="font-button text-button px-md py-sm border-[1.5px] border-brand-border text-on-background rounded-md hover:bg-brand-tint-2 transition-colors">Sign In</button>
+        <button data-action="getstarted" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover transition-colors shadow-ambient">Get Started</button>
+      </div>
+    </div>
+  </header>
+</template>
+
+<!-- ====================================================================
+     REUSABLE FOOTER
+     ==================================================================== -->
+<template id="tpl-footer">
+  <footer class="bg-surface-container-low border-t border-brand-border mt-xl">
+    <div class="max-w-[1200px] mx-auto px-12 py-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div>
+        <div class="flex items-center gap-2 text-lg font-bold text-on-background mb-sm">
+          <span class="material-symbols-outlined icon-fill text-brand">school</span>
+          Scholar Career
+        </div>
+        <p class="text-body-sm text-on-surface-variant max-w-xs">Making high-stakes opportunities visible and equitable globally.</p>
+      </div>
+      <div>
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Product</p>
+        <ul class="space-y-base text-body-sm text-on-surface-variant">
+          <li><a class="hover:text-on-background" href="#screen-foryou">For You</a></li>
+          <li><a class="hover:text-on-background" href="#screen-browse">Browse All</a></li>
+          <li><a class="hover:text-on-background" href="#screen-unis">Universities</a></li>
+          <li><a class="hover:text-on-background" href="#screen-career">Salary &amp; Career</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Company</p>
+        <ul class="space-y-base text-body-sm text-on-surface-variant">
+          <li><a class="hover:text-on-background" href="#">About</a></li>
+          <li><a class="hover:text-on-background" href="#">Mentors</a></li>
+          <li><a class="hover:text-on-background" href="#">Resources</a></li>
+          <li><a class="hover:text-on-background" href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Stay informed</p>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Weekly digest of new opportunities matched to your profile.</p>
+        <form class="flex gap-base" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="you@email.com" class="flex-1 px-sm py-sm border-[1.5px] border-brand-border rounded-md text-body-sm focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+          <button class="bg-brand text-on-primary px-sm py-sm rounded-md font-button text-button hover:bg-brand-hover">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-brand-border">
+      <div class="max-w-[1200px] mx-auto px-12 py-md flex flex-col md:flex-row justify-between items-center gap-sm text-body-sm text-on-surface-variant">
+        <p>© 2026 Scholar Career. Built for high-stakes milestones.</p>
+        <div class="flex gap-md">
+          <a class="hover:text-on-background" href="#">Privacy</a>
+          <a class="hover:text-on-background" href="#">Terms</a>
+          <a class="hover:text-on-background" href="#">Help Center</a>
+          <a class="hover:text-on-background" href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<!-- =====================================================================
+     SCREEN 1 · LANDING PAGE  (fixes: dual CTA, real-feeling partner logos,
+     numbered "How it works", testimonial sized down + avatar restored)
+     ===================================================================== -->
+<section id="screen-landing" class="screen-anchor">
+  <div data-navbar></div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <!-- Atmospheric backdrop: subtle grid + glow -->
+    <div class="absolute inset-0 -z-10" aria-hidden="true">
+      <div class="absolute inset-0 opacity-[0.04]"
+           style="background-image: linear-gradient(#1c1b1b 1px, transparent 1px), linear-gradient(90deg, #1c1b1b 1px, transparent 1px); background-size: 64px 64px;"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-brand opacity-[0.06] blur-3xl"></div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-12 py-xl text-center">
+      <span class="inline-flex items-center gap-base px-md py-base rounded-full bg-surface-container-lowest border border-brand-border text-label-caps text-on-surface-variant mb-md">
+        <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+        TRUSTED BY 12,400+ SCHOLARS THIS YEAR
+      </span>
+      <h1 class="text-h1 text-on-background max-w-4xl mx-auto mb-md">
+        Making high-stakes opportunities <span class="text-brand">visible and equitable</span> globally.
+      </h1>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-lg">
+        Discover scholarships, fellowships, universities, and career milestones curated for your unique journey. Designed for clarity, built for success.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-sm">
+        <a href="#screen-signup" class="inline-flex items-center justify-center gap-base font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover transition-colors shadow-ambient">
+          Build my profile
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        <a href="#screen-browse" class="inline-flex items-center justify-center gap-base font-button text-button px-md py-sm border-[1.5px] border-brand-border text-on-background rounded-md hover:bg-brand-tint-2 transition-colors">
+          <span class="material-symbols-outlined text-[18px]">play_circle</span>
+          See how it works
+        </a>
+      </div>
+      <p class="text-body-sm text-on-surface-variant mt-sm">Free forever for students · No credit card required</p>
+    </div>
+  </section>
+
+  <!-- Trust strip — replaces text placeholders with credible logo-lockups -->
+  <section class="border-y border-brand-border bg-surface-container-lowest py-md">
+    <div class="max-w-[1200px] mx-auto px-12">
+      <p class="text-label-caps uppercase text-on-surface-variant text-center mb-md">Partnered with leading institutions</p>
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-md items-center opacity-80">
+        <!-- Each lockup uses an icon + custom serif/strong type to read as a real brand -->
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">account_balance</span>
+          <span class="font-bold text-on-surface tracking-tight">Cambridge Trust</span>
+        </div>
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">public</span>
+          <span class="font-bold text-on-surface tracking-tight">Open Society</span>
+        </div>
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">science</span>
+          <span class="font-bold text-on-surface tracking-tight">Howard Hughes</span>
+        </div>
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">workspace_premium</span>
+          <span class="font-bold text-on-surface tracking-tight">Rhodes House</span>
+        </div>
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">corporate_fare</span>
+          <span class="font-bold text-on-surface tracking-tight">Knight-Hennessy</span>
+        </div>
+        <div class="flex items-center gap-base justify-center">
+          <span class="material-symbols-outlined text-[28px] text-on-surface-variant">hub</span>
+          <span class="font-bold text-on-surface tracking-tight">Schwarzman</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works — numbered, with stronger visual hierarchy -->
+  <section class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="text-center mb-lg">
+      <p class="text-label-caps uppercase text-brand mb-sm">How it works</p>
+      <h2 class="text-h2 text-on-background mb-sm">A streamlined path from discovery to achievement.</h2>
+      <p class="text-body-md text-on-surface-variant max-w-xl mx-auto">Four steps. One unified platform. Built around your goals, not the funder's bureaucracy.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+      <!-- Step 1 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow">
+        <div class="flex items-center justify-between mb-md">
+          <span class="text-label-caps uppercase text-on-surface-variant">Step 01</span>
+          <span class="material-symbols-outlined text-brand">person_add</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Build profile</h3>
+        <p class="text-body-md text-on-surface-variant">Tell us about your academics, goals, salary expectations, and mobility preferences.</p>
+      </article>
+      <!-- Step 2 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow">
+        <div class="flex items-center justify-between mb-md">
+          <span class="text-label-caps uppercase text-on-surface-variant">Step 02</span>
+          <span class="material-symbols-outlined text-brand">search</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Get matched</h3>
+        <p class="text-body-md text-on-surface-variant">Our matching engine surfaces the highest-fit scholarships, fellowships, and universities.</p>
+      </article>
+      <!-- Step 3 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow">
+        <div class="flex items-center justify-between mb-md">
+          <span class="text-label-caps uppercase text-on-surface-variant">Step 03</span>
+          <span class="material-symbols-outlined text-brand">description</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Apply confidently</h3>
+        <p class="text-body-md text-on-surface-variant">Manage applications with timelines, document storage, and milestone guidance.</p>
+      </article>
+      <!-- Step 4 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow">
+        <div class="flex items-center justify-between mb-md">
+          <span class="text-label-caps uppercase text-on-surface-variant">Step 04</span>
+          <span class="material-symbols-outlined text-brand">emoji_events</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Launch career</h3>
+        <p class="text-body-md text-on-surface-variant">Connect with mentors, secure funding, and align your milestones with target salary outcomes.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Outcomes strip -->
+  <section class="max-w-[1200px] mx-auto px-12 pb-xl">
+    <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md grid grid-cols-2 md:grid-cols-4 gap-md text-center">
+      <div>
+        <p class="text-h2 text-on-background">$48M+</p>
+        <p class="text-body-sm text-on-surface-variant">Awards secured by Scholar Career members</p>
+      </div>
+      <div>
+        <p class="text-h2 text-on-background">94%</p>
+        <p class="text-body-sm text-on-surface-variant">Of users find a match in their first session</p>
+      </div>
+      <div>
+        <p class="text-h2 text-on-background">62</p>
+        <p class="text-body-sm text-on-surface-variant">Countries represented in our network</p>
+      </div>
+      <div>
+        <p class="text-h2 text-on-background">3.2x</p>
+        <p class="text-body-sm text-on-surface-variant">Higher application success rate vs. solo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial — sized down, avatar restored -->
+  <section class="max-w-[1200px] mx-auto px-12 pb-xl">
+    <div class="bg-surface-container border border-brand-border rounded-lg p-md md:p-lg flex flex-col md:flex-row gap-md items-center shadow-ambient">
+      <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-surface-dim flex-shrink-0 ring-4 ring-surface-container-lowest">
+        <!-- SVG avatar so the testimonial never breaks -->
+        <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="avgrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f1edec"/>
+              <stop offset="100%" stop-color="#ddd9d8"/>
+            </linearGradient>
+          </defs>
+          <rect width="160" height="160" fill="url(#avgrad)"/>
+          <circle cx="80" cy="62" r="26" fill="#c4c7c7"/>
+          <path d="M30 160 C 30 110, 130 110, 130 160 Z" fill="#c4c7c7"/>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <span class="material-symbols-outlined text-brand text-h2">format_quote</span>
+        <p class="text-body-lg text-on-background mt-base mb-md">
+          Scholar Career completely transformed how I approached fellowships. The matching surfaced opportunities I'd never have found on my own, and the application timeline kept me focused. I secured a full-ride I genuinely didn't think was possible.
+        </p>
+        <div class="flex items-center gap-sm">
+          <div>
+            <p class="font-button text-button text-on-background">Sarah Jenkins</p>
+            <p class="text-body-sm text-on-surface-variant">2025 Global Excellence Fellow · MIT</p>
+          </div>
+          <div class="ml-auto flex gap-base">
+            <button class="w-9 h-9 rounded-full border border-brand-border flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest"><span class="material-symbols-outlined text-[18px]">arrow_back</span></button>
+            <button class="w-9 h-9 rounded-full border border-brand-border flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 2 · SIGN UP — multi-step with preferences
+     (mobility · salary expectation · career goal · education · transition)
+     ===================================================================== -->
+<section id="screen-signup" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Left: progress + context -->
+      <aside class="lg:col-span-4">
+        <p class="text-label-caps uppercase text-brand mb-sm">Get started · 3 minutes</p>
+        <h1 class="text-h1 text-on-background mb-md">Tell us who you are.</h1>
+        <p class="text-body-md text-on-surface-variant mb-lg">The better we understand your goals, the sharper our matches. Your answers shape every recommendation across the platform.</p>
+
+        <!-- Stepper -->
+        <ol class="space-y-md">
+          <li class="flex gap-sm items-start">
+            <span class="w-8 h-8 rounded-full bg-brand text-on-primary flex items-center justify-center text-button">1</span>
+            <div>
+              <p class="font-button text-button text-on-background">Account basics</p>
+              <p class="text-body-sm text-on-surface-variant">Name, email, password</p>
+            </div>
+          </li>
+          <li class="flex gap-sm items-start">
+            <span class="w-8 h-8 rounded-full bg-brand text-on-primary flex items-center justify-center text-button">2</span>
+            <div>
+              <p class="font-button text-button text-on-background">Academic info</p>
+              <p class="text-body-sm text-on-surface-variant">Where you study and your scores</p>
+            </div>
+          </li>
+          <li class="flex gap-sm items-start">
+            <span class="w-8 h-8 rounded-full bg-brand text-on-primary flex items-center justify-center text-button">3</span>
+            <div>
+              <p class="font-button text-button text-on-background">Eligibility profile</p>
+              <p class="text-body-sm text-on-surface-variant">Nationality, residency, citizenship</p>
+            </div>
+          </li>
+          <li class="flex gap-sm items-start">
+            <span class="w-8 h-8 rounded-full bg-brand text-on-primary flex items-center justify-center text-button">4</span>
+            <div>
+              <p class="font-button text-button text-on-background">Preferences &amp; goals</p>
+              <p class="text-body-sm text-on-surface-variant">Mobility, salary, career direction</p>
+            </div>
+          </li>
+          <li class="flex gap-sm items-start">
+            <span class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-button">5</span>
+            <div>
+              <p class="font-button text-button text-on-surface-variant">Build full profile</p>
+              <p class="text-body-sm text-on-surface-variant">Optional · do this anytime</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
+
+      <!-- Right: the actual sign-up card showing step 2 (preferences) — the most important step -->
+      <div class="lg:col-span-8">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+
+          <!-- Step indicator bar -->
+          <div class="flex items-center gap-sm mb-md">
+            <span class="text-label-caps uppercase text-on-surface-variant">Step 4 of 4</span>
+            <div class="flex-1 h-1 rounded-full bg-brand-border step-line" style="--p:100%"></div>
+            <span class="text-body-sm text-on-surface-variant">Preferences &amp; goals</span>
+          </div>
+
+          <h2 class="text-h2 text-on-background mb-base">What kind of opportunities do you want?</h2>
+          <p class="text-body-md text-on-surface-variant mb-md">Final step. These shape every recommendation across the platform.</p>
+
+          <!-- Quick context: previous selections summary -->
+          <div class="mb-md p-md rounded-md bg-surface-container-low border border-brand-border flex items-start gap-sm">
+            <span class="material-symbols-outlined text-brand text-[20px] mt-0.5">check_circle</span>
+            <div class="text-body-sm text-on-surface-variant">
+              <span class="text-on-background font-medium">India · Stanford University · CGPA 3.8 · International student</span><br>
+              From your earlier steps. <a href="#screen-academic" class="text-brand hover:underline">Edit academic</a> · <a href="#screen-eligibility" class="text-brand hover:underline">Edit eligibility</a>
+            </div>
+          </div>
+
+          <!-- Mobility -->
+          <fieldset class="mb-lg">
+            <legend class="text-label-caps uppercase text-on-surface-variant mb-sm">Where do you want to study or work?</legend>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-base">
+              <label class="cursor-pointer">
+                <input type="radio" name="mobility" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-md hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors">
+                  <span class="material-symbols-outlined text-brand mb-sm">home</span>
+                  <p class="font-button text-button text-on-background mb-base">Local only</p>
+                  <p class="text-body-sm text-on-surface-variant">Stay in my country / region</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="mobility" class="peer sr-only" checked/>
+                <div class="border-[1.5px] border-brand rounded-md p-md bg-brand-tint-5 transition-colors">
+                  <span class="material-symbols-outlined text-brand mb-sm">public</span>
+                  <p class="font-button text-button text-on-background mb-base">International</p>
+                  <p class="text-body-sm text-on-surface-variant">Open to studying abroad</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="mobility" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-md hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors">
+                  <span class="material-symbols-outlined text-brand mb-sm">all_inclusive</span>
+                  <p class="font-button text-button text-on-background mb-base">Both / open</p>
+                  <p class="text-body-sm text-on-surface-variant">Show me everything that fits</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Education level -->
+          <fieldset class="mb-lg">
+            <legend class="text-label-caps uppercase text-on-surface-variant mb-sm">Current education level</legend>
+            <div class="flex flex-wrap gap-base">
+              <label class="cursor-pointer">
+                <input type="radio" name="edulevel" class="peer sr-only"/>
+                <span class="inline-block px-md py-sm border-[1.5px] border-brand-border rounded-full text-body-sm text-on-surface peer-checked:border-brand peer-checked:bg-brand-tint-10 peer-checked:text-brand transition-colors">High school</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="edulevel" class="peer sr-only" checked/>
+                <span class="inline-block px-md py-sm border-[1.5px] border-brand bg-brand-tint-10 text-brand rounded-full text-body-sm transition-colors">Undergraduate</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="edulevel" class="peer sr-only"/>
+                <span class="inline-block px-md py-sm border-[1.5px] border-brand-border rounded-full text-body-sm text-on-surface peer-checked:border-brand peer-checked:bg-brand-tint-10 peer-checked:text-brand transition-colors">Graduate / Masters</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="edulevel" class="peer sr-only"/>
+                <span class="inline-block px-md py-sm border-[1.5px] border-brand-border rounded-full text-body-sm text-on-surface peer-checked:border-brand peer-checked:bg-brand-tint-10 peer-checked:text-brand transition-colors">PhD / Research</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="edulevel" class="peer sr-only"/>
+                <span class="inline-block px-md py-sm border-[1.5px] border-brand-border rounded-full text-body-sm text-on-surface peer-checked:border-brand peer-checked:bg-brand-tint-10 peer-checked:text-brand transition-colors">Working professional</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Career transition flag -->
+          <fieldset class="mb-lg">
+            <legend class="text-label-caps uppercase text-on-surface-variant mb-sm">Are you planning a career transition?</legend>
+            <p class="text-body-sm text-on-surface-variant mb-base">We surface different funding sources for career-changers and bootcamp learners.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-base">
+              <label class="cursor-pointer">
+                <input type="radio" name="transition" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-sm hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors">
+                  <p class="font-button text-button text-on-background">No — staying in field</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="transition" class="peer sr-only" checked/>
+                <div class="border-[1.5px] border-brand rounded-md p-sm bg-brand-tint-5 transition-colors">
+                  <p class="font-button text-button text-on-background">Yes — changing fields</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="transition" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-sm hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors">
+                  <p class="font-button text-button text-on-background">Exploring options</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- What you want -->
+          <fieldset class="mb-lg">
+            <legend class="text-label-caps uppercase text-on-surface-variant mb-sm">What are you optimizing for?</legend>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-base">
+              <label class="flex items-center gap-sm cursor-pointer p-sm border-[1.5px] border-brand-border rounded-md hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-brand-tint-5">
+                <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand" checked/>
+                <span class="text-body-sm text-on-background">Better-paying career outcomes</span>
+              </label>
+              <label class="flex items-center gap-sm cursor-pointer p-sm border-[1.5px] border-brand-border rounded-md hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-brand-tint-5">
+                <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand" checked/>
+                <span class="text-body-sm text-on-background">Recommended education path</span>
+              </label>
+              <label class="flex items-center gap-sm cursor-pointer p-sm border-[1.5px] border-brand-border rounded-md hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-brand-tint-5">
+                <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>
+                <span class="text-body-sm text-on-background">Research opportunities</span>
+              </label>
+              <label class="flex items-center gap-sm cursor-pointer p-sm border-[1.5px] border-brand-border rounded-md hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-brand-tint-5">
+                <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>
+                <span class="text-body-sm text-on-background">Networking &amp; mentorship</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Nav buttons -->
+          <div class="flex justify-between items-center pt-md border-t border-brand-border">
+            <a href="#screen-eligibility" class="font-button text-button text-on-surface-variant hover:text-on-background flex items-center gap-base">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span> Back
+            </a>
+            <div class="flex items-center gap-sm">
+              <a href="#screen-foryou" class="font-button text-button text-on-surface-variant hover:text-on-background">Skip — show me matches</a>
+              <a href="#screen-profile" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover transition-colors flex items-center gap-base">
+                Finish &amp; build profile
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-body-sm text-on-surface-variant mt-md text-center">
+          Already have an account? <a href="#" class="text-brand font-medium">Sign in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 2.5 · ACADEMIC INFO  (Step 2 of onboarding)
+     Local vs International toggle drives conditional fields.
+     Mirrors the user's reference flow.
+     ===================================================================== -->
+<section id="screen-academic" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Left: progress + context -->
+      <aside class="lg:col-span-4">
+        <p class="text-label-caps uppercase text-brand mb-sm">Onboarding · Step 2 of 4</p>
+        <h1 class="text-h1 text-on-background mb-md">Tell us about your academics.</h1>
+        <p class="text-body-md text-on-surface-variant mb-lg">We use this to match you with scholarships you're <span class="font-medium text-on-background">actually eligible for</span>. Local and international students see different fields because the criteria differ.</p>
+
+        <div class="bg-brand-tint-5 border border-brand-tint-10 rounded-md p-md flex items-start gap-base">
+          <span class="material-symbols-outlined text-brand text-[20px]">info</span>
+          <p class="text-body-sm text-on-surface-variant">Switching between Local and International changes which fields apply. Your scores are saved either way.</p>
+        </div>
+      </aside>
+
+      <!-- Right: academic form -->
+      <div class="lg:col-span-8">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+
+          <!-- Step indicator bar -->
+          <div class="flex items-center gap-sm mb-md">
+            <span class="text-label-caps uppercase text-on-surface-variant">Step 2 of 4</span>
+            <div class="flex-1 h-1 rounded-full bg-brand-border step-line" style="--p:50%"></div>
+            <span class="text-body-sm text-on-surface-variant">Academic info</span>
+          </div>
+
+          <h2 class="text-h2 text-on-background mb-base">Tell us about your academics</h2>
+          <p class="text-body-md text-on-surface-variant mb-md">We'll use this to match you with scholarships you're actually eligible for.</p>
+
+          <!-- LOCAL vs INTERNATIONAL TOGGLE — pill switch, prominent -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Are you applying as</p>
+            <div class="inline-flex p-1 bg-surface-container-low border border-brand-border rounded-full" role="tablist" aria-label="Student type">
+              <button role="tab" aria-selected="false"
+                class="px-md py-sm font-button text-button rounded-full text-on-surface-variant hover:text-on-background transition-colors">
+                <span class="material-symbols-outlined text-[18px] align-middle mr-base">home</span>Local student
+              </button>
+              <button role="tab" aria-selected="true"
+                class="px-md py-sm font-button text-button rounded-full bg-brand text-on-primary shadow-ambient">
+                <span class="material-symbols-outlined text-[18px] align-middle mr-base">public</span>International student
+              </button>
+            </div>
+            <p class="text-body-sm text-on-surface-variant mt-base">Selected: International — we'll show fields used by global scholarship boards (GPA scale, SAT/ACT, language tests).</p>
+          </div>
+
+          <!-- Country of residence -->
+          <div class="mb-md relative">
+            <input id="acad-country" type="text" placeholder=" " value="India"
+              class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+            <label for="acad-country" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Country of residence</label>
+            <span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+          </div>
+
+          <!-- Education level dropdown -->
+          <div class="mb-md relative">
+            <select id="acad-level" class="block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+              <option>Undergraduate</option>
+              <option>Graduate / Master's</option>
+              <option>PhD / Research</option>
+              <option>High school senior</option>
+            </select>
+            <label class="absolute left-md top-2 text-label-caps text-on-surface-variant uppercase pointer-events-none">Current education level</label>
+            <span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+          </div>
+
+          <!-- Institution -->
+          <div class="mb-md relative">
+            <input id="acad-inst" type="text" placeholder=" " value="Stanford University"
+              class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+            <label for="acad-inst" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Institution</label>
+          </div>
+
+          <!-- Field of study (chip input) -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Field of study</p>
+            <div class="flex flex-wrap gap-base p-sm border-[1.5px] border-brand-border rounded-md min-h-[56px] focus-within:border-brand focus-within:shadow-focus-ring">
+              <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Computer Science <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+              <input type="text" placeholder="Add field…" class="flex-1 min-w-[120px] bg-transparent border-0 focus:ring-0 focus:outline-none text-body-md p-base"/>
+            </div>
+          </div>
+
+          <!-- GPA / CGPA + Graduation year — INTERNATIONAL VARIANT shows GPA scale toggle -->
+          <div class="grid grid-cols-2 gap-md mb-md">
+            <div class="relative">
+              <input id="acad-gpa" type="text" placeholder=" " value="3.8"
+                class="float-input peer block w-full px-md pt-6 pb-2 pr-20 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+              <label for="acad-gpa" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Percentage / CGPA</label>
+              <!-- Scale switcher because international students often need clarity -->
+              <select aria-label="Scale" class="absolute right-2 top-1/2 -translate-y-1/2 text-body-sm border border-brand-border rounded text-on-surface-variant px-base py-0.5 bg-surface-container-lowest focus:border-brand focus:outline-none">
+                <option>CGPA / 4</option>
+                <option>CGPA / 10</option>
+                <option>%</option>
+              </select>
+            </div>
+            <div class="relative">
+              <input id="acad-grad" type="text" placeholder=" " value="2027"
+                class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+              <label for="acad-grad" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Graduation year</label>
+            </div>
+          </div>
+
+          <!-- LOCAL-style 10th / 12th marks — relevant for Indian / SE-Asian / Local students -->
+          <div class="grid grid-cols-2 gap-md mb-md">
+            <div class="relative">
+              <input id="acad-10" type="text" placeholder=" " value="92%"
+                class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+              <label for="acad-10" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">10th standard marks</label>
+            </div>
+            <div class="relative">
+              <input id="acad-12" type="text" placeholder=" " value="88%"
+                class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+              <label for="acad-12" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">12th standard marks</label>
+            </div>
+          </div>
+
+          <!-- Eligibility category -->
+          <div class="mb-md relative">
+            <select class="block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+              <option>General / Open</option>
+              <option>OBC</option>
+              <option>SC / ST</option>
+              <option>EWS</option>
+              <option>Minority</option>
+            </select>
+            <label class="absolute left-md top-2 text-label-caps text-on-surface-variant uppercase pointer-events-none">Category / eligibility group</label>
+            <span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+          </div>
+
+          <!-- Languages -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Languages spoken</p>
+            <div class="flex flex-wrap gap-base p-sm border-[1.5px] border-brand-border rounded-md min-h-[56px]">
+              <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">English <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+              <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Hindi <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+              <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Spanish <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+              <input type="text" placeholder="Add language…" class="flex-1 min-w-[120px] bg-transparent border-0 focus:ring-0 focus:outline-none text-body-md p-base"/>
+            </div>
+          </div>
+
+          <!-- Test scores (optional accordion) — varies for international students -->
+          <details class="mb-md border border-brand-border rounded-md overflow-hidden" open>
+            <summary class="px-md py-sm cursor-pointer flex items-center justify-between bg-surface-container-low">
+              <span class="font-button text-button text-on-background">Test scores <span class="text-on-surface-variant font-normal">(optional)</span></span>
+              <span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+            </summary>
+            <div class="p-md">
+              <p class="text-body-sm text-on-surface-variant mb-base">For international students, we recommend at least one English-language test score.</p>
+              <div class="flex flex-wrap gap-base">
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> IELTS
+                </button>
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> TOEFL
+                </button>
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> SAT
+                </button>
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> GRE
+                </button>
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> GMAT
+                </button>
+                <button class="inline-flex items-center gap-base px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm hover:border-brand hover:text-brand">
+                  <span class="material-symbols-outlined text-[18px]">add</span> Duolingo English Test
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <!-- Nav -->
+          <div class="flex justify-between items-center pt-md border-t border-brand-border">
+            <a href="#screen-signup" class="font-button text-button text-on-surface-variant hover:text-on-background flex items-center gap-base">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span> Back
+            </a>
+            <a href="#screen-eligibility" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover transition-colors flex items-center gap-base">
+              Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 2.7 · ELIGIBILITY PROFILE  (Step 3 of onboarding)
+     Nationality, residency, citizenship, household income — drives the
+     "Eligibility check" panel on every scholarship.
+     ===================================================================== -->
+<section id="screen-eligibility" class="screen-anchor">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Left: context -->
+      <aside class="lg:col-span-4">
+        <p class="text-label-caps uppercase text-brand mb-sm">Onboarding · Step 3 of 4</p>
+        <h1 class="text-h1 text-on-background mb-md">Eligibility profile.</h1>
+        <p class="text-body-md text-on-surface-variant mb-lg">Many scholarships are restricted by nationality, residency, or background. We'll use this to <span class="font-medium text-on-background">hide opportunities you can't apply for</span> and surface ones reserved for your group.</p>
+
+        <div class="bg-surface-container-lowest border border-brand-border rounded-md p-md">
+          <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Why we ask</p>
+          <ul class="space-y-base text-body-sm text-on-surface-variant">
+            <li class="flex gap-base items-start"><span class="material-symbols-outlined text-success text-[18px] icon-fill mt-0.5">check_circle</span>Filter out scholarships you're ineligible for</li>
+            <li class="flex gap-base items-start"><span class="material-symbols-outlined text-success text-[18px] icon-fill mt-0.5">check_circle</span>Surface programs reserved for international students</li>
+            <li class="flex gap-base items-start"><span class="material-symbols-outlined text-success text-[18px] icon-fill mt-0.5">check_circle</span>Match you with need-based aid &amp; demographic awards</li>
+            <li class="flex gap-base items-start"><span class="material-symbols-outlined text-on-surface-variant text-[18px] mt-0.5">lock</span>This data is private — never shared with funders without consent</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Right: form -->
+      <div class="lg:col-span-8">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+
+          <!-- Step indicator -->
+          <div class="flex items-center gap-sm mb-md">
+            <span class="text-label-caps uppercase text-on-surface-variant">Step 3 of 4</span>
+            <div class="flex-1 h-1 rounded-full bg-brand-border step-line" style="--p:75%"></div>
+            <span class="text-body-sm text-on-surface-variant">Eligibility</span>
+          </div>
+
+          <h2 class="text-h2 text-on-background mb-base">Eligibility profile</h2>
+          <p class="text-body-md text-on-surface-variant mb-md">Many scholarships are restricted by nationality, residency, or background.</p>
+
+          <!-- Nationality -->
+          <div class="mb-md">
+            <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Nationality</label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">public</span>
+              <select class="block w-full pl-12 pr-md py-md border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+                <option>Select nationality</option>
+                <option selected>Indian</option>
+                <option>British</option>
+                <option>American</option>
+                <option>Canadian</option>
+                <option>Other…</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+            </div>
+          </div>
+
+          <!-- Country of residence -->
+          <div class="mb-md">
+            <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Country of residence</label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
+              <select class="block w-full pl-12 pr-md py-md border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+                <option>Select country of residence</option>
+                <option selected>India</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Other…</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+            </div>
+          </div>
+
+          <!-- Citizenship status (radio cards) -->
+          <fieldset class="mb-md">
+            <legend class="text-label-caps uppercase text-on-surface-variant mb-sm">Citizenship status (for the country where you'll study)</legend>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-base">
+              <label class="cursor-pointer">
+                <input type="radio" name="citizen" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-sm hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors text-center">
+                  <span class="material-symbols-outlined text-brand mb-base">home</span>
+                  <p class="font-button text-button text-on-background">Home</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="citizen" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-sm hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors text-center">
+                  <span class="material-symbols-outlined text-brand mb-base">euro_symbol</span>
+                  <p class="font-button text-button text-on-background">EU</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="citizen" class="peer sr-only" checked/>
+                <div class="border-[1.5px] border-brand rounded-md p-sm bg-brand-tint-5 transition-colors text-center">
+                  <span class="material-symbols-outlined text-brand mb-base">flight</span>
+                  <p class="font-button text-button text-on-background">International</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="citizen" class="peer sr-only"/>
+                <div class="border-[1.5px] border-brand-border rounded-md p-sm hover:border-brand peer-checked:border-brand peer-checked:bg-brand-tint-5 transition-colors text-center">
+                  <span class="material-symbols-outlined text-brand mb-base">help</span>
+                  <p class="font-button text-button text-on-background">Other</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- DOB + Gender -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-md">
+            <div>
+              <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Date of birth</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">calendar_today</span>
+                <input type="date" class="block w-full pl-12 pr-md py-md border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring text-body-md" value="2003-04-15"/>
+              </div>
+            </div>
+            <div>
+              <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Gender</label>
+              <select class="block w-full px-md py-md border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+                <option>Select gender</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Household income bracket -->
+          <div class="mb-md">
+            <label class="text-label-caps uppercase text-on-surface-variant mb-sm flex items-center gap-base">
+              Household income bracket
+              <span class="material-symbols-outlined text-[14px] text-on-surface-variant" title="Used only to qualify need-based awards. Never shared.">info</span>
+            </label>
+            <select class="block w-full px-md py-md border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring appearance-none bg-surface-container-lowest text-body-md">
+              <option>Select bracket</option>
+              <option>Under $20,000 / yr</option>
+              <option>$20,000 – $50,000 / yr</option>
+              <option>$50,000 – $100,000 / yr</option>
+              <option>$100,000 – $200,000 / yr</option>
+              <option>Above $200,000 / yr</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <!-- Background information (optional) -->
+          <details class="mb-md border border-brand-border rounded-md overflow-hidden">
+            <summary class="px-md py-sm cursor-pointer flex items-center justify-between bg-surface-container-low">
+              <span class="font-button text-button text-on-background">Background information <span class="text-on-surface-variant font-normal">(optional)</span></span>
+              <span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+            </summary>
+            <div class="p-md space-y-base">
+              <p class="text-body-sm text-on-surface-variant">Some scholarships are reserved for specific groups. Sharing here unlocks them.</p>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>First-generation college student</label>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>From an underrepresented minority group</label>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Refugee or asylum seeker</label>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Person with a disability</label>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>LGBTQ+</label>
+              <label class="flex items-center gap-base cursor-pointer text-body-sm"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Veteran or military family</label>
+            </div>
+          </details>
+
+          <!-- Privacy note -->
+          <div class="bg-surface-container-low border border-brand-border rounded-md p-md mb-md flex items-start gap-base">
+            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">shield</span>
+            <p class="text-body-sm text-on-surface-variant">Encrypted at rest. We share these answers with funders <span class="font-medium text-on-background">only when you submit an application</span> that requires them.</p>
+          </div>
+
+          <!-- Nav -->
+          <div class="flex justify-between items-center pt-md border-t border-brand-border">
+            <a href="#screen-academic" class="font-button text-button text-on-surface-variant hover:text-on-background flex items-center gap-base">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span> Back
+            </a>
+            <a href="#screen-signup" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover transition-colors flex items-center gap-base">
+              Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+<section id="screen-profile" class="screen-anchor">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+
+    <!-- Page header + completeness -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+      <div>
+        <p class="text-label-caps uppercase text-brand mb-sm">Profile builder</p>
+        <h1 class="text-h2 text-on-background mb-base">Your academic &amp; career profile</h1>
+        <p class="text-body-md text-on-surface-variant max-w-2xl">A complete profile unlocks ~3× more matches. Each section feeds a different recommendation surface across the product.</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-brand-border rounded-md p-md min-w-[280px]">
+        <div class="flex justify-between items-center mb-base">
+          <p class="text-label-caps uppercase text-on-surface-variant">Profile completeness</p>
+          <p class="font-button text-button text-on-background">68%</p>
+        </div>
+        <div class="h-1 bg-brand-border rounded-full overflow-hidden mb-base">
+          <div class="h-full bg-brand" style="width:68%"></div>
+        </div>
+        <p class="text-body-sm text-on-surface-variant">Add test scores and a CV to reach 100%.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Left: section nav -->
+      <aside class="lg:col-span-3">
+        <nav class="bg-surface-container-lowest border border-brand-border rounded-md p-base sticky top-[112px]">
+          <ul class="space-y-1">
+            <li><a href="#sec-academic" class="flex justify-between items-center px-sm py-sm rounded-md bg-brand-tint-10 text-brand font-medium text-body-sm">Academic history <span class="material-symbols-outlined text-[16px] text-success icon-fill">check_circle</span></a></li>
+            <li><a href="#sec-skills"   class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Skills &amp; achievements <span class="material-symbols-outlined text-[16px] text-success icon-fill">check_circle</span></a></li>
+            <li><a href="#sec-tests"    class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Test scores <span class="material-symbols-outlined text-[16px] text-on-surface-variant">radio_button_unchecked</span></a></li>
+            <li><a href="#sec-career"   class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Career goals &amp; salary <span class="material-symbols-outlined text-[16px] text-success icon-fill">check_circle</span></a></li>
+            <li><a href="#sec-mobility" class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Mobility &amp; transition <span class="material-symbols-outlined text-[16px] text-success icon-fill">check_circle</span></a></li>
+            <li><a href="#sec-eligibility" class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Eligibility profile <span class="material-symbols-outlined text-[16px] text-success icon-fill">check_circle</span></a></li>
+            <li><a href="#sec-vault"    class="flex justify-between items-center px-sm py-sm rounded-md hover:bg-surface-container text-on-surface text-body-sm">Document vault <span class="material-symbols-outlined text-[16px] text-on-surface-variant">radio_button_unchecked</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Right: sections -->
+      <div class="lg:col-span-9 space-y-md">
+
+        <!-- Academic history -->
+        <article id="sec-academic" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <div class="flex items-center justify-between mb-md">
+            <h2 class="text-h3 text-on-background">Academic history</h2>
+            <button class="text-brand font-button text-button hover:text-brand-hover flex items-center gap-base"><span class="material-symbols-outlined text-[18px]">add</span> Add institution</button>
+          </div>
+
+          <!-- Existing entry -->
+          <div class="border border-brand-border rounded-md p-md mb-md">
+            <div class="flex justify-between items-start mb-sm">
+              <div>
+                <p class="font-button text-button text-on-background">King's College London</p>
+                <p class="text-body-sm text-on-surface-variant">BSc Computer Science · 2022 – Present</p>
+              </div>
+              <button class="text-on-surface-variant hover:text-on-background"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-base text-body-sm">
+              <div><p class="text-on-surface-variant">GPA</p><p class="text-on-background font-medium">3.82 / 4.0</p></div>
+              <div><p class="text-on-surface-variant">Field</p><p class="text-on-background font-medium">CS · AI track</p></div>
+              <div><p class="text-on-surface-variant">Status</p><p class="text-on-background font-medium">Year 3</p></div>
+              <div><p class="text-on-surface-variant">Honors</p><p class="text-on-background font-medium">Dean's List</p></div>
+            </div>
+          </div>
+
+          <!-- Add new (form preview) -->
+          <details class="border border-dashed border-brand-border rounded-md p-md">
+            <summary class="cursor-pointer font-button text-button text-on-surface-variant flex items-center gap-base"><span class="material-symbols-outlined text-[18px]">add_circle</span> Add another institution</summary>
+            <div class="mt-md grid grid-cols-1 md:grid-cols-2 gap-md">
+              <div class="relative">
+                <input id="inst-name" type="text" placeholder=" " class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+                <label for="inst-name" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Institution name</label>
+              </div>
+              <div class="relative">
+                <input id="inst-degree" type="text" placeholder=" " class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+                <label for="inst-degree" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Degree &amp; field</label>
+              </div>
+              <div class="relative">
+                <input id="inst-gpa" type="text" placeholder=" " class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+                <label for="inst-gpa" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">GPA / classification</label>
+              </div>
+              <div class="relative">
+                <input id="inst-dates" type="text" placeholder=" " class="float-input peer block w-full px-md pt-6 pb-2 border-[1.5px] border-brand-border rounded-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+                <label for="inst-dates" class="float-label absolute left-md top-4 text-on-surface-variant text-body-md">Dates attended</label>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Skills -->
+        <article id="sec-skills" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <div class="flex items-center justify-between mb-md">
+            <h2 class="text-h3 text-on-background">Skills &amp; achievements</h2>
+            <p class="text-body-sm text-on-surface-variant">Press Enter after each entry</p>
+          </div>
+          <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Skills</p>
+          <div class="flex flex-wrap gap-base mb-md">
+            <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Python <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+            <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Machine learning <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+            <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">React <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+            <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Statistics <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+            <span class="inline-flex items-center gap-base px-sm py-base bg-brand-chip-bg text-on-surface text-body-sm rounded-full">Public speaking <button class="hover:text-error"><span class="material-symbols-outlined text-[16px]">close</span></button></span>
+            <input type="text" placeholder="Add skill..." class="px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-body-sm focus:border-brand focus:ring-0 focus:outline-none w-40"/>
+          </div>
+          <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Achievements</p>
+          <ul class="space-y-base text-body-sm">
+            <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-success icon-fill text-[18px] mt-0.5">workspace_premium</span><span>Winner — National Hackathon 2025 · 1st of 240 teams</span></li>
+            <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-success icon-fill text-[18px] mt-0.5">workspace_premium</span><span>Published research — "Adaptive learning in low-data regimes" · ACM SIGCHI</span></li>
+            <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-success icon-fill text-[18px] mt-0.5">workspace_premium</span><span>Volunteer Code Mentor · 80+ hours · 12 students</span></li>
+          </ul>
+        </article>
+
+        <!-- Test scores -->
+        <article id="sec-tests" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <div class="flex items-center justify-between mb-md">
+            <h2 class="text-h3 text-on-background">Standardized test scores</h2>
+            <span class="text-label-caps uppercase text-warning">Incomplete</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <div class="border border-dashed border-brand-border rounded-md p-md text-center">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-base">SAT / ACT</p>
+              <p class="text-body-sm text-on-surface-variant mb-sm">Not added</p>
+              <button class="font-button text-button text-brand hover:text-brand-hover">+ Add score</button>
+            </div>
+            <div class="border border-dashed border-brand-border rounded-md p-md text-center">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-base">GRE / GMAT</p>
+              <p class="text-body-sm text-on-surface-variant mb-sm">Not added</p>
+              <button class="font-button text-button text-brand hover:text-brand-hover">+ Add score</button>
+            </div>
+            <div class="border border-dashed border-brand-border rounded-md p-md text-center">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-base">IELTS / TOEFL</p>
+              <p class="text-body-sm text-on-surface-variant mb-sm">Not added</p>
+              <button class="font-button text-button text-brand hover:text-brand-hover">+ Add score</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Career goals + salary -->
+        <article id="sec-career" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <h2 class="text-h3 text-on-background mb-md">Career goals &amp; salary expectations</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-md">
+            <div>
+              <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Target role</label>
+              <p class="font-button text-button text-on-background">Machine Learning Engineer</p>
+            </div>
+            <div>
+              <label class="text-label-caps uppercase text-on-surface-variant mb-sm block">Industry</label>
+              <p class="font-button text-button text-on-background">AI Research / Big Tech</p>
+            </div>
+          </div>
+
+          <!-- Salary slider -->
+          <div class="border border-brand-border rounded-md p-md bg-surface-container-low">
+            <div class="flex justify-between items-baseline mb-base">
+              <p class="text-label-caps uppercase text-on-surface-variant">Preferred starting salary</p>
+              <p class="text-h3 text-brand">$95k – $130k</p>
+            </div>
+            <!-- Visual range bar -->
+            <div class="relative h-1 bg-brand-border rounded-full mb-base">
+              <div class="absolute h-full bg-brand rounded-full" style="left: 30%; right: 18%;"></div>
+              <div class="absolute w-4 h-4 rounded-full bg-brand border-2 border-surface-container-lowest -top-1.5" style="left: calc(30% - 8px);"></div>
+              <div class="absolute w-4 h-4 rounded-full bg-brand border-2 border-surface-container-lowest -top-1.5" style="left: calc(82% - 8px);"></div>
+            </div>
+            <div class="flex justify-between text-body-sm text-on-surface-variant"><span>$40k</span><span>$200k+</span></div>
+            <div class="flex items-center gap-base mt-sm text-body-sm text-on-surface-variant">
+              <span class="material-symbols-outlined text-[18px] text-success icon-fill">trending_up</span>
+              Median in your matched roles: <span class="font-medium text-on-background">$118k</span> · You're tracking with the 60th percentile.
+            </div>
+          </div>
+        </article>
+
+        <!-- Mobility & transition -->
+        <article id="sec-mobility" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <h2 class="text-h3 text-on-background mb-md">Mobility &amp; transition</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Mobility preference</p>
+              <p class="font-button text-button text-on-background mb-base">International</p>
+              <p class="text-body-sm text-on-surface-variant">Top destinations: USA, Canada, Germany, Singapore</p>
+            </div>
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Career transition</p>
+              <p class="font-button text-button text-on-background mb-base">Yes — into AI research</p>
+              <p class="text-body-sm text-on-surface-variant">From: Software engineering · We surface bootcamp &amp; conversion grants.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Eligibility profile (mirrors onboarding step 3) -->
+        <article id="sec-eligibility" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <div class="flex items-center justify-between mb-md">
+            <h2 class="text-h3 text-on-background">Eligibility profile</h2>
+            <span class="text-label-caps uppercase text-success flex items-center gap-base"><span class="w-1.5 h-1.5 rounded-full bg-success"></span>VERIFIED</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant mb-md">Used to filter scholarships you're eligible for. Edit below — changes update your matches immediately.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-md">
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Nationality</p>
+              <p class="font-button text-button text-on-background">Indian</p>
+            </div>
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Country of residence</p>
+              <p class="font-button text-button text-on-background">India</p>
+            </div>
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Citizenship status</p>
+              <p class="font-button text-button text-on-background">International</p>
+              <p class="text-body-sm text-on-surface-variant">For studies in UK / USA / EU</p>
+            </div>
+            <div class="border border-brand-border rounded-md p-md">
+              <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Household income</p>
+              <p class="font-button text-button text-on-background">$20k – $50k / yr</p>
+            </div>
+          </div>
+
+          <div class="border border-brand-border rounded-md p-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Background flags</p>
+            <div class="flex flex-wrap gap-base">
+              <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">FIRST-GEN</span>
+              <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">UNDERREPRESENTED MINORITY</span>
+              <button class="px-sm py-base border-[1.5px] border-dashed border-brand-border rounded-full text-label-caps text-on-surface-variant hover:border-brand hover:text-brand">+ ADD</button>
+            </div>
+          </div>
+
+          <div class="mt-md flex justify-between items-center pt-md border-t border-brand-border">
+            <p class="text-body-sm text-on-surface-variant">These unlock <span class="font-medium text-brand">42 additional scholarships</span> in your matches.</p>
+            <a href="#screen-eligibility" class="font-button text-button text-brand hover:text-brand-hover">Edit eligibility →</a>
+          </div>
+        </article>
+
+        <!-- Document vault -->
+        <article id="sec-vault" class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <div class="flex items-center justify-between mb-md">
+            <h2 class="text-h3 text-on-background">Document vault</h2>
+            <button class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover flex items-center gap-base">
+              <span class="material-symbols-outlined text-[18px]">upload</span> Upload
+            </button>
+          </div>
+          <div class="space-y-base">
+            <div class="flex items-center justify-between p-sm border border-brand-border rounded-md">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-on-surface-variant">picture_as_pdf</span>
+                <div>
+                  <p class="font-button text-button text-on-background">CV — 2026.pdf</p>
+                  <p class="text-body-sm text-on-surface-variant">220 KB · Uploaded 2 weeks ago</p>
+                </div>
+              </div>
+              <button class="text-on-surface-variant hover:text-on-background"><span class="material-symbols-outlined">more_horiz</span></button>
+            </div>
+            <div class="flex items-center justify-between p-sm border border-brand-border rounded-md">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-on-surface-variant">description</span>
+                <div>
+                  <p class="font-button text-button text-on-background">Transcript_KCL_Y2.pdf</p>
+                  <p class="text-body-sm text-on-surface-variant">410 KB · Uploaded 1 month ago</p>
+                </div>
+              </div>
+              <button class="text-on-surface-variant hover:text-on-background"><span class="material-symbols-outlined">more_horiz</span></button>
+            </div>
+            <div class="border border-dashed border-brand-border rounded-md p-md text-center">
+              <p class="text-body-sm text-on-surface-variant mb-base">Drop files here or</p>
+              <button class="font-button text-button text-brand hover:text-brand-hover">browse to upload</button>
+              <p class="text-body-sm text-on-surface-variant mt-base">PDF, DOCX up to 10MB · Encrypted at rest</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 4 · FOR YOU — personalized matches based on profile
+     ===================================================================== -->
+<section id="screen-foryou" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+      <div>
+        <p class="text-label-caps uppercase text-brand mb-sm">Personalized for Alex · Updated 4 hours ago</p>
+        <h1 class="text-h1 text-on-background mb-base">For You</h1>
+        <p class="text-body-md text-on-surface-variant max-w-2xl">12 high-fit opportunities based on your profile. Want everything? <a href="#screen-browse" class="text-brand font-medium">Browse all</a> instead.</p>
+      </div>
+      <div class="flex items-center gap-base">
+        <button class="font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 flex items-center gap-base">
+          <span class="material-symbols-outlined text-[18px]">tune</span> Refine matches
+        </button>
+        <button class="font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 flex items-center gap-base">
+          <span class="material-symbols-outlined text-[18px]">sort</span> Sort: Best match
+        </button>
+      </div>
+    </div>
+
+    <!-- Why this matches you bar -->
+    <div class="bg-brand-tint-5 border border-brand-tint-10 rounded-md p-md mb-md flex items-start gap-sm">
+      <span class="material-symbols-outlined text-brand">auto_awesome</span>
+      <div class="flex-1">
+        <p class="font-button text-button text-on-background mb-base">Why these match you</p>
+        <p class="text-body-sm text-on-surface-variant">Based on your <span class="font-medium text-on-background">CS / AI track</span>, mobility set to <span class="font-medium text-on-background">International</span>, salary target <span class="font-medium text-on-background">$95k+</span>, career transition into <span class="font-medium text-on-background">AI research</span>, and your <span class="font-medium text-on-background">Indian nationality + International citizenship status</span>. We've hidden <span class="font-medium text-on-background">28 home-only awards</span> you can't apply for.</p>
+      </div>
+    </div>
+
+    <!-- Match cards — each shows a match score and "why" pill -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <!-- Card 1 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+        <div class="flex justify-between items-start mb-base">
+          <div class="flex items-center gap-base px-sm py-base bg-success-tint text-success rounded-full text-label-caps">
+            <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+            96% MATCH
+          </div>
+          <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+        </div>
+        <div class="flex flex-wrap gap-base mb-sm">
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">FULL RIDE</span>
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">AI/ML</span>
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">INTERNATIONAL</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Future Tech Innovators Fellowship</h3>
+        <p class="text-body-sm text-on-surface-variant mb-md">Future Forward Foundation</p>
+        <div class="space-y-base text-body-sm mb-md">
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$50,000 / year</span></div>
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>12 days remaining</span></div>
+        </div>
+        <p class="text-body-sm text-brand mb-md flex items-start gap-base">
+          <span class="material-symbols-outlined text-[16px] mt-0.5">check</span>
+          Matches your AI track, GPA, and international preference.
+        </p>
+        <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover">View &amp; apply</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+        <div class="flex justify-between items-start mb-base">
+          <div class="flex items-center gap-base px-sm py-base bg-success-tint text-success rounded-full text-label-caps">
+            <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+            91% MATCH
+          </div>
+          <button class="text-brand"><span class="material-symbols-outlined icon-fill">bookmark</span></button>
+        </div>
+        <div class="flex flex-wrap gap-base mb-sm">
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">RESEARCH</span>
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">$75K</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Quantum Computing Fellowship</h3>
+        <p class="text-body-sm text-on-surface-variant mb-md">Advanced Sciences Corp</p>
+        <div class="space-y-base text-body-sm mb-md">
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$75,000 / year</span></div>
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>3 months remaining</span></div>
+        </div>
+        <p class="text-body-sm text-brand mb-md flex items-start gap-base">
+          <span class="material-symbols-outlined text-[16px] mt-0.5">check</span>
+          Aligns with your salary target and research achievements.
+        </p>
+        <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+        <div class="flex justify-between items-start mb-base">
+          <div class="flex items-center gap-base px-sm py-base bg-warning-tint text-warning rounded-full text-label-caps">
+            <span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+            84% MATCH
+          </div>
+          <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+        </div>
+        <div class="flex flex-wrap gap-base mb-sm">
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">TRANSITION</span>
+          <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">BOOTCAMP</span>
+        </div>
+        <h3 class="text-h3 text-on-background mb-base">Career Switchers Grant</h3>
+        <p class="text-body-sm text-on-surface-variant mb-md">Kessler Foundation</p>
+        <div class="space-y-base text-body-sm mb-md">
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$15,000 one-time</span></div>
+          <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>6 weeks remaining</span></div>
+        </div>
+        <p class="text-body-sm text-brand mb-md flex items-start gap-base">
+          <span class="material-symbols-outlined text-[16px] mt-0.5">check</span>
+          You flagged a transition into AI research — this targets exactly that.
+        </p>
+        <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+      </article>
+    </div>
+
+    <div class="text-center mt-lg">
+      <button class="font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 inline-flex items-center gap-base">
+        Show 9 more matches <span class="material-symbols-outlined text-[18px]">expand_more</span>
+      </button>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 5 · BROWSE ALL — universal browse with full filters
+     Adds: education level, career transition, location search,
+     award amount with live values, sort, result count, view-saved working.
+     ===================================================================== -->
+<section id="screen-browse" class="screen-anchor">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="mb-lg max-w-3xl">
+      <p class="text-label-caps uppercase text-brand mb-sm">Browse all opportunities</p>
+      <h1 class="text-h1 text-on-background mb-base">Discover Opportunities</h1>
+      <p class="text-body-lg text-on-surface-variant mb-md">Search the complete catalog. No personalization — pure exploration.</p>
+
+      <!-- Search -->
+      <div class="relative">
+        <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+        <input type="text" placeholder="Search 14,200+ scholarships, fellowships, grants..." class="block w-full pl-12 pr-md py-md border-[1.5px] border-brand-border rounded-md text-body-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Sidebar filters -->
+      <aside class="lg:col-span-3 space-y-md">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-md p-md sticky top-[112px]">
+          <div class="flex justify-between items-center mb-md pb-base border-b border-brand-border">
+            <h3 class="text-h3 text-on-background">Filters</h3>
+            <button class="text-body-sm text-brand hover:text-brand-hover">Clear all</button>
+          </div>
+
+          <!-- Location with search -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Location</p>
+            <div class="relative mb-base">
+              <span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
+              <input type="text" placeholder="Search country / region..." class="w-full pl-9 pr-sm py-base border-[1.5px] border-brand-border rounded-md text-body-sm focus:border-brand focus:ring-0 focus:shadow-focus-ring"/>
+            </div>
+            <div class="space-y-base text-body-sm">
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand" checked/>Global / Online</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>North America</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Europe</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Asia-Pacific</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Africa</label>
+            </div>
+          </div>
+
+          <!-- Education level -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Education level</p>
+            <div class="flex flex-wrap gap-base">
+              <button class="px-sm py-base rounded-full border-[1.5px] border-brand bg-brand-tint-10 text-brand text-body-sm">Undergrad</button>
+              <button class="px-sm py-base rounded-full border-[1.5px] border-brand-border text-on-surface text-body-sm hover:border-brand">Graduate</button>
+              <button class="px-sm py-base rounded-full border-[1.5px] border-brand-border text-on-surface text-body-sm hover:border-brand">PhD</button>
+              <button class="px-sm py-base rounded-full border-[1.5px] border-brand-border text-on-surface text-body-sm hover:border-brand">Postdoc</button>
+            </div>
+          </div>
+
+          <!-- Career transition -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Career transition</p>
+            <div class="space-y-base text-body-sm">
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Career changers welcome</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Bootcamp / conversion</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Returning to study</label>
+            </div>
+          </div>
+
+          <!-- Citizenship / Visa eligibility — NEW for international students -->
+          <div class="mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm flex items-center gap-base">
+              Citizenship &amp; visa
+              <span class="material-symbols-outlined text-[14px] text-brand" title="Filter to scholarships you can actually apply for based on your eligibility profile.">verified</span>
+            </p>
+            <div class="space-y-base text-body-sm">
+              <label class="flex items-center gap-base cursor-pointer p-base border border-brand bg-brand-tint-5 rounded-md">
+                <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand" checked/>
+                <span class="text-on-background font-medium flex-1">Only show what I'm eligible for</span>
+                <span class="material-symbols-outlined text-[16px] text-brand">verified</span>
+              </label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Open to internationals</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Visa sponsorship available</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Home / national students only</label>
+              <label class="flex items-center gap-base cursor-pointer"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>Reserved for refugees / stateless</label>
+            </div>
+          </div>
+
+          <!-- Award amount with live values -->
+          <div class="mb-md">
+            <div class="flex justify-between items-baseline mb-sm">
+              <p class="text-label-caps uppercase text-on-surface-variant">Award amount</p>
+              <p class="text-body-sm text-on-background font-medium">$5k – $50k+</p>
+            </div>
+            <input type="range" class="w-full accent-brand" value="40"/>
+            <div class="flex justify-between text-body-sm text-on-surface-variant mt-base">
+              <span>$0</span><span>$50k+</span>
+            </div>
+          </div>
+
+          <!-- Apply / Reset -->
+          <div class="flex gap-base pt-md border-t border-brand-border">
+            <button class="flex-1 font-button text-button px-sm py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover">Apply</button>
+            <button class="font-button text-button px-sm py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2">Reset</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Results -->
+      <div class="lg:col-span-9">
+        <!-- Result bar with count + sort -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-base mb-md p-sm bg-surface-container-low border border-brand-border rounded-md">
+          <p class="text-body-sm text-on-surface-variant">Showing <span class="font-medium text-on-background">1–9</span> of <span class="font-medium text-on-background">312</span> opportunities</p>
+          <div class="flex items-center gap-base">
+            <span class="text-body-sm text-on-surface-variant">Sort by</span>
+            <select class="text-body-sm border-[1.5px] border-brand-border rounded-md px-sm py-base focus:border-brand focus:ring-0 focus:shadow-focus-ring bg-surface-container-lowest">
+              <option>Deadline (soonest)</option>
+              <option>Award amount (high → low)</option>
+              <option>Newest first</option>
+              <option>Best fit</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grid: 3 columns on desktop now -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+          <!-- 6 cards -->
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">FULL RIDE</span>
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">STEM</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Global Tech Innovators Fellowship</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Future Forward Foundation</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$50,000 / year</span></div>
+              <div class="flex items-center gap-base text-warning"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="font-medium">12 days left</span></div>
+              <div class="flex items-center gap-base text-success"><span class="material-symbols-outlined text-[18px] icon-fill">verified</span><span class="font-medium">You're eligible · International OK</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">MERIT</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Design Leadership Grant</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Creative Minds Institute</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$15,000 one-time</span></div>
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>4 weeks left</span></div>
+              <div class="flex items-center gap-base text-warning"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-medium">UK / EU students only</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">NEED-BASED</span>
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">GLOBAL</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Emerging Leaders Scholarship</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">World Education Fund</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">Tuition + Stipend</span></div>
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>10 weeks left</span></div>
+              <div class="flex items-center gap-base text-success"><span class="material-symbols-outlined text-[18px] icon-fill">public</span><span class="font-medium">Open globally · Visa support</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">RESEARCH</span>
+              </div>
+              <button class="text-brand"><span class="material-symbols-outlined icon-fill">bookmark</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Quantum Computing Fellowship</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Advanced Sciences Corp</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$75,000 / year</span></div>
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>3 months left</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">WOMEN IN STEM</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Ada Lovelace Engineering Award</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Lovelace Institute</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$25,000 / year</span></div>
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>2 months left</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+
+          <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient hover:shadow-ambient-lift transition-shadow flex flex-col">
+            <div class="flex justify-between items-start mb-base">
+              <div class="flex flex-wrap gap-base">
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">TRANSITION</span>
+                <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">BOOTCAMP</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-brand"><span class="material-symbols-outlined">bookmark_border</span></button>
+            </div>
+            <h3 class="text-h3 text-on-background mb-base">Career Switchers Grant</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Kessler Foundation</p>
+            <div class="space-y-base text-body-sm mb-md">
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">payments</span><span class="text-on-background font-medium">$15,000 one-time</span></div>
+              <div class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>6 weeks left</span></div>
+            </div>
+            <a href="#screen-detail" class="mt-auto font-button text-button text-center px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">View details</a>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-between items-center mt-lg">
+          <p class="text-body-sm text-on-surface-variant">Page 1 of 35</p>
+          <div class="flex items-center gap-base">
+            <button class="w-10 h-10 rounded-md border border-brand-border flex items-center justify-center text-on-surface-variant disabled:opacity-50" disabled><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+            <button class="w-10 h-10 rounded-md bg-brand text-on-primary font-button text-button">1</button>
+            <button class="w-10 h-10 rounded-md border border-brand-border text-on-surface font-button text-button hover:bg-brand-tint-2">2</button>
+            <button class="w-10 h-10 rounded-md border border-brand-border text-on-surface font-button text-button hover:bg-brand-tint-2">3</button>
+            <span class="text-on-surface-variant">…</span>
+            <button class="w-10 h-10 rounded-md border border-brand-border text-on-surface font-button text-button hover:bg-brand-tint-2">35</button>
+            <button class="w-10 h-10 rounded-md border border-brand-border flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 6 · SAVED — fully working bookmarks page
+     ===================================================================== -->
+<section id="screen-saved" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="mb-lg">
+      <p class="text-label-caps uppercase text-brand mb-sm">Your saved opportunities</p>
+      <h1 class="text-h1 text-on-background mb-base">Saved</h1>
+      <p class="text-body-md text-on-surface-variant">7 opportunities · Total potential value <span class="font-medium text-on-background">$215,000+</span></p>
+    </div>
+
+    <!-- Tabs across the top of saved -->
+    <div class="border-b border-brand-border mb-md flex gap-md">
+      <button class="py-sm border-b-2 border-brand text-brand font-button text-button">Scholarships <span class="ml-base text-body-sm text-on-surface-variant">7</span></button>
+      <button class="py-sm border-b-2 border-transparent text-on-surface-variant hover:text-on-background font-button text-button">Universities <span class="ml-base text-body-sm">3</span></button>
+      <button class="py-sm border-b-2 border-transparent text-on-surface-variant hover:text-on-background font-button text-button">Career paths <span class="ml-base text-body-sm">2</span></button>
+    </div>
+
+    <!-- Sort + bulk actions -->
+    <div class="flex justify-between items-center mb-md">
+      <label class="flex items-center gap-base text-body-sm text-on-surface-variant"><input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/> Select all</label>
+      <select class="text-body-sm border-[1.5px] border-brand-border rounded-md px-sm py-base focus:border-brand focus:ring-0 focus:shadow-focus-ring bg-surface-container-lowest">
+        <option>Sort: Deadline soonest</option>
+        <option>Recently saved</option>
+        <option>Award amount</option>
+      </select>
+    </div>
+
+    <!-- List view -->
+    <div class="bg-surface-container-lowest border border-brand-border rounded-lg overflow-hidden shadow-ambient">
+      <!-- Row 1 — urgent -->
+      <div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface-container-low transition-colors">
+        <label class="flex items-center gap-sm flex-1">
+          <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>
+          <div class="flex-1">
+            <div class="flex items-center gap-base mb-base">
+              <h4 class="font-button text-button text-on-background">Future Tech Innovators Fellowship</h4>
+              <span class="px-sm py-base bg-warning-tint text-warning text-label-caps rounded-full">12 DAYS LEFT</span>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Future Forward Foundation · $50,000 / year · Saved 4 days ago</p>
+          </div>
+        </label>
+        <div class="flex items-center gap-base">
+          <a href="#screen-detail" class="font-button text-button text-brand hover:text-brand-hover">View</a>
+          <button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete_outline</span></button>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface-container-low transition-colors">
+        <label class="flex items-center gap-sm flex-1">
+          <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>
+          <div class="flex-1">
+            <div class="flex items-center gap-base mb-base">
+              <h4 class="font-button text-button text-on-background">Quantum Computing Fellowship</h4>
+              <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">3 MONTHS LEFT</span>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Advanced Sciences Corp · $75,000 / year · Saved 1 week ago</p>
+          </div>
+        </label>
+        <div class="flex items-center gap-base">
+          <a href="#screen-detail" class="font-button text-button text-brand hover:text-brand-hover">View</a>
+          <button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete_outline</span></button>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors">
+        <label class="flex items-center gap-sm flex-1">
+          <input type="checkbox" class="rounded border-brand-border text-brand focus:ring-brand"/>
+          <div class="flex-1">
+            <div class="flex items-center gap-base mb-base">
+              <h4 class="font-button text-button text-on-background">Ada Lovelace Engineering Award</h4>
+              <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">2 MONTHS LEFT</span>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Lovelace Institute · $25,000 / year · Saved 2 weeks ago</p>
+          </div>
+        </label>
+        <div class="flex items-center gap-base">
+          <a href="#screen-detail" class="font-button text-button text-brand hover:text-brand-hover">View</a>
+          <button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete_outline</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state preview (collapsed) -->
+    <details class="mt-md">
+      <summary class="cursor-pointer text-body-sm text-on-surface-variant">Preview empty state ↓</summary>
+      <div class="mt-sm bg-surface-container-lowest border border-dashed border-brand-border rounded-lg p-lg text-center">
+        <span class="material-symbols-outlined text-h1 text-on-surface-variant mb-sm">bookmark_border</span>
+        <h3 class="text-h3 text-on-background mb-base">Nothing saved yet</h3>
+        <p class="text-body-md text-on-surface-variant mb-md">Bookmark scholarships and universities as you browse. They'll appear here so you can compare and act when ready.</p>
+        <a href="#screen-browse" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover inline-block">Start browsing</a>
+      </div>
+    </details>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 7 · SCHOLARSHIP DETAIL (fixed: green checks, real org logo,
+     application progress)
+     ===================================================================== -->
+<section id="screen-detail" class="screen-anchor">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-lg">
+    <!-- Breadcrumb -->
+    <nav class="text-body-sm text-on-surface-variant mb-md flex items-center gap-base">
+      <a href="#screen-foryou" class="hover:text-on-background">For You</a>
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      <span class="text-on-background">Future Tech Innovators Fellowship</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row md:items-start justify-between gap-md mb-md pb-md border-b border-brand-border">
+      <div class="flex gap-md items-start">
+        <!-- Real-feeling org logo (SVG monogram) -->
+        <div class="w-20 h-20 rounded-md bg-gradient-to-br from-brand to-brand-hover flex items-center justify-center text-on-primary shadow-ambient flex-shrink-0">
+          <span class="font-bold text-2xl tracking-tight">FF</span>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-base mb-base">
+            <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">FULL RIDE</span>
+            <span class="px-sm py-base bg-brand-chip-bg text-on-surface text-label-caps rounded-full">STEM</span>
+            <span class="px-sm py-base bg-brand-tint-10 text-brand text-label-caps rounded-full inline-flex items-center gap-base"><span class="material-symbols-outlined text-[14px]">flight</span>INTERNATIONAL OK</span>
+            <span class="px-sm py-base bg-success-tint text-success text-label-caps rounded-full">96% MATCH</span>
+          </div>
+          <h1 class="text-h1 text-on-background mb-base">Future Tech Innovators Fellowship</h1>
+          <p class="text-body-lg text-on-surface-variant">Future Forward Foundation</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p class="text-label-caps uppercase text-on-surface-variant mb-base">Award amount</p>
+        <p class="text-h2 text-brand">$50,000</p>
+        <p class="text-body-sm text-on-surface-variant">per academic year</p>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+      <!-- Left column -->
+      <div class="lg:col-span-2 space-y-md">
+
+        <!-- Application progress (NEW — was missing) -->
+        <article class="bg-brand-tint-5 border border-brand-tint-10 rounded-lg p-md shadow-ambient">
+          <div class="flex justify-between items-center mb-base">
+            <p class="text-label-caps uppercase text-brand">Your application is in progress</p>
+            <p class="text-body-sm text-brand font-medium">3 of 4 steps complete</p>
+          </div>
+          <div class="h-1 bg-brand-border rounded-full overflow-hidden mb-md">
+            <div class="h-full bg-brand" style="width:75%"></div>
+          </div>
+          <div class="grid grid-cols-4 gap-base text-center">
+            <div><span class="material-symbols-outlined icon-fill text-success">check_circle</span><p class="text-body-sm text-on-background mt-base">Profile</p></div>
+            <div><span class="material-symbols-outlined icon-fill text-success">check_circle</span><p class="text-body-sm text-on-background mt-base">Essay</p></div>
+            <div><span class="material-symbols-outlined icon-fill text-success">check_circle</span><p class="text-body-sm text-on-background mt-base">Transcript</p></div>
+            <div><span class="material-symbols-outlined text-on-surface-variant">radio_button_unchecked</span><p class="text-body-sm text-on-surface-variant mt-base">References</p></div>
+          </div>
+        </article>
+
+        <!-- About -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <h2 class="text-h3 text-on-background mb-md">About the scholarship</h2>
+          <div class="space-y-md text-body-md text-on-surface-variant">
+            <p>The Future Tech Innovators Fellowship supports the next generation of leaders in computer science, software engineering, and artificial intelligence. We believe financial barriers should never stand between exceptional talent and its full potential.</p>
+            <p>Beyond significant financial backing, recipients receive a comprehensive mentorship pairing with senior engineers at top-tier firms, plus invitations to our annual innovator summit in the Bay Area.</p>
+          </div>
+        </article>
+
+        <!-- Eligibility — now includes personalized match for the signed-in user -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <h2 class="text-h3 text-on-background mb-md flex items-center gap-base">
+            <span class="material-symbols-outlined text-brand">verified_user</span> Eligibility criteria
+          </h2>
+
+          <!-- Personalized eligibility check banner -->
+          <div class="bg-success-tint border border-success/20 rounded-md p-md mb-md flex items-start gap-sm">
+            <span class="material-symbols-outlined icon-fill text-success">verified</span>
+            <div class="flex-1">
+              <p class="font-button text-button text-on-background mb-base">You meet 4 of 5 requirements</p>
+              <p class="text-body-sm text-on-surface-variant">Based on your profile (Indian national, International student, CGPA 3.8, CS major). One requirement needs attention.</p>
+            </div>
+            <span class="text-h3 text-success">80%</span>
+          </div>
+
+          <ul class="space-y-sm text-body-md text-on-surface-variant">
+            <li class="flex items-start gap-sm">
+              <span class="material-symbols-outlined icon-fill text-success mt-0.5 text-[20px]">check_circle</span>
+              <div class="flex-1">
+                <span>Currently enrolled as a high school senior or undergraduate.</span>
+                <p class="text-body-sm text-success mt-base">✓ You're a 3rd-year undergraduate.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-sm">
+              <span class="material-symbols-outlined icon-fill text-success mt-0.5 text-[20px]">check_circle</span>
+              <div class="flex-1">
+                <span>Pursuing CS, Computer Engineering, or related field.</span>
+                <p class="text-body-sm text-success mt-base">✓ Computer Science · AI track.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-sm">
+              <span class="material-symbols-outlined icon-fill text-success mt-0.5 text-[20px]">check_circle</span>
+              <div class="flex-1">
+                <span>Minimum cumulative GPA of 3.5 / 4.0.</span>
+                <p class="text-body-sm text-success mt-base">✓ Your CGPA: 3.8 / 4.0.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-sm">
+              <span class="material-symbols-outlined icon-fill text-success mt-0.5 text-[20px]">check_circle</span>
+              <div class="flex-1">
+                <span>Open to international students.</span>
+                <p class="text-body-sm text-success mt-base">✓ This award accepts non-US citizens. Visa sponsorship available for finalists.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-sm">
+              <span class="material-symbols-outlined text-warning mt-0.5 text-[20px]">error</span>
+              <div class="flex-1">
+                <span>Demonstrated financial need (FAFSA or equivalent).</span>
+                <p class="text-body-sm text-warning mt-base">⚠ International students should submit a CSS Profile or home-country income proof. <a href="#" class="text-brand hover:underline">View accepted alternatives →</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- International-specific notes -->
+          <div class="mt-md p-md border border-brand-border rounded-md bg-surface-container-low">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-base flex items-center gap-base">
+              <span class="material-symbols-outlined text-[18px]">flight</span> International student notes
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-base text-body-sm">
+              <div><p class="text-on-surface-variant">Visa sponsorship</p><p class="text-on-background font-medium">Yes — F-1 / J-1</p></div>
+              <div><p class="text-on-surface-variant">English test required</p><p class="text-on-background font-medium">IELTS 7.0+ or TOEFL 100+</p></div>
+              <div><p class="text-on-surface-variant">Tax treatment</p><p class="text-on-background font-medium">Subject to US tax treaty</p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Requirements with start affordance per item -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+          <h2 class="text-h3 text-on-background mb-md flex items-center gap-base">
+            <span class="material-symbols-outlined text-brand">assignment</span> Application requirements
+          </h2>
+          <div class="space-y-base">
+            <div class="flex items-center justify-between p-md border border-brand-border rounded-md">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined icon-fill text-success">check_circle</span>
+                <div>
+                  <p class="font-button text-button text-on-background">Personal essay</p>
+                  <p class="text-body-sm text-on-surface-variant">1000 words · Submitted</p>
+                </div>
+              </div>
+              <button class="font-button text-button text-on-surface-variant hover:text-on-background">Edit</button>
+            </div>
+            <div class="flex items-center justify-between p-md border border-brand-border rounded-md">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined icon-fill text-success">check_circle</span>
+                <div>
+                  <p class="font-button text-button text-on-background">Transcripts</p>
+                  <p class="text-body-sm text-on-surface-variant">Uploaded · KCL_Y2_2026.pdf</p>
+                </div>
+              </div>
+              <button class="font-button text-button text-on-surface-variant hover:text-on-background">Replace</button>
+            </div>
+            <div class="flex items-center justify-between p-md border border-brand rounded-md bg-brand-tint-5">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-brand">pending</span>
+                <div>
+                  <p class="font-button text-button text-on-background">Recommendations</p>
+                  <p class="text-body-sm text-on-surface-variant">2 letters required · 0 received</p>
+                </div>
+              </div>
+              <button class="font-button text-button px-sm py-base bg-brand text-on-primary rounded-md hover:bg-brand-hover">Request</button>
+            </div>
+            <div class="flex items-center justify-between p-md border border-brand-border rounded-md">
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined icon-fill text-success">check_circle</span>
+                <div>
+                  <p class="font-button text-button text-on-background">Project portfolio</p>
+                  <p class="text-body-sm text-on-surface-variant">github.com/alex-kcl · Linked</p>
+                </div>
+              </div>
+              <button class="font-button text-button text-on-surface-variant hover:text-on-background">Edit</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right column -->
+      <aside class="space-y-md">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient sticky top-[112px]">
+          <div class="text-center pb-md border-b border-brand-border mb-md">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-base">Application deadline</p>
+            <p class="text-h3 text-on-background">May 14, 2026</p>
+            <div class="flex items-center justify-center gap-base mt-base text-warning font-button text-button">
+              <span class="material-symbols-outlined text-[18px]">timer</span> 12 days remaining
+            </div>
+          </div>
+          <button class="w-full bg-brand text-on-primary font-button text-button py-sm rounded-md hover:bg-brand-hover transition-colors mb-base flex items-center justify-center gap-base">
+            Continue application <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+          <button class="w-full border-[1.5px] border-brand-border text-on-background font-button text-button py-sm rounded-md hover:bg-brand-tint-2 flex items-center justify-center gap-base">
+            <span class="material-symbols-outlined text-[18px] icon-fill text-brand">bookmark</span> Saved
+          </button>
+          <div class="mt-md pt-md border-t border-brand-border">
+            <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Selection timeline</p>
+            <div class="space-y-base text-body-sm">
+              <div class="flex justify-between"><span class="text-on-surface-variant">Review period</span><span class="text-on-background font-medium">May – Jun</span></div>
+              <div class="flex justify-between"><span class="text-on-surface-variant">Interviews</span><span class="text-on-background font-medium">July 2026</span></div>
+              <div class="flex justify-between"><span class="text-on-surface-variant">Final decision</span><span class="text-on-background font-medium">Aug 2026</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <h3 class="font-button text-button text-on-background mb-base flex items-center gap-base">
+            <span class="material-symbols-outlined text-on-surface-variant">help_outline</span> Questions?
+          </h3>
+          <p class="text-body-sm text-on-surface-variant mb-base">Contact the scholarship administrator for specific inquiries.</p>
+          <div class="space-y-base text-body-sm">
+            <a class="flex items-center gap-base text-brand hover:underline" href="mailto:support@futureforward.org"><span class="material-symbols-outlined text-[18px]">mail</span>support@futureforward.org</a>
+            <a class="flex items-center gap-base text-brand hover:underline" href="#"><span class="material-symbols-outlined text-[18px]">language</span>futureforward.org/scholars</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 8 · UNIVERSITIES — local unis, about them, recommended for you
+     ===================================================================== -->
+<section id="screen-unis" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="mb-lg">
+      <p class="text-label-caps uppercase text-brand mb-sm">Universities · 2,400+ institutions</p>
+      <h1 class="text-h1 text-on-background mb-base">Find your university</h1>
+      <p class="text-body-md text-on-surface-variant max-w-2xl mb-md">Browse local institutions, learn what makes them distinctive, and see which ones match your salary outcomes and academic profile.</p>
+
+      <!-- Search row -->
+      <div class="flex flex-col md:flex-row gap-base">
+        <div class="relative flex-1">
+          <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+          <input type="text" placeholder="Search universities by name, city, or program..." class="w-full pl-12 pr-md py-md border-[1.5px] border-brand-border rounded-md text-body-md focus:border-brand focus:ring-0 focus:shadow-focus-ring transition-all"/>
+        </div>
+        <select class="px-md py-md border-[1.5px] border-brand-border rounded-md text-body-md focus:border-brand focus:ring-0 focus:shadow-focus-ring bg-surface-container-lowest">
+          <option>Any region</option>
+          <option>UK</option>
+          <option>USA</option>
+          <option>Europe</option>
+          <option>Asia-Pacific</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Local unis section -->
+    <div class="mb-xl">
+      <div class="flex items-end justify-between mb-md">
+        <div>
+          <p class="text-label-caps uppercase text-brand mb-sm">Near you · Newcastle, UK</p>
+          <h2 class="text-h2 text-on-background">Local universities</h2>
+        </div>
+        <a href="#" class="text-body-sm text-brand font-medium hover:text-brand-hover">View all in your region →</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+        <!-- Local Uni 1 -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg overflow-hidden shadow-ambient hover:shadow-ambient-lift transition-shadow">
+          <div class="h-32 bg-gradient-to-br from-primary-container to-on-surface-variant relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 rounded-md bg-surface-container-lowest flex items-center justify-center font-bold text-on-background text-xl">NU</div>
+            </div>
+          </div>
+          <div class="p-md">
+            <h3 class="text-h3 text-on-background mb-base">Newcastle University</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Russell Group · Founded 1834 · 28,000 students</p>
+            <p class="text-body-md text-on-surface-variant mb-md">Strong in medicine, engineering, and marine biology. Notable for its tight industry ties in the North-East tech corridor.</p>
+            <div class="grid grid-cols-2 gap-base text-body-sm mb-md pb-md border-b border-brand-border">
+              <div><p class="text-on-surface-variant">QS Ranking</p><p class="text-on-background font-medium">#129 World</p></div>
+              <div><p class="text-on-surface-variant">Avg starting salary</p><p class="text-on-background font-medium">£32,400</p></div>
+            </div>
+            <button class="w-full font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">Learn more</button>
+          </div>
+        </article>
+
+        <!-- Local Uni 2 -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg overflow-hidden shadow-ambient hover:shadow-ambient-lift transition-shadow">
+          <div class="h-32 bg-gradient-to-br from-brand to-brand-hover relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 rounded-md bg-surface-container-lowest flex items-center justify-center font-bold text-on-background text-xl">DU</div>
+            </div>
+          </div>
+          <div class="p-md">
+            <h3 class="text-h3 text-on-background mb-base">Durham University</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Russell Group · Founded 1832 · 19,000 students</p>
+            <p class="text-body-md text-on-surface-variant mb-md">Collegiate university with deep humanities tradition. Strong physics, theology, and law programs. UNESCO heritage campus.</p>
+            <div class="grid grid-cols-2 gap-base text-body-sm mb-md pb-md border-b border-brand-border">
+              <div><p class="text-on-surface-variant">QS Ranking</p><p class="text-on-background font-medium">#92 World</p></div>
+              <div><p class="text-on-surface-variant">Avg starting salary</p><p class="text-on-background font-medium">£35,800</p></div>
+            </div>
+            <button class="w-full font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">Learn more</button>
+          </div>
+        </article>
+
+        <!-- Local Uni 3 -->
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg overflow-hidden shadow-ambient hover:shadow-ambient-lift transition-shadow">
+          <div class="h-32 bg-gradient-to-br from-success to-on-surface-variant relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 rounded-md bg-surface-container-lowest flex items-center justify-center font-bold text-on-background text-xl">NM</div>
+            </div>
+          </div>
+          <div class="p-md">
+            <h3 class="text-h3 text-on-background mb-base">Northumbria University</h3>
+            <p class="text-body-sm text-on-surface-variant mb-md">Modern university · Founded 1992 · 32,000 students</p>
+            <p class="text-body-md text-on-surface-variant mb-md">Strong vocational ties; design, business, and computing have direct industry placements with regional employers.</p>
+            <div class="grid grid-cols-2 gap-base text-body-sm mb-md pb-md border-b border-brand-border">
+              <div><p class="text-on-surface-variant">QS Ranking</p><p class="text-on-background font-medium">#601-650</p></div>
+              <div><p class="text-on-surface-variant">Avg starting salary</p><p class="text-on-background font-medium">£28,900</p></div>
+            </div>
+            <button class="w-full font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:border-brand hover:text-brand">Learn more</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Recommended for you and your preferences -->
+    <div>
+      <div class="flex items-end justify-between mb-md">
+        <div>
+          <p class="text-label-caps uppercase text-brand mb-sm">Tailored to your profile</p>
+          <h2 class="text-h2 text-on-background">Recommended for you</h2>
+          <p class="text-body-sm text-on-surface-variant mt-base">Based on your CS / AI focus, $95k+ salary target, and international preference.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient flex gap-md">
+          <div class="w-20 h-20 rounded-md bg-gradient-to-br from-brand to-brand-hover flex items-center justify-center font-bold text-on-primary text-xl flex-shrink-0">MIT</div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-base">
+              <h3 class="text-h3 text-on-background">Massachusetts Institute of Technology</h3>
+              <div class="px-sm py-base bg-success-tint text-success rounded-full text-label-caps">94% FIT</div>
+            </div>
+            <p class="text-body-sm text-on-surface-variant mb-base">Cambridge, USA · Private research</p>
+            <div class="grid grid-cols-3 gap-base text-body-sm mb-md">
+              <div><p class="text-on-surface-variant">Median outcome</p><p class="text-on-background font-medium">$142k</p></div>
+              <div><p class="text-on-surface-variant">Aid available</p><p class="text-on-background font-medium">Need-blind</p></div>
+              <div><p class="text-on-surface-variant">Acceptance</p><p class="text-on-background font-medium">4%</p></div>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Why we suggest this: matches your AI track and salary ceiling. 7 active fellowships overlap your eligibility.</p>
+          </div>
+        </article>
+
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient flex gap-md">
+          <div class="w-20 h-20 rounded-md bg-gradient-to-br from-warning to-on-surface-variant flex items-center justify-center font-bold text-on-primary text-xl flex-shrink-0">SU</div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-base">
+              <h3 class="text-h3 text-on-background">Stanford University</h3>
+              <div class="px-sm py-base bg-success-tint text-success rounded-full text-label-caps">91% FIT</div>
+            </div>
+            <p class="text-body-sm text-on-surface-variant mb-base">Stanford, USA · Private research</p>
+            <div class="grid grid-cols-3 gap-base text-body-sm mb-md">
+              <div><p class="text-on-surface-variant">Median outcome</p><p class="text-on-background font-medium">$138k</p></div>
+              <div><p class="text-on-surface-variant">Aid available</p><p class="text-on-background font-medium">Need-based</p></div>
+              <div><p class="text-on-surface-variant">Acceptance</p><p class="text-on-background font-medium">4%</p></div>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Why we suggest this: Knight-Hennessy &amp; Stanford ML overlap your career-transition flag.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 9 · SALARY & CAREER — what to do for your salary section
+     ===================================================================== -->
+<section id="screen-career" class="screen-anchor">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <div class="mb-lg">
+      <p class="text-label-caps uppercase text-brand mb-sm">Career insights · Updated weekly</p>
+      <h1 class="text-h1 text-on-background mb-base">Salary &amp; career</h1>
+      <p class="text-body-md text-on-surface-variant max-w-2xl">What it actually takes to reach your target salary. Real outcomes data from 280,000 graduates, mapped onto your profile.</p>
+    </div>
+
+    <!-- Top hero stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+      <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Your target</p>
+        <p class="text-h2 text-on-background">$95k – $130k</p>
+        <p class="text-body-sm text-on-surface-variant mt-base">Set in profile</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Median in matched roles</p>
+        <p class="text-h2 text-brand">$118k</p>
+        <p class="text-body-sm text-success mt-base flex items-center gap-base"><span class="material-symbols-outlined text-[16px]">trending_up</span>Within your target band</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+        <p class="text-label-caps uppercase text-on-surface-variant mb-sm">Years to reach</p>
+        <p class="text-h2 text-on-background">2–4</p>
+        <p class="text-body-sm text-on-surface-variant mt-base">Post-graduation, with current path</p>
+      </div>
+    </div>
+
+    <!-- Salary curve visualization -->
+    <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient mb-lg">
+      <div class="flex justify-between items-end mb-md">
+        <div>
+          <h2 class="text-h3 text-on-background">Salary trajectory · ML Engineer track</h2>
+          <p class="text-body-sm text-on-surface-variant">Based on graduates with profiles similar to yours</p>
+        </div>
+        <div class="flex gap-base text-body-sm">
+          <span class="flex items-center gap-base"><span class="w-3 h-1 bg-brand rounded-full"></span>You (projected)</span>
+          <span class="flex items-center gap-base"><span class="w-3 h-1 bg-on-surface-variant rounded-full"></span>Cohort median</span>
+        </div>
+      </div>
+      <!-- Inline SVG chart, fully themed -->
+      <svg viewBox="0 0 800 280" class="w-full h-64" xmlns="http://www.w3.org/2000/svg" aria-label="Salary trajectory chart">
+        <!-- gridlines -->
+        <g stroke="#E8E6E1" stroke-width="1">
+          <line x1="60" y1="40"  x2="780" y2="40"/>
+          <line x1="60" y1="100" x2="780" y2="100"/>
+          <line x1="60" y1="160" x2="780" y2="160"/>
+          <line x1="60" y1="220" x2="780" y2="220"/>
+        </g>
+        <!-- y axis labels -->
+        <g fill="#444748" font-family="Inter" font-size="11" font-weight="500">
+          <text x="50" y="44"  text-anchor="end">$200k</text>
+          <text x="50" y="104" text-anchor="end">$150k</text>
+          <text x="50" y="164" text-anchor="end">$100k</text>
+          <text x="50" y="224" text-anchor="end">$50k</text>
+        </g>
+        <!-- target band -->
+        <rect x="60" y="115" width="720" height="50" fill="#3D5AFE" opacity="0.06"/>
+        <text x="780" y="125" text-anchor="end" fill="#3D5AFE" font-family="Inter" font-size="11" font-weight="600">YOUR TARGET BAND</text>
+        <!-- cohort median (grey dashed) -->
+        <polyline points="80,210 220,190 360,160 500,135 640,120 760,105"
+                  fill="none" stroke="#747878" stroke-width="2" stroke-dasharray="6 4"/>
+        <!-- you (brand) -->
+        <polyline points="80,205 220,175 360,140 500,115 640,90 760,70"
+                  fill="none" stroke="#3D5AFE" stroke-width="3"/>
+        <!-- you points -->
+        <g fill="#3D5AFE">
+          <circle cx="80"  cy="205" r="4"/>
+          <circle cx="220" cy="175" r="4"/>
+          <circle cx="360" cy="140" r="4"/>
+          <circle cx="500" cy="115" r="4"/>
+          <circle cx="640" cy="90"  r="4"/>
+          <circle cx="760" cy="70"  r="5" stroke="#fff" stroke-width="2"/>
+        </g>
+        <!-- x labels -->
+        <g fill="#444748" font-family="Inter" font-size="11" font-weight="500">
+          <text x="80"  y="255" text-anchor="middle">Year 0</text>
+          <text x="220" y="255" text-anchor="middle">Year 2</text>
+          <text x="360" y="255" text-anchor="middle">Year 4</text>
+          <text x="500" y="255" text-anchor="middle">Year 6</text>
+          <text x="640" y="255" text-anchor="middle">Year 8</text>
+          <text x="760" y="255" text-anchor="middle">Year 10</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- What to do for your career — actionable steps -->
+    <div class="mb-lg">
+      <h2 class="text-h2 text-on-background mb-md">What to do for your career</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex items-center gap-base mb-md">
+            <span class="w-10 h-10 rounded-md bg-brand-tint-10 flex items-center justify-center text-brand"><span class="material-symbols-outlined">school</span></span>
+            <p class="text-label-caps uppercase text-on-surface-variant">In the next 6 months</p>
+          </div>
+          <h3 class="text-h3 text-on-background mb-base">Lock in research experience</h3>
+          <p class="text-body-md text-on-surface-variant mb-md">Graduates with one published paper land roles ~14% above the cohort median. We track 8 open research positions matching your profile.</p>
+          <a href="#screen-foryou" class="text-brand font-button text-button hover:text-brand-hover">View matched research roles →</a>
+        </article>
+
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex items-center gap-base mb-md">
+            <span class="w-10 h-10 rounded-md bg-brand-tint-10 flex items-center justify-center text-brand"><span class="material-symbols-outlined">trending_up</span></span>
+            <p class="text-label-caps uppercase text-on-surface-variant">In the next year</p>
+          </div>
+          <h3 class="text-h3 text-on-background mb-base">Target a top-25 program</h3>
+          <p class="text-body-md text-on-surface-variant mb-md">Median salary lift of ~$22k for graduates from top-25 CS programs vs. peer schools. 4 fellowships could fully fund this.</p>
+          <a href="#screen-unis" class="text-brand font-button text-button hover:text-brand-hover">Browse matched universities →</a>
+        </article>
+
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex items-center gap-base mb-md">
+            <span class="w-10 h-10 rounded-md bg-brand-tint-10 flex items-center justify-center text-brand"><span class="material-symbols-outlined">workspace_premium</span></span>
+            <p class="text-label-caps uppercase text-on-surface-variant">In 3–5 years</p>
+          </div>
+          <h3 class="text-h3 text-on-background mb-base">Specialize via certifications</h3>
+          <p class="text-body-md text-on-surface-variant mb-md">ML specialists with ML Ops certifications report 18% higher base. We partner with 3 fully-funded programs for our members.</p>
+          <a href="#" class="text-brand font-button text-button hover:text-brand-hover">View certification paths →</a>
+        </article>
+      </div>
+    </div>
+
+    <!-- Salary comparison panel -->
+    <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-lg shadow-ambient">
+      <h2 class="text-h3 text-on-background mb-md">Compare paths to your target</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-body-sm">
+          <thead>
+            <tr class="text-label-caps uppercase text-on-surface-variant border-b border-brand-border">
+              <th class="text-left py-sm">Path</th>
+              <th class="text-left py-sm">Time to $95k+</th>
+              <th class="text-left py-sm">Avg debt taken</th>
+              <th class="text-left py-sm">Match for you</th>
+              <th class="text-right py-sm"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brand-border">
+            <tr>
+              <td class="py-sm">
+                <p class="font-button text-button text-on-background">Direct to industry</p>
+                <p class="text-body-sm text-on-surface-variant">BSc → ML Engineer role</p>
+              </td>
+              <td>3.2 yrs avg</td>
+              <td class="text-success font-medium">$0</td>
+              <td><span class="px-sm py-base bg-warning-tint text-warning text-label-caps rounded-full">PARTIAL</span></td>
+              <td class="text-right"><a href="#" class="text-brand font-button text-button">Plan path →</a></td>
+            </tr>
+            <tr>
+              <td class="py-sm">
+                <p class="font-button text-button text-on-background">Master's + industry</p>
+                <p class="text-body-sm text-on-surface-variant">BSc → MSc → senior role</p>
+              </td>
+              <td>2.8 yrs avg</td>
+              <td>$28k median (often funded)</td>
+              <td><span class="px-sm py-base bg-success-tint text-success text-label-caps rounded-full">STRONG</span></td>
+              <td class="text-right"><a href="#" class="text-brand font-button text-button">Plan path →</a></td>
+            </tr>
+            <tr>
+              <td class="py-sm">
+                <p class="font-button text-button text-on-background">PhD → research</p>
+                <p class="text-body-sm text-on-surface-variant">BSc → PhD → research scientist</p>
+              </td>
+              <td>5.5 yrs avg</td>
+              <td class="text-success font-medium">$0 (stipend)</td>
+              <td><span class="px-sm py-base bg-success-tint text-success text-label-caps rounded-full">STRONG</span></td>
+              <td class="text-right"><a href="#" class="text-brand font-button text-button">Plan path →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<div class="screen-divider h-[2px]"></div>
+
+<!-- =====================================================================
+     SCREEN 10 · DASHBOARD — fixed (right-sized welcome, contextual stats,
+     quick actions)
+     ===================================================================== -->
+<section id="screen-dashboard" class="screen-anchor bg-surface-container-low">
+  <div data-navbar></div>
+
+  <div class="max-w-[1200px] mx-auto px-12 py-xl">
+    <!-- Welcome — sized down from H1 to H2 -->
+    <header class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+      <div>
+        <p class="text-label-caps uppercase text-brand mb-sm">Saturday · May 2, 2026</p>
+        <h1 class="text-h2 text-on-background mb-base">Welcome back, Alex.</h1>
+        <p class="text-body-md text-on-surface-variant">3 deadlines this month · 1 needing attention today.</p>
+      </div>
+      <!-- Quick actions -->
+      <div class="flex gap-base flex-wrap">
+        <a href="#screen-foryou" class="font-button text-button px-md py-sm bg-brand text-on-primary rounded-md hover:bg-brand-hover flex items-center gap-base">
+          <span class="material-symbols-outlined text-[18px]">add</span> Start application
+        </a>
+        <a href="#screen-profile" class="font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 flex items-center gap-base">
+          <span class="material-symbols-outlined text-[18px]">edit</span> Update profile
+        </a>
+        <a href="#screen-saved" class="font-button text-button px-md py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 flex items-center gap-base">
+          <span class="material-symbols-outlined text-[18px]">bookmark</span> Saved
+        </a>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Stats — now with context lines -->
+      <section class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex items-center justify-between mb-base">
+            <span class="text-body-sm text-on-surface-variant">In progress</span>
+            <span class="material-symbols-outlined icon-fill text-brand">edit_document</span>
+          </div>
+          <p class="text-h2 text-on-background">4</p>
+          <p class="text-body-sm text-on-surface-variant mt-base">2 due in next 30 days</p>
+        </div>
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex items-center justify-between mb-base">
+            <span class="text-body-sm text-on-surface-variant">Submitted</span>
+            <span class="material-symbols-outlined icon-fill text-on-surface-variant">send</span>
+          </div>
+          <p class="text-h2 text-on-background">12</p>
+          <p class="text-body-sm text-on-surface-variant mt-base">All-time · 3 awaiting decision</p>
+        </div>
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient relative overflow-hidden">
+          <div class="absolute right-0 top-0 w-24 h-24 bg-success-tint rounded-full -mr-8 -mt-8 blur-xl"></div>
+          <div class="flex items-center justify-between mb-base relative z-10">
+            <span class="text-body-sm text-on-surface-variant">Awards won</span>
+            <span class="material-symbols-outlined icon-fill text-success">emoji_events</span>
+          </div>
+          <p class="text-h2 text-on-background relative z-10">2</p>
+          <p class="text-body-sm text-on-surface-variant mt-base relative z-10">Worth $42,000 total</p>
+        </div>
+      </section>
+
+      <!-- Profile -->
+      <aside class="lg:col-span-4 mb-lg">
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <h3 class="text-h3 text-on-background mb-base">Profile completeness</h3>
+          <div class="h-1 bg-brand-border rounded-full overflow-hidden mb-base">
+            <div class="h-full bg-brand" style="width:68%"></div>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">68% complete. Add test scores and CV to unlock 9 more matches.</p>
+          <a href="#screen-profile" class="mt-md font-button text-button text-on-background w-full py-sm border-[1.5px] border-brand-border rounded-md hover:bg-brand-tint-2 flex items-center justify-center gap-base">Update profile</a>
+        </div>
+      </aside>
+
+      <!-- Recent activity -->
+      <section class="lg:col-span-8">
+        <h2 class="text-h2 text-on-background mb-md">Recent activity</h2>
+        <div class="bg-surface-container-lowest border border-brand-border rounded-lg shadow-ambient overflow-hidden">
+          <div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface transition-colors">
+            <div class="flex items-start gap-md">
+              <div class="w-10 h-10 rounded-full bg-success-tint flex items-center justify-center"><span class="material-symbols-outlined icon-fill text-success">check_circle</span></div>
+              <div>
+                <h4 class="font-button text-button text-on-background mb-base">National STEM Merit Scholarship</h4>
+                <p class="text-body-sm text-on-surface-variant">Submitted on Apr 12, 2026</p>
+              </div>
+            </div>
+            <span class="px-sm py-base rounded-full bg-success-tint text-success text-label-caps">AWARDED</span>
+          </div>
+          <div class="flex items-center justify-between p-md border-b border-brand-border hover:bg-surface transition-colors">
+            <div class="flex items-start gap-md">
+              <div class="w-10 h-10 rounded-full bg-brand-tint-10 flex items-center justify-center"><span class="material-symbols-outlined icon-fill text-brand">schedule</span></div>
+              <div>
+                <h4 class="font-button text-button text-on-background mb-base">Future Tech Innovators Fellowship</h4>
+                <p class="text-body-sm text-warning">References needed · 12 days left</p>
+              </div>
+            </div>
+            <span class="px-sm py-base rounded-full bg-brand-tint-10 text-brand text-label-caps">IN PROGRESS</span>
+          </div>
+          <div class="flex items-center justify-between p-md hover:bg-surface transition-colors">
+            <div class="flex items-start gap-md">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined icon-fill text-on-surface-variant">done_all</span></div>
+              <div>
+                <h4 class="font-button text-button text-on-background mb-base">Arts &amp; Humanities Trust Fund</h4>
+                <p class="text-body-sm text-on-surface-variant">Submitted on Mar 28, 2026 · Awaiting decision</p>
+              </div>
+            </div>
+            <span class="px-sm py-base rounded-full bg-surface-container-high text-on-surface-variant text-label-caps">SUBMITTED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommendations -->
+      <section class="lg:col-span-4 flex flex-col gap-md">
+        <h2 class="text-h2 text-on-background">Recommended for you</h2>
+
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex flex-wrap gap-base mb-base">
+            <span class="px-sm py-base rounded-full bg-brand-chip-bg text-on-surface text-label-caps">FULL RIDE</span>
+            <span class="px-sm py-base rounded-full bg-brand-chip-bg text-on-surface text-label-caps">TECH</span>
+          </div>
+          <h4 class="font-button text-button text-on-background mb-base">Future Tech Innovators Grant</h4>
+          <p class="text-body-sm text-on-surface-variant mb-md">For undergraduates pursuing CS with focus on AI ethics.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-label-caps uppercase text-on-surface-variant flex items-center gap-base"><span class="material-symbols-outlined text-[14px]">event</span> Due Nov 15</span>
+            <button class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-on-surface-variant hover:bg-brand hover:border-brand hover:text-on-primary"><span class="material-symbols-outlined text-sm">bookmark_add</span></button>
+          </div>
+        </article>
+
+        <article class="bg-surface-container-lowest border border-brand-border rounded-lg p-md shadow-ambient">
+          <div class="flex flex-wrap gap-base mb-base">
+            <span class="px-sm py-base rounded-full bg-brand-chip-bg text-on-surface text-label-caps">$10,000</span>
+            <span class="px-sm py-base rounded-full bg-brand-chip-bg text-on-surface text-label-caps">LEADERSHIP</span>
+          </div>
+          <h4 class="font-button text-button text-on-background mb-base">Civic Leadership Endowment</h4>
+          <p class="text-body-sm text-on-surface-variant mb-md">Recognizing community service and government initiatives.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-label-caps uppercase text-on-surface-variant flex items-center gap-base"><span class="material-symbols-outlined text-[14px]">event</span> Due Dec 01</span>
+            <button class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-on-surface-variant hover:bg-brand hover:border-brand hover:text-on-primary"><span class="material-symbols-outlined text-sm">bookmark_add</span></button>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <div data-footer></div>
+</section>
+
+<!-- =====================================================================
+     SCRIPT — render shared navbar/footer into every screen, manage active
+     nav state per screen so the same template serves all 10 sections.
+     ===================================================================== -->
+<script>
+(function () {
+  const navbarTpl = document.getElementById('tpl-navbar');
+  const footerTpl = document.getElementById('tpl-footer');
+
+  // Map each screen ID → which nav item should be active
+  const activeMap = {
+    'screen-landing':     null,
+    'screen-signup':      null,
+    'screen-academic':    null,
+    'screen-eligibility': null,
+    'screen-profile':   'dashboard',
+    'screen-foryou':    'foryou',
+    'screen-browse':    'browse',
+    'screen-saved':     'saved',
+    'screen-detail':    'foryou',
+    'screen-unis':      'unis',
+    'screen-career':    'career',
+    'screen-dashboard': 'dashboard'
+  };
+
+  document.querySelectorAll('[data-navbar]').forEach(slot => {
+    const screenId = slot.closest('section').id;
+    const clone = navbarTpl.content.cloneNode(true);
+
+    // Set active state
+    const activeKey = activeMap[screenId];
+    if (activeKey) {
+      const link = clone.querySelector(`[data-nav="${activeKey}"]`);
+      if (link) {
+        link.classList.remove('text-on-surface-variant');
+        link.classList.add('text-brand', 'border-b-2', 'border-brand', 'pb-1');
+      }
+    }
+    slot.replaceWith(clone);
+  });
+
+  document.querySelectorAll('[data-footer]').forEach(slot => {
+    slot.replaceWith(footerTpl.content.cloneNode(true));
+  });
+})();
+</script>
+
+</body>
+</html>
