@@ -80,10 +80,7 @@ export function OpportunitiesPage() {
           className="field"
           placeholder="Search scholarships..."
           value={search}
-          onChange={(event) => {
-            setSearch(event.target.value);
-            setPage(1);
-          }}
+          onChange={(event) => setSearch(event.target.value)}
         />
         <select
           className="field"

@@ -12,12 +12,19 @@ export function TodosPage() {
   const [loading, setLoading] = useState(true);
   const enabled = import.meta.env.VITE_ENABLE_SUPABASE_TODOS === "true";
 
-  useEffect(() => {
-    if (!enabled) {
-      setLoading(false);
-      return;
-    }
+  if (!enabled) {
+    return (
+      <section className="card" style={{ maxWidth: 640 }}>
+        <h2>Supabase Todos</h2>
+        <p>
+          This demo page is disabled by default. Set
+          `VITE_ENABLE_SUPABASE_TODOS=true` to enable it.
+        </p>
+      </section>
+    );
+  }
 
+  useEffect(() => {
     const run = async () => {
       try {
         const supabase = createClient();
@@ -32,19 +39,7 @@ export function TodosPage() {
     };
 
     run();
-  }, [enabled]);
-
-  if (!enabled) {
-    return (
-      <section className="card" style={{ maxWidth: 640 }}>
-        <h2>Supabase Todos</h2>
-        <p>
-          This demo page is disabled by default. Set
-          `VITE_ENABLE_SUPABASE_TODOS=true` to enable it.
-        </p>
-      </section>
-    );
-  }
+  }, []);
 
   return (
     <section className="card" style={{ maxWidth: 640 }}>

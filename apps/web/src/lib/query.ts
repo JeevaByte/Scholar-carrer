@@ -13,21 +13,15 @@ export const buildOpportunityQuery = (
   filters: OpportunityQueryState,
 ): string => {
   const params = new URLSearchParams();
-
-  const entries: Array<[string, string | number | undefined]> = [
-    ["search", filters.search?.trim()],
-    ["educationLevel", filters.educationLevel?.trim()],
-    ["location", filters.location?.trim()],
-    ["minAmount", filters.minAmount],
-    ["maxAmount", filters.maxAmount],
-    ["sort", filters.sort?.trim()],
-    ["page", filters.page],
-    ["pageSize", filters.pageSize],
-  ];
-
-  entries.forEach(([key, value]) => {
+  Object.entries(filters).forEach(([key, value]) => {
     if (value === undefined) return;
-    if (typeof value === "string" && value.trim() === "") return;
+    if (typeof value === "string") {
+      const trimmed = value.trim();
+      if (!trimmed) return;
+      params.set(key, trimmed);
+      return;
+    }
+
     params.set(key, String(value));
   });
 
