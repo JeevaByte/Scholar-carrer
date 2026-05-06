@@ -5,11 +5,16 @@ import { OpportunityCard } from "../components/OpportunityCard";
 
 export function DashboardPage() {
   const [data, setData] = useState<DashboardPayload | null>(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    api.dashboard().then(setData);
+    api
+      .dashboard()
+      .then(setData)
+      .catch((err) => setError(String(err)));
   }, []);
 
+  if (error) return <p>Failed to load dashboard: {error}</p>;
   if (!data) return <p>Loading dashboard...</p>;
 
   return (
@@ -34,16 +39,27 @@ export function DashboardPage() {
         </article>
       </div>
 
-      <div className="grid" style={{ gridTemplateColumns: "2fr 1fr", gap: "1rem" }}>
+      <div
+        className="grid"
+        style={{ gridTemplateColumns: "2fr 1fr", gap: "1rem" }}
+      >
         <article className="card">
           <h3>Recent Activity</h3>
           {data.activity.map((item) => (
-            <div key={item.id} style={{ borderTop: "1px solid var(--line)", paddingTop: "0.7rem", marginTop: "0.7rem" }}>
+            <div
+              key={item.id}
+              style={{
+                borderTop: "1px solid var(--line)",
+                paddingTop: "0.7rem",
+                marginTop: "0.7rem",
+              }}
+            >
               <strong>{item.title}</strong>
               <p>{item.dateLabel}</p>
               <span className="badge">{item.status}</span>
             </div>
           ))}
+          {data.activity.length === 0 ? <p>No recent activity yet.</p> : null}
         </article>
 
         <article className="card">
@@ -52,6 +68,9 @@ export function DashboardPage() {
             {data.recommended.map((item) => (
               <OpportunityCard key={item.id} item={item} />
             ))}
+            {data.recommended.length === 0 ? (
+              <p>No recommendations available yet.</p>
+            ) : null}
           </div>
         </article>
       </div>

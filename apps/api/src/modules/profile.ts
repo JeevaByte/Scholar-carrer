@@ -1,12 +1,12 @@
 import type { Router } from "express";
 
 export const registerProfileRoutes = (router: Router) => {
-  router.get("/profile", (_req, res) => {
-    res.json({
-      id: "user-demo-1",
-      fullName: "Alex Johnson",
-      email: "alex@example.com",
-      profileCompletion: 85
-    });
+  router.get("/profile", async (req, res, next) => {
+    try {
+      const profile = await req.repo.getProfile(req.userId);
+      res.json(profile);
+    } catch (error) {
+      next(error);
+    }
   });
 };

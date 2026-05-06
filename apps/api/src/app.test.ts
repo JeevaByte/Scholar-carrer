@@ -9,9 +9,11 @@ describe("mock repository", () => {
       educationLevel: "phd",
       page: 1,
       pageSize: 10,
-      sort: "relevance"
+      sort: "relevance",
     });
 
-    expect(data.items.every((item) => item.educationLevel === "phd")).toBe(true);
+    expect(data.items.every((item) => item.educationLevel === "phd")).toBe(
+      true,
+    );
   });
 });

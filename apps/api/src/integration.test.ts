@@ -8,7 +8,7 @@ describe("list -> save -> dashboard flow", () => {
       search: "",
       page: 1,
       pageSize: 10,
-      sort: "relevance"
+      sort: "relevance",
     });
 
     expect(list.items.length).toBeGreaterThan(0);
@@ -16,6 +16,8 @@ describe("list -> save -> dashboard flow", () => {
     await repo.saveOpportunity("user-demo-1", list.items[0].id);
     const dashboard = await repo.getDashboard("user-demo-1");
 
-    expect(dashboard.recommended.some((item) => item.id === list.items[0].id)).toBe(true);
+    expect(
+      dashboard.recommended.some((item) => item.id === list.items[0].id),
+    ).toBe(true);
   });
 });

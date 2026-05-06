@@ -3,13 +3,29 @@ import { Link } from "react-router-dom";
 
 interface Props {
   item: Opportunity;
-  onSave?: (id: string) => void;
+  actionLabel?: string;
+  actionPendingLabel?: string;
+  actionDisabled?: boolean;
+  onAction?: (id: string) => void | Promise<void>;
 }
 
-export function OpportunityCard({ item, onSave }: Props) {
+export function OpportunityCard({
+  item,
+  actionLabel,
+  actionPendingLabel,
+  actionDisabled,
+  onAction,
+}: Props) {
   return (
     <article className="card">
-      <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem", flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "0.4rem",
+          marginBottom: "0.6rem",
+          flexWrap: "wrap",
+        }}
+      >
         {item.tags.map((tag) => (
           <span key={tag} className="badge">
             {tag}
@@ -27,9 +43,15 @@ export function OpportunityCard({ item, onSave }: Props) {
         <Link className="secondary-btn" to={`/opportunities/${item.id}`}>
           View Details
         </Link>
-        {onSave ? (
-          <button className="primary-btn" onClick={() => onSave(item.id)}>
-            Save
+        {onAction ? (
+          <button
+            className="primary-btn"
+            disabled={actionDisabled}
+            onClick={() => void onAction(item.id)}
+          >
+            {actionDisabled
+              ? (actionPendingLabel ?? actionLabel ?? "Working...")
+              : (actionLabel ?? "Save")}
           </button>
         ) : null}
       </div>

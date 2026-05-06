@@ -1,4 +1,9 @@
-export type OpportunityTag = "full-ride" | "stem" | "leadership" | "research" | "need-based";
+export type OpportunityTag =
+  | "full-ride"
+  | "stem"
+  | "leadership"
+  | "research"
+  | "need-based";
 
 export interface Opportunity {
   id: string;
@@ -12,6 +17,15 @@ export interface Opportunity {
   deadlineISO: string;
   tags: OpportunityTag[];
   isSaved?: boolean;
+}
+
+export interface Profile {
+  id: string;
+  fullName: string;
+  email: string;
+  profileCompletion: number;
+  educationLevel?: Opportunity["educationLevel"];
+  nationality?: string;
 }
 
 export interface DashboardStats {

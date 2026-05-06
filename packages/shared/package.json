@@ -7,8 +7,9 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run --passWithNoTests",
-    "lint": "echo 'shared lint placeholder'",
-    "format": "echo 'shared format placeholder'"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "npm run typecheck",
+    "format": "prettier --check \"src/**/*.ts\" \"package.json\""
   },
   "dependencies": {
     "zod": "^3.23.8"

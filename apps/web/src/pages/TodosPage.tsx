@@ -10,6 +10,19 @@ export function TodosPage() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(true);
+  const enabled = import.meta.env.VITE_ENABLE_SUPABASE_TODOS === "true";
+
+  if (!enabled) {
+    return (
+      <section className="card" style={{ maxWidth: 640 }}>
+        <h2>Supabase Todos</h2>
+        <p>
+          This demo page is disabled by default. Set
+          `VITE_ENABLE_SUPABASE_TODOS=true` to enable it.
+        </p>
+      </section>
+    );
+  }
 
   useEffect(() => {
     const run = async () => {
