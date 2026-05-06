@@ -1,4 +1,9 @@
-export type OpportunityTag = "full-ride" | "stem" | "leadership" | "research" | "need-based";
+export type OpportunityTag =
+  | "full-ride"
+  | "stem"
+  | "leadership"
+  | "research"
+  | "need-based";
 
 export interface Opportunity {
   id: string;

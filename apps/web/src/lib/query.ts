@@ -9,7 +9,9 @@ export interface OpportunityQueryState {
   pageSize?: string | number;
 }
 
-export const buildOpportunityQuery = (filters: OpportunityQueryState): string => {
+export const buildOpportunityQuery = (
+  filters: OpportunityQueryState,
+): string => {
   const params = new URLSearchParams();
 
   const entries: Array<[string, string | number | undefined]> = [
@@ -20,7 +22,7 @@ export const buildOpportunityQuery = (filters: OpportunityQueryState): string =>
     ["maxAmount", filters.maxAmount],
     ["sort", filters.sort?.trim()],
     ["page", filters.page],
-    ["pageSize", filters.pageSize]
+    ["pageSize", filters.pageSize],
   ];
 
   entries.forEach(([key, value]) => {

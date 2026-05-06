@@ -30,19 +30,23 @@ describe("API routes", () => {
 
   it("returns a request-scoped profile", async () => {
     const response = await fetch(`${baseUrl}/api/v1/profile`, {
-      headers: { "x-user-id": userId }
+      headers: { "x-user-id": userId },
     });
 
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
       id: userId,
-      fullName: "Alex Johnson"
+      fullName: "Alex Johnson",
     });
   });
 
   it("persists saved opportunities and dashboard state for a request user", async () => {
-    const opportunitiesResponse = await fetch(`${baseUrl}/api/v1/opportunities`);
-    const opportunities = (await opportunitiesResponse.json()) as { items: Array<{ id: string }> };
+    const opportunitiesResponse = await fetch(
+      `${baseUrl}/api/v1/opportunities`,
+    );
+    const opportunities = (await opportunitiesResponse.json()) as {
+      items: Array<{ id: string }>;
+    };
 
     const targetId = opportunities.items[0]?.id;
     expect(targetId).toBeTruthy();
@@ -51,20 +55,22 @@ describe("API routes", () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-user-id": userId
+        "x-user-id": userId,
       },
-      body: JSON.stringify({ opportunityId: targetId })
+      body: JSON.stringify({ opportunityId: targetId }),
     });
     expect(saveResponse.status).toBe(201);
 
     const dashboardResponse = await fetch(`${baseUrl}/api/v1/dashboard`, {
-      headers: { "x-user-id": userId }
+      headers: { "x-user-id": userId },
     });
     const dashboard = (await dashboardResponse.json()) as {
       recommended: Array<{ id: string }>;
     };
 
-    expect(dashboard.recommended.some((item) => item.id === targetId)).toBe(true);
+    expect(dashboard.recommended.some((item) => item.id === targetId)).toBe(
+      true,
+    );
   });
 
   it("rejects invalid save payloads with a validation error", async () => {
@@ -72,9 +78,9 @@ describe("API routes", () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-user-id": userId
+        "x-user-id": userId,
       },
-      body: JSON.stringify({ opportunityId: "" })
+      body: JSON.stringify({ opportunityId: "" }),
     });
 
     expect(response.status).toBe(400);

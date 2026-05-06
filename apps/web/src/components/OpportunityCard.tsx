@@ -9,10 +9,23 @@ interface Props {
   onAction?: (id: string) => void | Promise<void>;
 }
 
-export function OpportunityCard({ item, actionLabel, actionPendingLabel, actionDisabled, onAction }: Props) {
+export function OpportunityCard({
+  item,
+  actionLabel,
+  actionPendingLabel,
+  actionDisabled,
+  onAction,
+}: Props) {
   return (
     <article className="card">
-      <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem", flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "0.4rem",
+          marginBottom: "0.6rem",
+          flexWrap: "wrap",
+        }}
+      >
         {item.tags.map((tag) => (
           <span key={tag} className="badge">
             {tag}
@@ -31,8 +44,14 @@ export function OpportunityCard({ item, actionLabel, actionPendingLabel, actionD
           View Details
         </Link>
         {onAction ? (
-          <button className="primary-btn" disabled={actionDisabled} onClick={() => void onAction(item.id)}>
-            {actionDisabled ? actionPendingLabel ?? actionLabel ?? "Working..." : actionLabel ?? "Save"}
+          <button
+            className="primary-btn"
+            disabled={actionDisabled}
+            onClick={() => void onAction(item.id)}
+          >
+            {actionDisabled
+              ? (actionPendingLabel ?? actionLabel ?? "Working...")
+              : (actionLabel ?? "Save")}
           </button>
         ) : null}
       </div>

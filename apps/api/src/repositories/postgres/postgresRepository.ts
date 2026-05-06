@@ -4,7 +4,7 @@ import type {
   Opportunity,
   OpportunityFilterInput,
   PaginatedResponse,
-  Profile
+  Profile,
 } from "@scholar-career/shared";
 import type { QueryResultRow } from "pg";
 import { postgres } from "./postgresClient.js";
@@ -32,19 +32,26 @@ const toOpportunity = (row: OpportunityRow): Opportunity => ({
   amountValue: Number(row.amount_value),
   educationLevel: row.education_level,
   location: row.location,
-  deadlineISO: row.deadline_iso instanceof Date ? row.deadline_iso.toISOString().slice(0, 10) : String(row.deadline_iso),
-  tags: row.tags ?? []
+  deadlineISO:
+    row.deadline_iso instanceof Date
+      ? row.deadline_iso.toISOString().slice(0, 10)
+      : String(row.deadline_iso),
+  tags: row.tags ?? [],
 });
 
 export class PostgresRepository implements DataRepository {
-  async listOpportunities(filters: OpportunityFilterInput): Promise<PaginatedResponse<Opportunity>> {
+  async listOpportunities(
+    filters: OpportunityFilterInput,
+  ): Promise<PaginatedResponse<Opportunity>> {
     const where: string[] = [];
     const values: unknown[] = [];
 
     if (filters.search) {
       values.push(`%${filters.search.trim()}%`);
       const index = values.length;
-      where.push(`(title ILIKE $${index} OR provider ILIKE $${index} OR summary ILIKE $${index})`);
+      where.push(
+        `(title ILIKE $${index} OR provider ILIKE $${index} OR summary ILIKE $${index})`,
+      );
     }
     if (filters.educationLevel) {
       values.push(filters.educationLevel);
@@ -73,7 +80,7 @@ export class PostgresRepository implements DataRepository {
 
     const countResult = await postgres.query<{ count: string }>(
       `select count(*)::text as count from opportunities ${whereClause}`,
-      values
+      values,
     );
 
     values.push(filters.pageSize, (filters.page - 1) * filters.pageSize);
@@ -103,14 +110,14 @@ export class PostgresRepository implements DataRepository {
         limit $${values.length - 1}
         offset $${values.length}
       `,
-      values
+      values,
     );
 
     return {
       items: itemsResult.rows.map(toOpportunity),
       total: Number(countResult.rows[0]?.count ?? 0),
       page: filters.page,
-      pageSize: filters.pageSize
+      pageSize: filters.pageSize,
     };
   }
 
@@ -138,7 +145,7 @@ export class PostgresRepository implements DataRepository {
         from opportunities
         where id = $1
       `,
-      [id]
+      [id],
     );
 
     return result.rows[0] ? toOpportunity(result.rows[0]) : null;
@@ -160,7 +167,7 @@ export class PostgresRepository implements DataRepository {
         from profiles
         where id = $1
       `,
-      [userId]
+      [userId],
     );
 
     const row = result.rows[0];
@@ -169,7 +176,7 @@ export class PostgresRepository implements DataRepository {
         id: userId,
         fullName: "Demo User",
         email: "demo@example.com",
-        profileCompletion: 0
+        profileCompletion: 0,
       };
     }
 
@@ -179,7 +186,7 @@ export class PostgresRepository implements DataRepository {
       email: row.email,
       profileCompletion: Number(row.profile_completion),
       educationLevel: row.education_level ?? undefined,
-      nationality: row.nationality ?? undefined
+      nationality: row.nationality ?? undefined,
     };
   }
 
@@ -190,12 +197,18 @@ export class PostgresRepository implements DataRepository {
         values ($1, $2)
         on conflict (user_id, opportunity_id) do nothing
       `,
-      [userId, opportunityId]
+      [userId, opportunityId],
     );
   }
 
-  async unsaveOpportunity(userId: string, opportunityId: string): Promise<void> {
-    await postgres.query(`delete from saved_opportunities where user_id = $1 and opportunity_id = $2`, [userId, opportunityId]);
+  async unsaveOpportunity(
+    userId: string,
+    opportunityId: string,
+  ): Promise<void> {
+    await postgres.query(
+      `delete from saved_opportunities where user_id = $1 and opportunity_id = $2`,
+      [userId, opportunityId],
+    );
   }
 
   async listSavedOpportunities(userId: string): Promise<Opportunity[]> {
@@ -224,30 +237,35 @@ export class PostgresRepository implements DataRepository {
         where s.user_id = $1
         order by s.created_at desc
       `,
-      [userId]
+      [userId],
     );
 
     return result.rows.map(toOpportunity);
   }
 
-  async applyToOpportunity(userId: string, opportunityId: string, note?: string): Promise<void> {
+  async applyToOpportunity(
+    userId: string,
+    opportunityId: string,
+    note?: string,
+  ): Promise<void> {
     await postgres.query(
       `insert into applications (user_id, opportunity_id, note) values ($1, $2, $3)`,
-      [userId, opportunityId, note ?? null]
+      [userId, opportunityId, note ?? null],
     );
   }
 
   async getDashboard(userId: string): Promise<DashboardPayload> {
-    const [saved, profile, statsResult, activityResult, recommendedResult] = await Promise.all([
-      this.listSavedOpportunities(userId),
-      this.getProfile(userId),
-      postgres.query<{
-        in_progress: string;
-        submitted: string;
-        awarded: string;
-        profile_completion: number | null;
-      }>(
-        `
+    const [saved, profile, statsResult, activityResult, recommendedResult] =
+      await Promise.all([
+        this.listSavedOpportunities(userId),
+        this.getProfile(userId),
+        postgres.query<{
+          in_progress: string;
+          submitted: string;
+          awarded: string;
+          profile_completion: number | null;
+        }>(
+          `
           select
             count(*) filter (where a.status = 'in-progress')::text as in_progress,
             count(*) filter (where a.status = 'submitted')::text as submitted,
@@ -257,20 +275,20 @@ export class PostgresRepository implements DataRepository {
           left join applications a on a.user_id = p.id
           where p.id = $1
         `,
-        [userId]
-      ),
-      postgres.query<ActivityItem & QueryResultRow>(
-        `
+          [userId],
+        ),
+        postgres.query<ActivityItem & QueryResultRow>(
+          `
           select id::text, title, status, date_label as "dateLabel"
           from activity_feed
           where user_id = $1
           order by created_at desc
           limit 5
         `,
-        [userId]
-      ),
-      postgres.query<OpportunityRow>(
-        `
+          [userId],
+        ),
+        postgres.query<OpportunityRow>(
+          `
           select
             id,
             title,
@@ -292,9 +310,9 @@ export class PostgresRepository implements DataRepository {
           from opportunities
           order by deadline_iso asc
           limit 2
-        `
-      )
-    ]);
+        `,
+        ),
+      ]);
 
     const stats = statsResult.rows[0];
 
@@ -303,10 +321,12 @@ export class PostgresRepository implements DataRepository {
         inProgress: Number(stats?.in_progress ?? 0),
         submitted: Number(stats?.submitted ?? 0),
         awarded: Number(stats?.awarded ?? 0),
-        profileCompletion: profile.profileCompletion || Number(stats?.profile_completion ?? 0)
+        profileCompletion:
+          profile.profileCompletion || Number(stats?.profile_completion ?? 0),
       },
       activity: activityResult.rows,
-      recommended: saved.length > 0 ? saved : recommendedResult.rows.map(toOpportunity)
+      recommended:
+        saved.length > 0 ? saved : recommendedResult.rows.map(toOpportunity),
     };
   }
 }

@@ -39,11 +39,21 @@ export function DashboardPage() {
         </article>
       </div>
 
-      <div className="grid" style={{ gridTemplateColumns: "2fr 1fr", gap: "1rem" }}>
+      <div
+        className="grid"
+        style={{ gridTemplateColumns: "2fr 1fr", gap: "1rem" }}
+      >
         <article className="card">
           <h3>Recent Activity</h3>
           {data.activity.map((item) => (
-            <div key={item.id} style={{ borderTop: "1px solid var(--line)", paddingTop: "0.7rem", marginTop: "0.7rem" }}>
+            <div
+              key={item.id}
+              style={{
+                borderTop: "1px solid var(--line)",
+                paddingTop: "0.7rem",
+                marginTop: "0.7rem",
+              }}
+            >
               <strong>{item.title}</strong>
               <p>{item.dateLabel}</p>
               <span className="badge">{item.status}</span>
@@ -58,7 +68,9 @@ export function DashboardPage() {
             {data.recommended.map((item) => (
               <OpportunityCard key={item.id} item={item} />
             ))}
-            {data.recommended.length === 0 ? <p>No recommendations available yet.</p> : null}
+            {data.recommended.length === 0 ? (
+              <p>No recommendations available yet.</p>
+            ) : null}
           </div>
         </article>
       </div>

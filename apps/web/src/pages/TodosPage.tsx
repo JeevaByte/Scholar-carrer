@@ -38,7 +38,10 @@ export function TodosPage() {
     return (
       <section className="card" style={{ maxWidth: 640 }}>
         <h2>Supabase Todos</h2>
-        <p>This demo page is disabled by default. Set `VITE_ENABLE_SUPABASE_TODOS=true` to enable it.</p>
+        <p>
+          This demo page is disabled by default. Set
+          `VITE_ENABLE_SUPABASE_TODOS=true` to enable it.
+        </p>
       </section>
     );
   }

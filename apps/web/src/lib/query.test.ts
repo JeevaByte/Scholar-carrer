@@ -8,7 +8,7 @@ describe("buildOpportunityQuery", () => {
       educationLevel: "undergraduate",
       location: "global",
       sort: "deadline",
-      page: 2
+      page: 2,
     });
 
     expect(query).toContain("search=tech+fellowship");

@@ -28,9 +28,9 @@ export function App() {
         { to: "/opportunities", label: "Opportunities" },
         { to: "/saved", label: "Saved" },
         { to: "/dashboard", label: "Dashboard" },
-        showTodos ? { to: "/todos", label: "Todos" } : null
+        showTodos ? { to: "/todos", label: "Todos" } : null,
       ].filter(Boolean) as Array<{ to: string; label: string }>,
-    [showTodos]
+    [showTodos],
   );
 
   return (
@@ -43,7 +43,9 @@ export function App() {
               <NavLink
                 key={link.to}
                 to={link.to}
-                className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
               >
                 {link.label}
               </NavLink>
@@ -52,7 +54,11 @@ export function App() {
           <div style={{ display: "grid", justifyItems: "end", gap: "0.2rem" }}>
             <button className="primary-btn">Get Started</button>
             <small>
-              {profile ? `Signed in as ${profile.fullName}` : profileError ? "Profile unavailable" : "Loading profile..."}
+              {profile
+                ? `Signed in as ${profile.fullName}`
+                : profileError
+                  ? "Profile unavailable"
+                  : "Loading profile..."}
             </small>
           </div>
         </div>
@@ -62,7 +68,10 @@ export function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/opportunities" element={<OpportunitiesPage />} />
-          <Route path="/opportunities/:id" element={<OpportunityDetailPage />} />
+          <Route
+            path="/opportunities/:id"
+            element={<OpportunityDetailPage />}
+          />
           <Route path="/saved" element={<SavedPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/todos" element={<TodosPage />} />

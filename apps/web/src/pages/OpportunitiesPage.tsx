@@ -30,7 +30,7 @@ export function OpportunitiesPage() {
       maxAmount,
       sort,
       page,
-      pageSize
+      pageSize,
     });
   }, [educationLevel, location, maxAmount, minAmount, page, search, sort]);
 
@@ -57,7 +57,11 @@ export function OpportunitiesPage() {
     setNotice("");
     try {
       await api.save(id);
-      setItems((current) => current.map((item) => (item.id === id ? { ...item, isSaved: true } : item)));
+      setItems((current) =>
+        current.map((item) =>
+          item.id === id ? { ...item, isSaved: true } : item,
+        ),
+      );
       setNotice("Opportunity saved.");
     } catch (err) {
       setNotice(`Failed to save opportunity: ${String(err)}`);
@@ -91,7 +95,11 @@ export function OpportunitiesPage() {
           <option value="graduate">Graduate</option>
           <option value="phd">PhD</option>
         </select>
-        <select className="field" value={location} onChange={(event) => setLocation(event.target.value)}>
+        <select
+          className="field"
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+        >
           <option value="">All locations</option>
           <option value="global">Global</option>
           <option value="uk">UK</option>
@@ -114,7 +122,11 @@ export function OpportunitiesPage() {
           value={maxAmount}
           onChange={(event) => setMaxAmount(event.target.value)}
         />
-        <select className="field" value={sort} onChange={(event) => setSort(event.target.value)}>
+        <select
+          className="field"
+          value={sort}
+          onChange={(event) => setSort(event.target.value)}
+        >
           <option value="relevance">Most relevant</option>
           <option value="deadline">Deadline</option>
           <option value="amount">Award amount</option>
@@ -142,8 +154,14 @@ export function OpportunitiesPage() {
           />
         ))}
         {!loading && items.length > 0 ? (
-          <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-            <button className="secondary-btn" disabled={page <= 1} onClick={() => setPage((current) => current - 1)}>
+          <div
+            style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}
+          >
+            <button
+              className="secondary-btn"
+              disabled={page <= 1}
+              onClick={() => setPage((current) => current - 1)}
+            >
               Previous
             </button>
             <button

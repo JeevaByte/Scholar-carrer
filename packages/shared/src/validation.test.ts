@@ -7,7 +7,7 @@ describe("opportunityFilterSchema", () => {
       page: "2",
       pageSize: "12",
       minAmount: "1000",
-      maxAmount: "5000"
+      maxAmount: "5000",
     });
 
     expect(parsed.page).toBe(2);
@@ -22,8 +22,8 @@ describe("applyOpportunitySchema", () => {
     expect(() =>
       applyOpportunitySchema.parse({
         opportunityId: "opp-1",
-        note: "x".repeat(501)
-      })
+        note: "x".repeat(501),
+      }),
     ).toThrow();
   });
 });

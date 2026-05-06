@@ -3,6 +3,7 @@
 Scholar Career is a TypeScript monorepo with a React frontend, an Express API, shared contracts, and Supabase-ready schema/migrations.
 
 ## Architecture
+
 - `apps/web` — React + Vite frontend
 - `apps/api` — Express API with repository-backed modules and Swagger docs
 - `packages/shared` — shared types and Zod validation schemas
@@ -11,6 +12,7 @@ Scholar Career is a TypeScript monorepo with a React frontend, an Express API, s
 - `.github/workflows` — CI and deployment validation workflows
 
 ## Current product scope
+
 - Opportunity discovery with search, filters, sorting, and pagination
 - Opportunity detail with save/apply actions
 - Saved opportunities management
@@ -19,12 +21,15 @@ Scholar Career is a TypeScript monorepo with a React frontend, an Express API, s
 - Mock, Postgres, and Supabase repository modes
 
 ## Demo-ready vs production-ready
+
 ### Demo-ready behavior
+
 - API falls back to a demo user when no `x-user-id` header is supplied
 - Mock repository provides deterministic profile, saved, application, and dashboard data
 - `/todos` is a Supabase smoke-test page and is disabled unless explicitly enabled
 
 ### Production-oriented improvements now included
+
 - Real workspace typecheck/format scripts replaced placeholder commands
 - Route-level API tests and shared/web test coverage added
 - CI workflows validate format, typecheck, build, test, and deployment builds
@@ -32,9 +37,11 @@ Scholar Career is a TypeScript monorepo with a React frontend, an Express API, s
 - RLS migration templates now include concrete ownership policies
 
 ## Environment
+
 Copy `/home/runner/work/Scholar-carrer/Scholar-carrer/.env.example` and set the values you need.
 
 Important variables:
+
 - `DATA_SOURCE=mock|postgres|supabase`
 - `API_PORT`
 - `DATABASE_URL`
@@ -49,6 +56,7 @@ Important variables:
 - `SUPABASE_SERVICE_ROLE_KEY`
 
 ## Local development
+
 1. Install dependencies
    ```bash
    npm install
@@ -67,6 +75,7 @@ Important variables:
    ```
 
 ## Validation commands
+
 ```bash
 npm run format
 npm run typecheck
@@ -75,12 +84,14 @@ npm run test
 ```
 
 ## Deployment assumptions
+
 - `apps/web/vercel.json` builds the shared package and web app for a static Vite deploy
 - `apps/api/vercel.json` builds the shared package and API, then serves `apps/api/dist/app.js`
 - Vercel and GitHub Actions expect workspace installs from the repository root
 - Supabase credentials should be provided through deployment environment variables, not committed files
 
 ## API surface
+
 - `GET /health`
 - `GET /docs`
 - `GET /api/v1/profile`

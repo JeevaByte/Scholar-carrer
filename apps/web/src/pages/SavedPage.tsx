@@ -43,8 +43,12 @@ export function SavedPage() {
       <h2>Saved Opportunities</h2>
       {notice ? <p>{notice}</p> : null}
       {loading ? <p>Loading saved opportunities...</p> : null}
-      {!loading && error ? <p>Failed to load saved opportunities: {error}</p> : null}
-      {!loading && items.length === 0 ? <p>You have no saved opportunities yet.</p> : null}
+      {!loading && error ? (
+        <p>Failed to load saved opportunities: {error}</p>
+      ) : null}
+      {!loading && items.length === 0 ? (
+        <p>You have no saved opportunities yet.</p>
+      ) : null}
       <div className="grid cards">
         {items.map((item) => (
           <OpportunityCard

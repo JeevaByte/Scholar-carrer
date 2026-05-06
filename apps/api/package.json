@@ -8,8 +8,8 @@
     "prebuild": "npm run build -w @scholar-career/shared",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
-    "test": "vitest run",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build -w @scholar-career/shared && vitest run",
+    "typecheck": "npm run build -w @scholar-career/shared && tsc -p tsconfig.json --noEmit",
     "lint": "npm run typecheck",
     "format": "prettier --check \"src/**/*.ts\" \"package.json\" \"vercel.json\""
   },

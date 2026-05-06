@@ -1,6 +1,7 @@
 # Supabase Handoff Checklist
 
 ## Implemented alignment
+
 - API repository modes: mock, postgres, and supabase
 - Request-scoped user resolution via `x-user-id` header with `DEMO_USER_ID` fallback
 - Shared profile contract used by API and web
@@ -9,6 +10,7 @@
 - SQL migrations now include concrete RLS ownership policies instead of placeholder comments
 
 ## Expected tables
+
 - `profiles`
 - `opportunities`
 - `opportunity_tags`
@@ -18,6 +20,7 @@
 - `todos` (demo-only smoke-test page)
 
 ## Current code assumptions
+
 1. `profiles.id` maps to the authenticated user ID.
 2. `opportunity_tags` stores one row per tag and is joined back into opportunities.
 3. `saved_opportunities` uses a unique `(user_id, opportunity_id)` pair.
@@ -25,6 +28,7 @@
 5. `activity_feed.date_label` is already formatted for UI display.
 
 ## Files to update if schema changes
+
 - `/home/runner/work/Scholar-carrer/Scholar-carrer/apps/api/src/repositories/supabase/supabaseRepository.ts`
 - `/home/runner/work/Scholar-carrer/Scholar-carrer/apps/api/src/repositories/postgres/postgresRepository.ts`
 - `/home/runner/work/Scholar-carrer/Scholar-carrer/packages/shared/src/types.ts`
@@ -32,6 +36,7 @@
 - `/home/runner/work/Scholar-carrer/Scholar-carrer/supabase/migrations/002_app_seed_and_todos.sql`
 
 ## Runtime setup
+
 1. Set:
    - `DATA_SOURCE=supabase`
    - `SUPABASE_URL`
@@ -44,6 +49,7 @@
 3. Start the API and web app from the repo root.
 
 ## Quick verification
+
 1. `GET /health` returns `dataSource: supabase`
 2. `GET /api/v1/profile` returns the current profile
 3. `GET /api/v1/opportunities` returns opportunities with `tags`
@@ -51,6 +57,7 @@
 5. Set `VITE_ENABLE_SUPABASE_TODOS=true` only if you want the demo `/todos` page enabled
 
 ## Remaining external decisions
+
 1. Whether `profiles.id` should be managed directly from `auth.users`
 2. Whether `activity_feed.date_label` should stay presentation-ready or move to timestamps
 3. Whether dashboard recommendations should eventually come from ranking logic instead of saved/latest fallbacks

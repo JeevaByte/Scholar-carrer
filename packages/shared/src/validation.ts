@@ -8,16 +8,16 @@ export const opportunityFilterSchema = z.object({
   maxAmount: z.coerce.number().nonnegative().optional(),
   page: z.coerce.number().int().positive().default(1),
   pageSize: z.coerce.number().int().positive().max(50).default(10),
-  sort: z.enum(["deadline", "amount", "relevance"]).default("relevance")
+  sort: z.enum(["deadline", "amount", "relevance"]).default("relevance"),
 });
 
 export const saveOpportunitySchema = z.object({
-  opportunityId: z.string().min(1)
+  opportunityId: z.string().min(1),
 });
 
 export const applyOpportunitySchema = z.object({
   opportunityId: z.string().min(1),
-  note: z.string().max(500).optional()
+  note: z.string().max(500).optional(),
 });
 
 export type OpportunityFilterInput = z.infer<typeof opportunityFilterSchema>;
