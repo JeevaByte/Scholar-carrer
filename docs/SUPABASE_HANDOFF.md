@@ -29,11 +29,11 @@
 
 ## Files to update if schema changes
 
-- `/home/runner/work/Scholar-carrer/Scholar-carrer/apps/api/src/repositories/supabase/supabaseRepository.ts`
-- `/home/runner/work/Scholar-carrer/Scholar-carrer/apps/api/src/repositories/postgres/postgresRepository.ts`
-- `/home/runner/work/Scholar-carrer/Scholar-carrer/packages/shared/src/types.ts`
-- `/home/runner/work/Scholar-carrer/Scholar-carrer/supabase/migrations/001_initial_schema.sql`
-- `/home/runner/work/Scholar-carrer/Scholar-carrer/supabase/migrations/002_app_seed_and_todos.sql`
+- `apps/api/src/repositories/supabase/supabaseRepository.ts`
+- `apps/api/src/repositories/postgres/postgresRepository.ts`
+- `packages/shared/src/types.ts`
+- `supabase/migrations/001_initial_schema.sql`
+- `supabase/migrations/002_app_seed_and_todos.sql`
 
 ## Runtime setup
 
@@ -44,8 +44,8 @@
    - `SUPABASE_SERVICE_ROLE_KEY`
    - optional `DEMO_USER_ID`
 2. Apply:
-   - `/home/runner/work/Scholar-carrer/Scholar-carrer/supabase/migrations/001_initial_schema.sql`
-   - `/home/runner/work/Scholar-carrer/Scholar-carrer/supabase/migrations/002_app_seed_and_todos.sql`
+   - `supabase/migrations/001_initial_schema.sql`
+   - `supabase/migrations/002_app_seed_and_todos.sql`
 3. Start the API and web app from the repo root.
 
 ## Quick verification
