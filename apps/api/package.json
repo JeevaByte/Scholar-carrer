@@ -9,11 +9,12 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "test": "vitest run",
-    "lint": "echo 'api lint placeholder'",
-    "format": "echo 'api format placeholder'"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "npm run typecheck",
+    "format": "prettier --check \"src/**/*.ts\" \"package.json\" \"vercel.json\""
   },
   "dependencies": {
-    "@scholar-career/shared": "file:./vendor/shared",
+    "@scholar-career/shared": "0.1.0",
     "@supabase/supabase-js": "^2.45.4",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

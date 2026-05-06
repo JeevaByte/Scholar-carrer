@@ -9,9 +9,3 @@ coverage/
 .DS_Store
 *.log
 *.tsbuildinfo
-
-# Allow vendored runtime artifacts and API build output for Vercel deployment.
-!apps/api/dist/
-!apps/api/dist/**
-!apps/api/vendor/shared/dist/
-!apps/api/vendor/shared/dist/**

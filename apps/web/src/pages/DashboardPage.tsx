@@ -5,11 +5,16 @@ import { OpportunityCard } from "../components/OpportunityCard";
 
 export function DashboardPage() {
   const [data, setData] = useState<DashboardPayload | null>(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    api.dashboard().then(setData);
+    api
+      .dashboard()
+      .then(setData)
+      .catch((err) => setError(String(err)));
   }, []);
 
+  if (error) return <p>Failed to load dashboard: {error}</p>;
   if (!data) return <p>Loading dashboard...</p>;
 
   return (
@@ -44,6 +49,7 @@ export function DashboardPage() {
               <span className="badge">{item.status}</span>
             </div>
           ))}
+          {data.activity.length === 0 ? <p>No recent activity yet.</p> : null}
         </article>
 
         <article className="card">
@@ -52,6 +58,7 @@ export function DashboardPage() {
             {data.recommended.map((item) => (
               <OpportunityCard key={item.id} item={item} />
             ))}
+            {data.recommended.length === 0 ? <p>No recommendations available yet.</p> : null}
           </div>
         </article>
       </div>

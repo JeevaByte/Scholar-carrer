@@ -1,6 +1,16 @@
 repos:
   - repo: local
     hooks:
+      - id: format-check
+        name: format-check
+        entry: npm run format
+        language: system
+        pass_filenames: false
+      - id: typecheck
+        name: typecheck
+        entry: npm run typecheck
+        language: system
+        pass_filenames: false
       - id: web-tests
         name: web-tests
         entry: npm run test -w @scholar-career/web

@@ -1,0 +1,36 @@
+name: Deployment Validation
+
+on:
+  pull_request:
+    paths:
+      - "apps/api/**"
+      - "apps/web/**"
+      - "packages/shared/**"
+      - ".github/workflows/deployment-validate.yml"
+      - "package.json"
+      - "package-lock.json"
+
+jobs:
+  vercel-builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate shared build
+        run: npm run build -w @scholar-career/shared
+
+      - name: Validate API build
+        run: npm run build -w @scholar-career/api
+
+      - name: Validate web build
+        run: npm run build -w @scholar-career/web

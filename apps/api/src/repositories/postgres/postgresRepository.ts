@@ -3,7 +3,8 @@ import type {
   DashboardPayload,
   Opportunity,
   OpportunityFilterInput,
-  PaginatedResponse
+  PaginatedResponse,
+  Profile
 } from "@scholar-career/shared";
 import type { QueryResultRow } from "pg";
 import { postgres } from "./postgresClient.js";
@@ -78,7 +79,24 @@ export class PostgresRepository implements DataRepository {
     values.push(filters.pageSize, (filters.page - 1) * filters.pageSize);
     const itemsResult = await postgres.query<OpportunityRow>(
       `
-        select id, title, provider, summary, amount_label, amount_value, education_level, location, deadline_iso, tags
+        select
+          id,
+          title,
+          provider,
+          summary,
+          amount_label,
+          amount_value,
+          education_level,
+          location,
+          deadline_iso,
+          coalesce(
+            (
+              select array_agg(tag order by tag)
+              from opportunity_tags
+              where opportunity_id = opportunities.id
+            ),
+            '{}'
+          ) as tags
         from opportunities
         ${whereClause}
         ${orderBy}
@@ -99,7 +117,24 @@ export class PostgresRepository implements DataRepository {
   async getOpportunityById(id: string): Promise<Opportunity | null> {
     const result = await postgres.query<OpportunityRow>(
       `
-        select id, title, provider, summary, amount_label, amount_value, education_level, location, deadline_iso, tags
+        select
+          id,
+          title,
+          provider,
+          summary,
+          amount_label,
+          amount_value,
+          education_level,
+          location,
+          deadline_iso,
+          coalesce(
+            (
+              select array_agg(tag order by tag)
+              from opportunity_tags
+              where opportunity_id = opportunities.id
+            ),
+            '{}'
+          ) as tags
         from opportunities
         where id = $1
       `,
@@ -107,6 +142,45 @@ export class PostgresRepository implements DataRepository {
     );
 
     return result.rows[0] ? toOpportunity(result.rows[0]) : null;
+  }
+
+  async getProfile(userId: string): Promise<Profile> {
+    const result = await postgres.query<
+      QueryResultRow & {
+        id: string;
+        full_name: string;
+        email: string;
+        profile_completion: number;
+        education_level: Profile["educationLevel"] | null;
+        nationality: string | null;
+      }
+    >(
+      `
+        select id, full_name, email, profile_completion, education_level, nationality
+        from profiles
+        where id = $1
+      `,
+      [userId]
+    );
+
+    const row = result.rows[0];
+    if (!row) {
+      return {
+        id: userId,
+        fullName: "Demo User",
+        email: "demo@example.com",
+        profileCompletion: 0
+      };
+    }
+
+    return {
+      id: row.id,
+      fullName: row.full_name,
+      email: row.email,
+      profileCompletion: Number(row.profile_completion),
+      educationLevel: row.education_level ?? undefined,
+      nationality: row.nationality ?? undefined
+    };
   }
 
   async saveOpportunity(userId: string, opportunityId: string): Promise<void> {
@@ -127,7 +201,24 @@ export class PostgresRepository implements DataRepository {
   async listSavedOpportunities(userId: string): Promise<Opportunity[]> {
     const result = await postgres.query<OpportunityRow>(
       `
-        select o.id, o.title, o.provider, o.summary, o.amount_label, o.amount_value, o.education_level, o.location, o.deadline_iso, o.tags
+        select
+          o.id,
+          o.title,
+          o.provider,
+          o.summary,
+          o.amount_label,
+          o.amount_value,
+          o.education_level,
+          o.location,
+          o.deadline_iso,
+          coalesce(
+            (
+              select array_agg(tag order by tag)
+              from opportunity_tags
+              where opportunity_id = o.id
+            ),
+            '{}'
+          ) as tags
         from saved_opportunities s
         join opportunities o on o.id = s.opportunity_id
         where s.user_id = $1
@@ -147,8 +238,9 @@ export class PostgresRepository implements DataRepository {
   }
 
   async getDashboard(userId: string): Promise<DashboardPayload> {
-    const [saved, statsResult, activityResult] = await Promise.all([
+    const [saved, profile, statsResult, activityResult, recommendedResult] = await Promise.all([
       this.listSavedOpportunities(userId),
+      this.getProfile(userId),
       postgres.query<{
         in_progress: string;
         submitted: string;
@@ -176,6 +268,31 @@ export class PostgresRepository implements DataRepository {
           limit 5
         `,
         [userId]
+      ),
+      postgres.query<OpportunityRow>(
+        `
+          select
+            id,
+            title,
+            provider,
+            summary,
+            amount_label,
+            amount_value,
+            education_level,
+            location,
+            deadline_iso,
+            coalesce(
+              (
+                select array_agg(tag order by tag)
+                from opportunity_tags
+                where opportunity_id = opportunities.id
+              ),
+              '{}'
+            ) as tags
+          from opportunities
+          order by deadline_iso asc
+          limit 2
+        `
       )
     ]);
 
@@ -186,10 +303,10 @@ export class PostgresRepository implements DataRepository {
         inProgress: Number(stats?.in_progress ?? 0),
         submitted: Number(stats?.submitted ?? 0),
         awarded: Number(stats?.awarded ?? 0),
-        profileCompletion: Number(stats?.profile_completion ?? 0)
+        profileCompletion: profile.profileCompletion || Number(stats?.profile_completion ?? 0)
       },
       activity: activityResult.rows,
-      recommended: saved
+      recommended: saved.length > 0 ? saved : recommendedResult.rows.map(toOpportunity)
     };
   }
 }

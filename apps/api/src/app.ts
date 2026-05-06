@@ -8,6 +8,7 @@ import { registerSavedRoutes } from "./modules/saved.js";
 import { registerApplicationRoutes } from "./modules/applications.js";
 import { registerDashboardRoutes } from "./modules/dashboard.js";
 import { registerProfileRoutes } from "./modules/profile.js";
+import { resolveRequestUserId } from "./auth/requestUser.js";
 import { MockRepository } from "./repositories/mock/mockRepository.js";
 import { PostgresRepository } from "./repositories/postgres/postgresRepository.js";
 import { SupabaseRepository } from "./repositories/supabase/supabaseRepository.js";
@@ -17,6 +18,7 @@ declare global {
   namespace Express {
     interface Request {
       repo: DataRepository;
+      userId: string;
     }
   }
 }
@@ -33,7 +35,8 @@ const openApiDoc = {
     "/opportunities/{id}": { get: { summary: "Get opportunity detail" } },
     "/saved": { get: { summary: "List saved opportunities" }, post: { summary: "Save opportunity" } },
     "/applications": { post: { summary: "Apply to opportunity" } },
-    "/dashboard": { get: { summary: "Get dashboard" } }
+    "/dashboard": { get: { summary: "Get dashboard" } },
+    "/profile": { get: { summary: "Get active profile" } }
   }
 };
 
@@ -49,6 +52,7 @@ app.use(cors());
 app.use(express.json());
 app.use((req, _res, next) => {
   req.repo = repo;
+  req.userId = resolveRequestUserId(req);
   next();
 });
 

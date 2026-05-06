@@ -1,13 +1,25 @@
 import type {
+  ActivityItem,
   DashboardPayload,
   Opportunity,
   OpportunityFilterInput,
-  PaginatedResponse
+  PaginatedResponse,
+  Profile
 } from "@scholar-career/shared";
 import { mockActivity, mockOpportunities, mockStats } from "../../data/mockData.js";
 import type { DataRepository } from "../contracts.js";
 
 const savedByUser = new Map<string, Set<string>>();
+const applicationsByUser = new Map<string, ActivityItem[]>();
+
+const getProfileForUser = (userId: string): Profile => ({
+  id: userId,
+  fullName: "Alex Johnson",
+  email: "alex@example.com",
+  profileCompletion: mockStats.profileCompletion,
+  educationLevel: "graduate",
+  nationality: "Indian"
+});
 
 const applySearch = (items: Opportunity[], search: string): Opportunity[] => {
   const q = search.trim().toLowerCase();
@@ -61,6 +73,10 @@ export class MockRepository implements DataRepository {
     return mockOpportunities.find((item) => item.id === id) ?? null;
   }
 
+  async getProfile(userId: string): Promise<Profile> {
+    return getProfileForUser(userId);
+  }
+
   async saveOpportunity(userId: string, opportunityId: string): Promise<void> {
     const existing = savedByUser.get(userId) ?? new Set<string>();
     existing.add(opportunityId);
@@ -78,15 +94,34 @@ export class MockRepository implements DataRepository {
     return mockOpportunities.filter((item) => saved.has(item.id));
   }
 
-  async applyToOpportunity(_userId: string, _opportunityId: string, _note?: string): Promise<void> {
-    return;
+  async applyToOpportunity(userId: string, opportunityId: string, _note?: string): Promise<void> {
+    const opportunity = await this.getOpportunityById(opportunityId);
+    const nextActivity: ActivityItem = {
+      id: `act-${userId}-${opportunityId}`,
+      title: opportunity?.title ?? "Opportunity",
+      status: "submitted",
+      dateLabel: "Submitted just now"
+    };
+    const items = applicationsByUser.get(userId) ?? [];
+    applicationsByUser.set(userId, [nextActivity, ...items].slice(0, 5));
   }
 
   async getDashboard(userId: string): Promise<DashboardPayload> {
     const saved = await this.listSavedOpportunities(userId);
+    const profile = await this.getProfile(userId);
+    const activity = applicationsByUser.get(userId) ?? mockActivity;
+    const submitted = activity.filter((item) => item.status === "submitted").length;
+    const awarded = activity.filter((item) => item.status === "awarded").length;
+    const inProgress = activity.filter((item) => item.status === "in-progress").length;
+
     return {
-      stats: mockStats,
-      activity: mockActivity,
+      stats: {
+        inProgress,
+        submitted,
+        awarded,
+        profileCompletion: profile.profileCompletion
+      },
+      activity,
       recommended: saved.length > 0 ? saved : mockOpportunities.slice(0, 2)
     };
   }

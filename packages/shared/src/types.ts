@@ -14,6 +14,15 @@ export interface Opportunity {
   isSaved?: boolean;
 }
 
+export interface Profile {
+  id: string;
+  fullName: string;
+  email: string;
+  profileCompletion: number;
+  educationLevel?: Opportunity["educationLevel"];
+  nationality?: string;
+}
+
 export interface DashboardStats {
   inProgress: number;
   submitted: number;
